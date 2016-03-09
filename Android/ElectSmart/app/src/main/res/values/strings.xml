@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">ElectSmart</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="tab1">Home</string>
+    <string name="tab2">Upcoming Elections</string>
+    <string name="tab3">Current Events</string>
 
     <string name="hello_world">Hello world!</string>
 

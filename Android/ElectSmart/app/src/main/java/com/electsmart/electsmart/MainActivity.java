@@ -1,5 +1,7 @@
 package com.electsmart.electsmart;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import android.support.v7.app.AppCompatActivity;
@@ -127,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
+            //TODO: Have this create a new fragment that is specific to each tab
             return PlaceholderFragment.newInstance(position + 1);
         }
 
@@ -141,11 +144,11 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
+                    return getString(R.string.tab1).toUpperCase(l);
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
+                    return getString(R.string.tab2).toUpperCase(l);
                 case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
+                    return getString(R.string.tab3).toUpperCase(l);
             }
             return null;
         }
