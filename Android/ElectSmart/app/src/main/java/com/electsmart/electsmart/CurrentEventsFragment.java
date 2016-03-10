@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 public class CurrentEventsFragment extends Fragment {
 
+    private static final String TAG = CurrentEventsFragment.class.getSimpleName();
+
     public CurrentEventsFragment() {
         // Required empty public constructor
     }

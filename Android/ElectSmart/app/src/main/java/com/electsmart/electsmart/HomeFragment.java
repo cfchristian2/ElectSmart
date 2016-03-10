@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 public class HomeFragment extends Fragment {
 
+    private static final String TAG = HomeFragment.class.getSimpleName();
+
     public HomeFragment() {
         // Required empty public constructor
     }
