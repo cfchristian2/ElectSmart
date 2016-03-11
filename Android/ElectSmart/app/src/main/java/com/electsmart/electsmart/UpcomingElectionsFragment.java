@@ -1,12 +1,17 @@
 package com.electsmart.electsmart;
 
+import android.app.ListActivity;
+import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
-public class UpcomingElectionsFragment extends Fragment {
+import java.util.ArrayList;
+
+public class UpcomingElectionsFragment extends ListFragment {
 
     private static final String TAG = UpcomingElectionsFragment.class.getSimpleName();
 
@@ -28,6 +33,20 @@ public class UpcomingElectionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        // Construct the data source
+        View view = inflater.inflate(R.layout.fragment_upcoming_elections, container, false);
+        ListView listView = (ListView) view.findViewById(R.id.upcoming_elections_list);
+
+        ArrayList<UpcomingElection> arrayOfElections = new ArrayList<UpcomingElection>();
+
+        //Need to fill Elections info
+
+        // Create the adapter to convert the array to views
+        UpcomingElectionsAdapter adapter = new UpcomingElectionsAdapter(getActivity(), arrayOfElections);
+
+        // Attach the adapter to a ListView
+        listView.setAdapter(adapter);
+
         return inflater.inflate(R.layout.fragment_upcoming_elections, container, false);
     }
 }
