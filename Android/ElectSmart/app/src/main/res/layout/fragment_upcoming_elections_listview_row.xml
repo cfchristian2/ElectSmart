@@ -18,11 +18,34 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:weightSum="1">
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/LeftElection_Icon"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
-                    android:id="@+id/UpcomingElection_Cal_3"
-                    android:src="@mipmap/Home_Election_Date" />
+                    android:id="@+id/UpcomingElection_Cal_Left"
+                    android:src="@drawable/ic_calendar_blank_black_48dp" />
+
+                <TextView
+                    android:id="@+id/UpcomingElection_Calendar_Date_Left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_alignLeft="@id/UpcomingElection_Cal_Left"
+                    android:layout_alignTop="@id/UpcomingElection_Cal_Left"
+                    android:layout_alignRight="@id/UpcomingElection_Cal_Left"
+                    android:layout_alignBottom="@id/UpcomingElection_Cal_Left"
+                    android:layout_margin="1dp"
+                    android:paddingTop="10dp"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="#000000" />
+                </RelativeLayout>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -32,7 +55,7 @@
                     android:paddingTop="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:id="@+id/UpcomingElection_Title_3"
+                    android:id="@+id/UpcomingElection_Title_Left"
                     android:gravity="center" />
             </LinearLayout>
         </RelativeLayout>
@@ -44,25 +67,48 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight=".5"
                 android:weightSum="1">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:id="@+id/UpcomingElection_Cal_4"
-                    android:src="@mipmap/Home_Election_Date" />
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/RightElection_Icon"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:id="@+id/UpcomingElection_Cal_Right"
+                        android:src="@drawable/ic_calendar_blank_black_48dp" />
+
+                    <TextView
+                        android:id="@+id/UpcomingElection_Calendar_Date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:layout_alignLeft="@id/UpcomingElection_Cal_Right"
+                        android:layout_alignTop="@id/UpcomingElection_Cal_Right"
+                        android:layout_alignRight="@id/UpcomingElection_Cal_Right"
+                        android:layout_alignBottom="@id/UpcomingElection_Cal_Right"
+                        android:layout_margin="1dp"
+                        android:paddingTop="10dp"
+                        android:gravity="center"
+                        android:text="10"
+                        android:textColor="#000000" />
+                </RelativeLayout>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="General Election"
+                    android:text="Fall Primary"
                     android:paddingBottom="10dp"
                     android:paddingTop="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:id="@+id/UpcomingElection_Title_4"
+                    android:id="@+id/UpcomingElection_Title_Right"
                     android:gravity="center" />
             </LinearLayout>
-
         </RelativeLayout>
-    </LinearLayout>
+        </LinearLayout>
 </LinearLayout>
