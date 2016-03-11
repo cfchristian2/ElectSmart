@@ -54,7 +54,7 @@
                     android:layout_height="130dp"
                     android:layout_marginRight="125dp"
                     android:id="@+id/ElectionDate"
-                    android:src="@mipmap/Home_Election_Date" />
+                    android:src="@drawable/ic_calendar_blank_black_48dp" />
             </LinearLayout>
 
 
@@ -65,7 +65,7 @@
                 <!--Find My Polling Place-->
                 <ImageView
                     android:id="@+id/PollingMarker"
-                    android:src="@mipmap/Home_PollingMarker"
+                    android:src="@drawable/ic_map_marker_black_48dp"
                     android:layout_width="131dp"
                     android:layout_height="130dp" />
             </LinearLayout>
