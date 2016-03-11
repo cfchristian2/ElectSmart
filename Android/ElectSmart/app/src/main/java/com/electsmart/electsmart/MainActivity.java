@@ -1,8 +1,12 @@
 package com.electsmart.electsmart;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.location.Geocoder;
+import android.location.Location;
+import android.os.Handler;
+import android.os.ResultReceiver;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -13,8 +17,10 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.Toast;
 
+import com.electsmart.electsmart.geolocation.FetchAddressIntentService;
+import com.electsmart.electsmart.geolocation.GeolocationConstants;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -38,6 +44,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     private GoogleApiClient mGoogleApiClient;
 
+    protected Location mLastLocation;
+    private AddressResultReceiver mResultReceiver;
+    String mAddressOutput;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        mResultReceiver = new AddressResultReceiver(new Handler());
 
         // Create an instance of GoogleAPIClient.
         if (mGoogleApiClient == null) {
@@ -79,8 +91,23 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     @Override
     public void onConnected(Bundle connectionHint) {
         try {
-            LocationServices.FusedLocationApi.getLastLocation(
+            mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                     mGoogleApiClient);
+
+            if (mLastLocation != null) {
+                // Determine whether a Geocoder is available.
+                if (!Geocoder.isPresent()) {
+                    Toast.makeText(this, R.string.no_geocoder_available,
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                //if (mAddressRequested) {
+                    startIntentService();
+               // }
+            }
+
+            Toast.makeText(MainActivity.this, String.valueOf(mLastLocation.getLatitude()) + ", " + String.valueOf(mLastLocation.getLongitude()), Toast.LENGTH_SHORT).show();
         } catch(SecurityException e) {
 
         }
@@ -89,6 +116,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     @Override
     public void onConnectionSuspended(int value) {
 
+    }
+
+    protected void startIntentService() {
+        Intent intent = new Intent(this, FetchAddressIntentService.class);
+        intent.putExtra(GeolocationConstants.RECEIVER, mResultReceiver);
+        intent.putExtra(GeolocationConstants.LOCATION_DATA_EXTRA, mLastLocation);
+        startService(intent);
     }
 
     @Override
@@ -116,6 +150,33 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
 
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @SuppressLint("ParcelCreator")
+    class AddressResultReceiver extends ResultReceiver {
+
+        public AddressResultReceiver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        protected void onReceiveResult(int resultCode, Bundle resultData) {
+
+            // Display the address string
+            // or an error message sent from the intent service.
+            mAddressOutput = resultData.getString(GeolocationConstants.RESULT_DATA_KEY);
+//            displayAddressOutput();
+
+            // Show a toast message if an address was found.
+            if (resultCode == GeolocationConstants.SUCCESS_RESULT) {
+                showToast(getString(R.string.address_found));
+            }
+
+        }
     }
 
     /**
