@@ -13,7 +13,7 @@ import com.electsmart.electsmart.Models.UpcomingElection;
 
 import java.util.ArrayList;
 
-public class UpcomingElectionsFragment extends Fragment {
+public class UpcomingElectionsFragment extends ListFragment {
 
     private static final String TAG = UpcomingElectionsFragment.class.getSimpleName();
 
@@ -37,17 +37,17 @@ public class UpcomingElectionsFragment extends Fragment {
         // Inflate the layout for this fragment
         // Construct the data source
         View view = inflater.inflate(R.layout.fragment_upcoming_elections, container, false);
-        ListView listView = (ListView) view.findViewById(R.id.upcoming_elections_list);
 
         ArrayList<UpcomingElection> arrayOfElections = new ArrayList<UpcomingElection>();
 
         //Need to fill Elections info
+        arrayOfElections.add(new UpcomingElection());
 
         // Create the adapter to convert the array to views
         UpcomingElectionsAdapter adapter = new UpcomingElectionsAdapter(getActivity(), arrayOfElections);
 
         // Attach the adapter to a ListView
-        listView.setAdapter(adapter);
+        setListAdapter(adapter);
 
         return inflater.inflate(R.layout.fragment_upcoming_elections, container, false);
     }
