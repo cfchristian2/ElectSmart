@@ -1,6 +1,7 @@
 package com.electsmart.electsmart;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,7 @@ import com.electsmart.electsmart.Models.UpcomingElection;
 
 import java.util.ArrayList;
 
-public class UpcomingElectionsFragment extends ListFragment {
+public class UpcomingElectionsFragment extends Fragment {
 
     private static final String TAG = UpcomingElectionsFragment.class.getSimpleName();
 
