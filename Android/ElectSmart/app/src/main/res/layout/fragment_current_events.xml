@@ -5,5 +5,9 @@
     tools:context="com.electsmart.electsmart.CurrentEventsFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/current_event_list"></ListView>
 
 </FrameLayout>
