@@ -9,6 +9,8 @@ import android.os.ResultReceiver;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -29,7 +31,9 @@ public class MainActivity extends AppCompatActivity  implements GoogleApiClient.
 
     protected Location mLastLocation;
     private AddressResultReceiver mResultReceiver;
-    String mAddressOutput;
+    protected String mAddressOutput;
+
+    private PreferencesManager mPrefsManager;
 
     private TextView mAddressText;
     private Button mContinueButton;
@@ -40,15 +44,15 @@ public class MainActivity extends AppCompatActivity  implements GoogleApiClient.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAddressText = (TextView) findViewById(R.id.addressInfo);
-        mContinueButton = (Button) findViewById(R.id.continueButton);
-        mContinueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                moveToNextView();
-            }
-        });
-        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        setUpViewElements();
+
+        PreferencesManager.initializeInstance(this);
+        mPrefsManager = PreferencesManager.getInstance();
+
+        if(!TextUtils.isEmpty(mPrefsManager.getAddress())) {
+            Log.d(TAG, "Used saved address");
+            moveToNextView();
+        }
 
         mResultReceiver = new AddressResultReceiver(new Handler());
 
@@ -60,6 +64,21 @@ public class MainActivity extends AppCompatActivity  implements GoogleApiClient.
                     .addApi(LocationServices.API)
                     .build();
         }
+    }
+
+    private void setUpViewElements() {
+        mAddressText = (TextView) findViewById(R.id.addressInfo);
+
+        mContinueButton = (Button) findViewById(R.id.continueButton);
+        mContinueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPrefsManager.setAddress(mAddressOutput);
+                moveToNextView();
+            }
+        });
+
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
     }
 
     protected void onStart() {
@@ -86,12 +105,12 @@ public class MainActivity extends AppCompatActivity  implements GoogleApiClient.
                     return;
                 }
 
+                mPrefsManager.setLatLng(mLastLocation);
                 //if (mAddressRequested) {
                 startIntentService();
                 // }
             }
 
-            Toast.makeText(MainActivity.this, String.valueOf(mLastLocation.getLatitude()) + ", " + String.valueOf(mLastLocation.getLongitude()), Toast.LENGTH_SHORT).show();
         } catch(SecurityException e) {
 
         }
@@ -147,7 +166,7 @@ public class MainActivity extends AppCompatActivity  implements GoogleApiClient.
             mProgressBar.setVisibility(View.INVISIBLE);
             // Show a toast message if an address was found.
             if (resultCode == GeolocationConstants.SUCCESS_RESULT) {
-                showToast(getString(R.string.address_found));
+                //showToast(getString(R.string.address_found));
                 displayAddressOutput();
             } else if (resultCode == GeolocationConstants.FAILURE_RESULT) {
                 //TODO handle the case with no address
