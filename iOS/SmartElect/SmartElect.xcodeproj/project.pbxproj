@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC7CABA81C961CD7009BB184 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABA71C961CD7009BB184 /* ThirdViewController.swift */; };
-		DC7CABAA1C961CE9009BB184 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABA91C961CE9009BB184 /* FourthViewController.swift */; };
+		DC7CABA81C961CD7009BB184 /* CurrentEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABA71C961CD7009BB184 /* CurrentEventsViewController.swift */; };
+		DC7CABAA1C961CE9009BB184 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABA91C961CE9009BB184 /* SettingsViewController.swift */; };
 		DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88041C8FA283005CAF6A /* AppDelegate.swift */; };
-		DCEF88071C8FA283005CAF6A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88061C8FA283005CAF6A /* FirstViewController.swift */; };
-		DCEF88091C8FA283005CAF6A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88081C8FA283005CAF6A /* SecondViewController.swift */; };
+		DCEF88071C8FA283005CAF6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88061C8FA283005CAF6A /* HomeViewController.swift */; };
+		DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */; };
 		DCEF880C1C8FA283005CAF6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCEF880A1C8FA283005CAF6A /* Main.storyboard */; };
 		DCEF880E1C8FA283005CAF6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCEF880D1C8FA283005CAF6A /* Assets.xcassets */; };
 		DCEF88111C8FA283005CAF6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCEF880F1C8FA283005CAF6A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DC7CABA71C961CD7009BB184 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		DC7CABA91C961CE9009BB184 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		DC7CABA71C961CD7009BB184 /* CurrentEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventsViewController.swift; sourceTree = "<group>"; };
+		DC7CABA91C961CE9009BB184 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DCEF88011C8FA283005CAF6A /* SmartElect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartElect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEF88041C8FA283005CAF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCEF88061C8FA283005CAF6A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		DCEF88081C8FA283005CAF6A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		DCEF88061C8FA283005CAF6A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		DCEF880B1C8FA283005CAF6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCEF880D1C8FA283005CAF6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCEF88101C8FA283005CAF6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,10 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				DCEF88041C8FA283005CAF6A /* AppDelegate.swift */,
-				DCEF88061C8FA283005CAF6A /* FirstViewController.swift */,
-				DC7CABA71C961CD7009BB184 /* ThirdViewController.swift */,
-				DC7CABA91C961CE9009BB184 /* FourthViewController.swift */,
-				DCEF88081C8FA283005CAF6A /* SecondViewController.swift */,
+				DCEF88061C8FA283005CAF6A /* HomeViewController.swift */,
+				DC7CABA71C961CD7009BB184 /* CurrentEventsViewController.swift */,
+				DC7CABA91C961CE9009BB184 /* SettingsViewController.swift */,
+				DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */,
 				DCEF880A1C8FA283005CAF6A /* Main.storyboard */,
 				DCEF880D1C8FA283005CAF6A /* Assets.xcassets */,
 				DCEF880F1C8FA283005CAF6A /* LaunchScreen.storyboard */,
@@ -145,11 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCEF88091C8FA283005CAF6A /* SecondViewController.swift in Sources */,
+				DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */,
 				DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */,
-				DC7CABA81C961CD7009BB184 /* ThirdViewController.swift in Sources */,
-				DCEF88071C8FA283005CAF6A /* FirstViewController.swift in Sources */,
-				DC7CABAA1C961CE9009BB184 /* FourthViewController.swift in Sources */,
+				DC7CABA81C961CD7009BB184 /* CurrentEventsViewController.swift in Sources */,
+				DCEF88071C8FA283005CAF6A /* HomeViewController.swift in Sources */,
+				DC7CABAA1C961CE9009BB184 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
