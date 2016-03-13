@@ -11,4 +11,9 @@
     <string name="no_address_found">No address could be found</string>
     <string name="address_found">An address was found</string>
     <string name="no_geocoder_available">There is no geocoder available</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="dialog_correct_address">Is this the correct address</string>
+    <string name="address_correct">Yes</string>
+    <string name="address_incorrect">No</string>
 </resources>
