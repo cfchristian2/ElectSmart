@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC7CABA81C961CD7009BB184 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABA71C961CD7009BB184 /* ThirdViewController.swift */; };
+		DC7CABAA1C961CE9009BB184 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABA91C961CE9009BB184 /* FourthViewController.swift */; };
 		DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88041C8FA283005CAF6A /* AppDelegate.swift */; };
 		DCEF88071C8FA283005CAF6A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88061C8FA283005CAF6A /* FirstViewController.swift */; };
 		DCEF88091C8FA283005CAF6A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88081C8FA283005CAF6A /* SecondViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC7CABA71C961CD7009BB184 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		DC7CABA91C961CE9009BB184 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		DCEF88011C8FA283005CAF6A /* SmartElect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartElect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEF88041C8FA283005CAF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCEF88061C8FA283005CAF6A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 			children = (
 				DCEF88041C8FA283005CAF6A /* AppDelegate.swift */,
 				DCEF88061C8FA283005CAF6A /* FirstViewController.swift */,
+				DC7CABA71C961CD7009BB184 /* ThirdViewController.swift */,
+				DC7CABA91C961CE9009BB184 /* FourthViewController.swift */,
 				DCEF88081C8FA283005CAF6A /* SecondViewController.swift */,
 				DCEF880A1C8FA283005CAF6A /* Main.storyboard */,
 				DCEF880D1C8FA283005CAF6A /* Assets.xcassets */,
@@ -141,7 +147,9 @@
 			files = (
 				DCEF88091C8FA283005CAF6A /* SecondViewController.swift in Sources */,
 				DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */,
+				DC7CABA81C961CD7009BB184 /* ThirdViewController.swift in Sources */,
 				DCEF88071C8FA283005CAF6A /* FirstViewController.swift in Sources */,
+				DC7CABAA1C961CE9009BB184 /* FourthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +297,7 @@
 				DCEF88171C8FA283005CAF6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
