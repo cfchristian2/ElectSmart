@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity  implements GoogleApiClient.
 
     private TextView mAddressText;
     private Button mContinueButton;
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity  implements GoogleApiClient.
                 moveToNextView();
             }
         });
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         mResultReceiver = new AddressResultReceiver(new Handler());
 
@@ -141,6 +144,7 @@ public class MainActivity extends AppCompatActivity  implements GoogleApiClient.
             mAddressOutput = resultData.getString(GeolocationConstants.RESULT_DATA_KEY);
 //            displayAddressOutput();
 
+            mProgressBar.setVisibility(View.INVISIBLE);
             // Show a toast message if an address was found.
             if (resultCode == GeolocationConstants.SUCCESS_RESULT) {
                 showToast(getString(R.string.address_found));
