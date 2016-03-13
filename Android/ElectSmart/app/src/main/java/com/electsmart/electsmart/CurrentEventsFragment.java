@@ -5,6 +5,7 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 public class CurrentEventsFragment extends ListFragment {
 
@@ -31,6 +32,9 @@ public class CurrentEventsFragment extends ListFragment {
 
 
         View view = inflater.inflate(R.layout.fragment_current_events, container, false);
+        ListView listView = (ListView) view.findViewById(R.id.current_event_list);
+
+
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_current_events, container, false);
