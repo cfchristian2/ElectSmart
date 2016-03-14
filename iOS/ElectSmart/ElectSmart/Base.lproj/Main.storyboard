@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="HomeViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Home View is not yet implemented" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DMJ-3Z-mR8">
+                                <rect key="frame" x="167.5" y="289.5" width="265.5" height="20.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DMJ-3Z-mR8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="D9o-EC-DR2"/>
+                            <constraint firstItem="DMJ-3Z-mR8" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="kpu-pU-JTz"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="acW-dT-cKf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="0.0"/>
+        </scene>
+        <!--Current Events-->
+        <scene sceneID="McV-mh-Afz">
+            <objects>
+                <tableViewController id="YXA-iV-vz5" customClass="CurrentEventsTableViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sj0-XS-5pj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xMB-qp-fIO">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xMB-qp-fIO" id="Jx0-2a-JgG">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YXA-iV-vz5" id="9ws-7S-Xec"/>
+                            <outlet property="delegate" destination="YXA-iV-vz5" id="sTP-Ix-3iN"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Current Events" image="currentEvents" id="XWf-aH-fHu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zrr-ag-cbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2221" y="0.0"/>
+        </scene>
+        <!--Upcoming-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="UpcomingViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Upcoming Events View is not yet implemented" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
+                                <rect key="frame" x="123.5" y="290" width="354" height="20.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
+                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Upcoming" image="upcoming" id="cPa-gy-q4n"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488" y="0.0"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="35P-8S-Vo5">
+            <objects>
+                <viewController id="Sg1-pm-564" customClass="SettingsViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HcL-Pi-8J8"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ae-bO-V04"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0JI-Fe-HEG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings View is not yet implemented" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fu-o5-0MT">
+                                <rect key="frame" x="158.5" y="290" width="283" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5fu-o5-0MT" firstAttribute="centerY" secondItem="0JI-Fe-HEG" secondAttribute="centerY" id="Af0-Mw-RfP"/>
+                            <constraint firstItem="5fu-o5-0MT" firstAttribute="centerX" secondItem="0JI-Fe-HEG" secondAttribute="centerX" id="fKZ-cN-4Zl"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="mjf-hs-jON"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDH-fw-aby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="774"/>
+        </scene>
+        <!--Address View Controller-->
+        <scene sceneID="SZG-ck-Wfz">
+            <objects>
+                <viewController id="GfB-UG-JgE" customClass="AddressViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="93i-Kq-sPe"/>
+                        <viewControllerLayoutGuide type="bottom" id="3DI-VR-xsy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CCh-Q0-bSA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nr7-3e-d3N">
+                                <rect key="frame" x="59.5" y="80" width="480" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZC-Xv-0nL">
+                                <rect key="frame" x="59.5" y="120.5" width="480" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ug-av-4CQ">
+                                <rect key="frame" x="269" y="201" width="62" height="30"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="clickContinueButton:" destination="GfB-UG-JgE" eventType="touchUpInside" id="D5L-m7-BuT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XZC-Xv-0nL" firstAttribute="width" secondItem="Nr7-3e-d3N" secondAttribute="width" id="0L4-Zp-E1Z"/>
+                            <constraint firstItem="Nr7-3e-d3N" firstAttribute="top" secondItem="93i-Kq-sPe" secondAttribute="bottom" constant="60" id="7rC-dl-BBe"/>
+                            <constraint firstItem="XZC-Xv-0nL" firstAttribute="centerX" secondItem="CCh-Q0-bSA" secondAttribute="centerX" id="Ie2-DR-H5Z"/>
+                            <constraint firstItem="2ug-av-4CQ" firstAttribute="centerX" secondItem="CCh-Q0-bSA" secondAttribute="centerX" id="QJl-9x-n4Z"/>
+                            <constraint firstItem="Nr7-3e-d3N" firstAttribute="width" secondItem="CCh-Q0-bSA" secondAttribute="width" multiplier="0.8" id="TRo-fL-p9S"/>
+                            <constraint firstItem="Nr7-3e-d3N" firstAttribute="centerX" secondItem="CCh-Q0-bSA" secondAttribute="centerX" id="i15-S4-c83"/>
+                            <constraint firstItem="XZC-Xv-0nL" firstAttribute="top" secondItem="Nr7-3e-d3N" secondAttribute="bottom" constant="20" id="q4Q-kj-Ctf"/>
+                            <constraint firstItem="2ug-av-4CQ" firstAttribute="top" secondItem="XZC-Xv-0nL" secondAttribute="bottom" constant="60" id="vKW-NY-YnL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressLineOneLabel" destination="Nr7-3e-d3N" id="Yle-LK-9ur"/>
+                        <outlet property="addressLineTwoLabel" destination="XZC-Xv-0nL" id="sG6-T0-w7h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="954-l3-LOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="-791"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" customClass="MainTabBarController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="GfB-UG-JgE" kind="presentation" identifier="goToAddressView" modalPresentationStyle="overFullScreen" id="baX-1L-wQv"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="YXA-iV-vz5" kind="relationship" relationship="viewControllers" id="rsl-zg-e4s"/>
+                        <segue destination="Sg1-pm-564" kind="relationship" relationship="viewControllers" id="VQj-EF-WNl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="currentEvents" width="25" height="25"/>
+        <image name="home" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
+        <image name="upcoming" width="25" height="25"/>
+    </resources>
+</document>
