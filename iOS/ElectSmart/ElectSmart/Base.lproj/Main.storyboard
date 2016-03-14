@@ -158,7 +158,13 @@
                             <constraint firstItem="5fu-o5-0MT" firstAttribute="centerX" secondItem="0JI-Fe-HEG" secondAttribute="centerX" id="fKZ-cN-4Zl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="mjf-hs-jON"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="mjf-hs-jON">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.10980392156862745" green="0.5490196078431373" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDH-fw-aby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -243,7 +249,13 @@
         <scene sceneID="z7i-cE-9kF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gvg-jk-81d" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Current Events" image="currentEvents" id="XWf-aH-fHu"/>
+                    <tabBarItem key="tabBarItem" title="Current Events" image="currentEvents" id="XWf-aH-fHu">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.10980392156862745" green="0.5490196078431373" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rsC-Fm-pQR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -262,7 +274,13 @@
         <scene sceneID="Jxo-Py-5pm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A6e-IH-pJd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Upcoming" image="upcoming" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Upcoming" image="upcoming" id="cPa-gy-q4n">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.10980392156862745" green="0.5490196078431373" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ss3-hk-DHa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -281,7 +299,13 @@
         <scene sceneID="f9y-AR-Jtt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M45-OX-4dd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="acW-dT-cKf">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.10980392156862745" green="0.5490196078431373" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xe9-T3-eU6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

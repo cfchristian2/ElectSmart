@@ -16,6 +16,9 @@ class CurrentEventsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         title = "Current Events"
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green: 139.0/255.0, blue: 139.0/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,7 +53,7 @@ class CurrentEventsTableViewController: UITableViewController {
         }
         
         // Add text overlay
-        drawTitle("News Article Title", labelView: labelView, imageViewToReference: imageView)
+        drawTitle("News Story Title", labelView: labelView, imageViewToReference: imageView)
         
         // Layer subviews
         self.view.addSubview(imageView)
@@ -94,8 +97,9 @@ class CurrentEventsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detScene = segue.destinationViewController as! NewsStoryViewController
         
-        // TODO: Pass a real URL to next view taken from NewsStory item
+        // TODO: Pass real URL and title to next view taken from NewsStory item
         detScene.url = NSURL(string: "https://www.apple.com")
+        detScene.storyTitle = "Apple FTW"
         
     }
 }

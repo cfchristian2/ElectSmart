@@ -11,11 +11,14 @@ import UIKit
 class NewsStoryViewController: UIViewController {
     
     var url: NSURL?
+    var storyTitle: String?
     
     @IBOutlet weak var newsStoryWebView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = storyTitle
         
         let URLRequest = NSURLRequest(URL: url!)
         self.newsStoryWebView.loadRequest(URLRequest)
