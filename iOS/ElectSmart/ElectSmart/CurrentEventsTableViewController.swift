@@ -10,62 +10,84 @@ import UIKit
 
 class CurrentEventsTableViewController: UITableViewController {
     
+    let stories: [NewsStory] = [NewsStory]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        title = "Current Events"
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // TODO: Define number of rows as the number of elements in stories
+        return 3
     }
     
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("currentEventCell", forIndexPath: indexPath)
     
-    // Configure the cell...
+        // TODO: Change configuration here so that the proper image/title/URL are set for cell
+        // TODO: Have UITableViewCell resize to height of downloaded image (currently set to fixed height)
+        
+        // Configure the cell
+        let imageView = UIImageView(frame: cell.frame)
+        let labelView = UILabel()
+        
+        // Add image BG
+        if let checkedUrl = NSURL(string: "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150") {
+            imageView.contentMode = .ScaleAspectFit
+            downloadImage(checkedUrl, imageView: imageView)
+        }
+        
+        // Add text overlay
+        drawTitle("News Article Title", labelView: labelView, imageViewToReference: imageView)
+        
+        // Layer subviews
+        self.view.addSubview(imageView)
+        self.view.addSubview(labelView)
     
-    return cell
+        return cell
     }
-    */
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
-    }
-    */
+    // MARK: Drawing text overlay
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    private func drawTitle(title: String, labelView: UILabel, imageViewToReference: UIImageView) {
+        labelView.text = "    "+title
+        labelView.font = UIFont(name: "System", size: 17)
+        labelView.textColor = UIColor.blackColor()
+        labelView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.6)
+        labelView.textAlignment = .Left
+        labelView.numberOfLines = 1
+        labelView.frame = CGRectMake(imageViewToReference.frame.minX, (imageViewToReference.frame.minY+imageViewToReference.frame.height-40), imageViewToReference.frame.width, 40)
     }
+    
+    // MARK: Loading images into TableView
+    
+    private func getDataFromUrl(url: NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError?) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) {
+            (data, response, error) in completion(data: data, response: response, error: error)
+        }.resume()
     }
-    */
+    
+    private func downloadImage(url: NSURL, imageView: UIImageView) {
+        getDataFromUrl(url) { (data, response, error)  in
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                guard let data = data where error == nil else { return }
+                imageView.image = UIImage(data: data)
+                self.tableView.layoutSubviews()
+            }
+        }
+    }
     
     // MARK: - Navigation
     
