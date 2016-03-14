@@ -14,6 +14,7 @@
 		DC7CABB41C963DA0009BB184 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABB31C963DA0009BB184 /* MainTabBarController.swift */; };
 		DC7CABD81C966805009BB184 /* NewsStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABD71C966805009BB184 /* NewsStory.swift */; };
 		DC7CABDA1C966847009BB184 /* CurrentEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */; };
+		DC7CABDD1C96793D009BB184 /* NewsStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */; };
 		DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88041C8FA283005CAF6A /* AppDelegate.swift */; };
 		DCEF88071C8FA283005CAF6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88061C8FA283005CAF6A /* HomeViewController.swift */; };
 		DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */; };
@@ -30,6 +31,7 @@
 		DC7CABB31C963DA0009BB184 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DC7CABD71C966805009BB184 /* NewsStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStory.swift; sourceTree = "<group>"; };
 		DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventsTableViewController.swift; sourceTree = "<group>"; };
+		DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStoryViewController.swift; sourceTree = "<group>"; };
 		DCEF88011C8FA283005CAF6A /* ElectSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElectSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEF88041C8FA283005CAF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCEF88061C8FA283005CAF6A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -77,9 +79,10 @@
 				DC7CABB31C963DA0009BB184 /* MainTabBarController.swift */,
 				DCEF88061C8FA283005CAF6A /* HomeViewController.swift */,
 				DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */,
-				DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */,
 				DC7CABA91C961CE9009BB184 /* SettingsViewController.swift */,
 				DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */,
+				DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */,
+				DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */,
 				DCEF880A1C8FA283005CAF6A /* Main.storyboard */,
 				DCEF880D1C8FA283005CAF6A /* Assets.xcassets */,
 				DCEF880F1C8FA283005CAF6A /* LaunchScreen.storyboard */,
@@ -167,6 +170,7 @@
 				DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */,
 				DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */,
 				DC7CABAC1C961FC8009BB184 /* AddressViewController.swift in Sources */,
+				DC7CABDD1C96793D009BB184 /* NewsStoryViewController.swift in Sources */,
 				DC7CABB41C963DA0009BB184 /* MainTabBarController.swift in Sources */,
 				DCEF88071C8FA283005CAF6A /* HomeViewController.swift in Sources */,
 				DC7CABAA1C961CE9009BB184 /* SettingsViewController.swift in Sources */,

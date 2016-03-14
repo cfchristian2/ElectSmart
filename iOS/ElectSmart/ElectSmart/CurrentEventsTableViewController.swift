@@ -91,9 +91,11 @@ class CurrentEventsTableViewController: UITableViewController {
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let detScene = segue.destinationViewController as! NewsStoryViewController
+        
+        // TODO: Pass a real URL to next view taken from NewsStory item
+        detScene.url = NSURL(string: "https://www.apple.com")
+        
     }
 }

@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="2221" y="712"/>
         </scene>
-        <!--View Controller-->
+        <!--News Story View Controller-->
         <scene sceneID="YbX-oT-LTp">
             <objects>
-                <viewController id="w5h-vL-JzR" sceneMemberID="viewController">
+                <viewController id="w5h-vL-JzR" customClass="NewsStoryViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="csz-Jb-8zX"/>
                         <viewControllerLayoutGuide type="bottom" id="IHn-uH-OEW"/>
@@ -94,6 +94,9 @@
                             <constraint firstItem="Lhp-sB-ejw" firstAttribute="centerX" secondItem="6dq-8R-c4p" secondAttribute="centerX" id="vZP-MJ-4cr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newsStoryWebView" destination="Lhp-sB-ejw" id="hcs-AH-ag0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjc-Wx-SZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
