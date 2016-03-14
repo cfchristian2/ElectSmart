@@ -13,6 +13,10 @@ import Contacts
 class AddressViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
+    let appDataPlist = "AppData.plist"
+    let addressDictionaryKey = "AddressDictionary"
+    var appDataPlistPath: String = ""
+    var addressDictionaryData = [NSObject: AnyObject]()
     
     @IBOutlet weak var addressLineOneLabel: UILabel!
     @IBOutlet weak var addressLineTwoLabel: UILabel!
@@ -20,7 +24,19 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        findMyLocation()
+        formPlistPath()
+        retrieveAddress()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let zip = addressDictionaryData["ZIP"] as? String ?? ""
+        if (!zip.isEmpty) {
+            self.performSegueWithIdentifier("goToHomeView", sender: self)
+        } else {
+            findMyLocation()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,6 +46,52 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func clickContinueButton(sender: AnyObject) {
         
         self.performSegueWithIdentifier("goToHomeView", sender: self)
+    }
+    
+    // MARK: Address data storing/retrieving methods
+    
+    private func formPlistPath() {
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths[0] as! NSString
+        appDataPlistPath = documentsDirectory.stringByAppendingPathComponent(appDataPlist)
+    }
+    
+    private func saveAddress(addressDictionary: [NSObject: AnyObject]) {
+        
+        let dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
+        
+        let addressDictionaryData = NSKeyedArchiver.archivedDataWithRootObject(addressDictionary)
+        
+        dict.setObject(addressDictionaryData, forKey: addressDictionaryKey)
+
+        dict.writeToFile(appDataPlistPath, atomically: false)
+        let resultDictionary = NSMutableDictionary(contentsOfFile: appDataPlistPath)
+        print("Saved Address Dictionary Data is --> \(resultDictionary?.description)")
+    }
+    
+    private func retrieveAddress() {
+        
+        let fileManager = NSFileManager.defaultManager()
+        
+        if(!fileManager.fileExistsAtPath(appDataPlistPath)) {
+            if let bundlePath = NSBundle.mainBundle().pathForResource("AppData", ofType: "plist") {
+                do {
+                    try fileManager.copyItemAtPath(bundlePath, toPath: appDataPlistPath)
+                } catch {
+                    // TODO: Some error handling here?
+                    print("Something went wrong")
+                }
+            }
+        }
+        
+        let myDict = NSDictionary(contentsOfFile: appDataPlistPath)
+        if let dict = myDict {
+            if let addressDictionaryValue = dict.objectForKey(addressDictionaryKey) as? NSData {
+                addressDictionaryData = NSKeyedUnarchiver.unarchiveObjectWithData(addressDictionaryValue) as! [NSObject: AnyObject]
+                print("Retrieved Address Dictionary Data is --> \(addressDictionaryData.description)")
+            }
+        }
     }
     
     // MARK: Location-getting functions
@@ -45,10 +107,6 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
     private func displayLocationInfo(placemark: CLPlacemark) {
         locationManager.stopUpdatingLocation()
         
-        for placeMarkAddress in placemark.addressDictionary!{
-            print(placeMarkAddress)
-        }
-        
         let addressArray = placemark.addressDictionary!
         let street = addressArray["Street"] as? String ?? ""
         let city = addressArray["City"] as? String ?? ""
@@ -58,6 +116,8 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
         
         addressLineOneLabel.text = street
         addressLineTwoLabel.text = city+", "+state+" "+zip+"-"+ext
+        
+        saveAddress(addressArray)
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
