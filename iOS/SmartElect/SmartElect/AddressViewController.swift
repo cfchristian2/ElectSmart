@@ -16,7 +16,6 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
     let appDataPlist = "AppData.plist"
     let addressDictionaryKey = "AddressDictionary"
     var appDataPlistPath: String = ""
-    var addressDictionaryData = [NSObject: AnyObject]()
     
     @IBOutlet weak var addressLineOneLabel: UILabel!
     @IBOutlet weak var addressLineTwoLabel: UILabel!
@@ -25,18 +24,7 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         formPlistPath()
-        retrieveAddress()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let zip = addressDictionaryData["ZIP"] as? String ?? ""
-        if (!zip.isEmpty) {
-            self.performSegueWithIdentifier("goToHomeView", sender: self)
-        } else {
-            findMyLocation()
-        }
+        findMyLocation()
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,10 +33,10 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func clickContinueButton(sender: AnyObject) {
         
-        self.performSegueWithIdentifier("goToHomeView", sender: self)
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
     
-    // MARK: Address data storing/retrieving methods
+    // MARK: Address data storing methods
     
     private func formPlistPath() {
         
@@ -68,30 +56,6 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
         dict.writeToFile(appDataPlistPath, atomically: false)
         let resultDictionary = NSMutableDictionary(contentsOfFile: appDataPlistPath)
         print("Saved Address Dictionary Data is --> \(resultDictionary?.description)")
-    }
-    
-    private func retrieveAddress() {
-        
-        let fileManager = NSFileManager.defaultManager()
-        
-        if(!fileManager.fileExistsAtPath(appDataPlistPath)) {
-            if let bundlePath = NSBundle.mainBundle().pathForResource("AppData", ofType: "plist") {
-                do {
-                    try fileManager.copyItemAtPath(bundlePath, toPath: appDataPlistPath)
-                } catch {
-                    // TODO: Some error handling here?
-                    print("Something went wrong")
-                }
-            }
-        }
-        
-        let myDict = NSDictionary(contentsOfFile: appDataPlistPath)
-        if let dict = myDict {
-            if let addressDictionaryValue = dict.objectForKey(addressDictionaryKey) as? NSData {
-                addressDictionaryData = NSKeyedUnarchiver.unarchiveObjectWithData(addressDictionaryValue) as! [NSObject: AnyObject]
-                print("Retrieved Address Dictionary Data is --> \(addressDictionaryData.description)")
-            }
-        }
     }
     
     // MARK: Location-getting functions
