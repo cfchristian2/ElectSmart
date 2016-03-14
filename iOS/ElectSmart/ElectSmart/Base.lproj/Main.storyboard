@@ -6,7 +6,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="HomeViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,11 +31,11 @@
                             <constraint firstItem="DMJ-3Z-mR8" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="kpu-pU-JTz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="8z8-dp-ahW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="0.0"/>
+            <point key="canvasLocation" x="758" y="712"/>
         </scene>
         <!--Current Events Table View Controller-->
         <scene sceneID="McV-mh-Afz">
@@ -102,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="2221" y="1426"/>
         </scene>
-        <!--Upcoming-->
+        <!--Upcoming View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="UpcomingViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,11 +127,11 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Upcoming" image="upcoming" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="E7d-sr-T7n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1488" y="0.0"/>
+            <point key="canvasLocation" x="1488" y="712"/>
         </scene>
         <!--Settings-->
         <scene sceneID="35P-8S-Vo5">
@@ -229,8 +229,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="GfB-UG-JgE" kind="presentation" identifier="goToAddressView" modalPresentationStyle="overFullScreen" id="baX-1L-wQv"/>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="M45-OX-4dd" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="A6e-IH-pJd" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="gvg-jk-81d" kind="relationship" relationship="viewControllers" id="rsl-zg-e4s"/>
                         <segue destination="Sg1-pm-564" kind="relationship" relationship="viewControllers" id="VQj-EF-WNl"/>
                     </connections>
@@ -257,6 +257,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3E6-Pg-2fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2221" y="0.0"/>
+        </scene>
+        <!--Upcoming-->
+        <scene sceneID="Jxo-Py-5pm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A6e-IH-pJd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Upcoming" image="upcoming" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ss3-hk-DHa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="8r3-fl-RFb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yaj-cp-wN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488" y="0.0"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="f9y-AR-Jtt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M45-OX-4dd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xe9-T3-eU6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="ocA-R7-RX7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvo-a4-ma5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="0.0"/>
         </scene>
     </scenes>
     <resources>
