@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -31,11 +32,11 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="-378"/>
+            <point key="canvasLocation" x="758" y="0.0"/>
         </scene>
         <!--Current Events-->
         <scene sceneID="Mwo-Ot-dpI">
@@ -58,11 +59,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Current Events" id="yVI-Yf-oPB"/>
+                    <tabBarItem key="tabBarItem" title="Current Events" image="currentEvents" id="yVI-Yf-oPB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wwz-e0-9Gg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-63" y="1167"/>
+            <point key="canvasLocation" x="2231" y="0.0"/>
         </scene>
         <!--Upcoming-->
         <scene sceneID="wg7-f3-ORb">
@@ -90,11 +91,11 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Upcoming" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Upcoming" image="upcoming" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="320"/>
+            <point key="canvasLocation" x="1488" y="0.0"/>
         </scene>
         <!--Settings-->
         <scene sceneID="35P-8S-Vo5">
@@ -117,11 +118,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="mjf-hs-jON"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="mjf-hs-jON"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDH-fw-aby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="654" y="1167"/>
+            <point key="canvasLocation" x="0.0" y="743"/>
         </scene>
         <!--Address View Controller-->
         <scene sceneID="SZG-ck-Wfz">
@@ -135,20 +136,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address Line 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nr7-3e-d3N">
-                                <rect key="frame" x="87" y="174" width="425" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nr7-3e-d3N">
+                                <rect key="frame" x="59.5" y="80" width="480" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address Line 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZC-Xv-0nL">
-                                <rect key="frame" x="87" y="218" width="425" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZC-Xv-0nL">
+                                <rect key="frame" x="59.5" y="120.5" width="480" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ug-av-4CQ">
-                                <rect key="frame" x="87" y="337" width="62" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ug-av-4CQ">
+                                <rect key="frame" x="269" y="201" width="62" height="30"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
                                     <action selector="clickContinueButton:" destination="GfB-UG-JgE" eventType="touchUpInside" id="D5L-m7-BuT"/>
@@ -156,6 +157,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XZC-Xv-0nL" firstAttribute="width" secondItem="Nr7-3e-d3N" secondAttribute="width" id="0L4-Zp-E1Z"/>
+                            <constraint firstItem="Nr7-3e-d3N" firstAttribute="top" secondItem="93i-Kq-sPe" secondAttribute="bottom" constant="60" id="7rC-dl-BBe"/>
+                            <constraint firstItem="XZC-Xv-0nL" firstAttribute="centerX" secondItem="CCh-Q0-bSA" secondAttribute="centerX" id="Ie2-DR-H5Z"/>
+                            <constraint firstItem="2ug-av-4CQ" firstAttribute="centerX" secondItem="CCh-Q0-bSA" secondAttribute="centerX" id="QJl-9x-n4Z"/>
+                            <constraint firstItem="Nr7-3e-d3N" firstAttribute="width" secondItem="CCh-Q0-bSA" secondAttribute="width" multiplier="0.8" id="TRo-fL-p9S"/>
+                            <constraint firstItem="Nr7-3e-d3N" firstAttribute="centerX" secondItem="CCh-Q0-bSA" secondAttribute="centerX" id="i15-S4-c83"/>
+                            <constraint firstItem="XZC-Xv-0nL" firstAttribute="top" secondItem="Nr7-3e-d3N" secondAttribute="bottom" constant="20" id="q4Q-kj-Ctf"/>
+                            <constraint firstItem="2ug-av-4CQ" firstAttribute="top" secondItem="XZC-Xv-0nL" secondAttribute="bottom" constant="60" id="vKW-NY-YnL"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="addressLineOneLabel" destination="Nr7-3e-d3N" id="Yle-LK-9ur"/>
@@ -165,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="954-l3-LOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="-797"/>
+            <point key="canvasLocation" x="0.0" y="-751"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -190,7 +201,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="currentEvents" width="25" height="25"/>
+        <image name="home" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
+        <image name="upcoming" width="25" height="25"/>
     </resources>
 </document>
