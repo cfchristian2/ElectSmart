@@ -9,13 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.electsmart.electsmart.Adapters.UpcomingElectionsAdapter;
-import com.electsmart.electsmart.Models.UpcomingElection;
+import com.electsmart.electsmart.Models.UpcomingElectionRow;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class UpcomingElectionsFragment extends ListFragment {
 
     private static final String TAG = UpcomingElectionsFragment.class.getSimpleName();
+    private List<UpcomingElectionRow> upcomingElectionList;
+    UpcomingElectionsAdapter adapter;
 
     public UpcomingElectionsFragment() {
         // Required empty public constructor
@@ -29,26 +32,20 @@ public class UpcomingElectionsFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        UpcomingElectionRow row1 = new UpcomingElectionRow(01, 01, 2017, 0, "First Election", 12, 31, 2017, 1, "Second Election");
+        UpcomingElectionRow row2 = new UpcomingElectionRow(02, 02, 2018, 2, "Third Election", 07, 16, 2017, 3, "My Birthday");
+
+        upcomingElectionList = new ArrayList<UpcomingElectionRow>();
+        upcomingElectionList.add(row1);
+        upcomingElectionList.add(row2);
+
+        adapter = new UpcomingElectionsAdapter(getActivity(), upcomingElectionList);
+        setListAdapter(adapter);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        // Construct the data source
-        View view = inflater.inflate(R.layout.fragment_upcoming_elections, container, false);
-
-        ArrayList<UpcomingElection> arrayOfElections = new ArrayList<UpcomingElection>();
-
-        //Need to fill Elections info
-        arrayOfElections.add(new UpcomingElection());
-
-        // Create the adapter to convert the array to views
-        UpcomingElectionsAdapter adapter = new UpcomingElectionsAdapter(getActivity(), arrayOfElections);
-
-        // Attach the adapter to a ListView
-        setListAdapter(adapter);
-
-        return inflater.inflate(R.layout.fragment_upcoming_elections, container, false);
+        return inflater.inflate(R.layout.fragment_upcoming_elections, null, false);
     }
 }

@@ -82,7 +82,7 @@
                         android:src="@drawable/ic_calendar_blank_black_48dp" />
 
                     <TextView
-                        android:id="@+id/UpcomingElection_Calendar_Date"
+                        android:id="@+id/UpcomingElection_Calendar_Date_Right"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceLarge"
