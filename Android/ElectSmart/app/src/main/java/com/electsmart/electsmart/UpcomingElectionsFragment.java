@@ -6,6 +6,7 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.electsmart.electsmart.Adapters.UpcomingElectionsAdapter;
@@ -47,5 +48,17 @@ public class UpcomingElectionsFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_upcoming_elections, null, false);
+    }
+
+    //@Override
+    public void onItemClick(AdapterView<?> parent, View view, int position,
+                            long id) {
+        /* NEED TO CREATE AN ELECTION FRAGMENT */
+
+        /*ElectionFragment nextFrag= new ElectionFragmen();
+        this.getFragmentManager().beginTransaction()
+                .replace(R.id.container, nextFrag, "UpcomingElectionsFragment")
+                .addToBackStack(null)
+                .commit();*/
     }
 }

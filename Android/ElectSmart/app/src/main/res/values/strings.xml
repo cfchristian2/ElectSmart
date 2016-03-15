@@ -17,4 +17,6 @@
     <string name="address_correct">Yes</string>
     <string name="address_incorrect">No</string>
     <string name="GoogleCivicAPIKey">AIzaSyDpUWbHBgy1Arp8gvAqGpwwBedXb8MvbqA</string>
+
+    <string name="SampleParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin mattis lacus, in semper diam dapibus non.</string>
 </resources>
