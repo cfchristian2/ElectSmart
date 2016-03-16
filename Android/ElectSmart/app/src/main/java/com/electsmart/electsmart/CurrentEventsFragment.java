@@ -38,7 +38,9 @@ public class CurrentEventsFragment extends ListFragment {
 
         ArrayList<CurrentEvent> currentEvents = new ArrayList<>();
         for(int i = 0; i < 11; i++){
-            currentEvents.add(new CurrentEvent());
+            CurrentEvent CurrentEvent = new CurrentEvent();
+            CurrentEvent.title = "Drumpf";
+            currentEvents.add(CurrentEvent);
         }
 
         CurrentEventsAdapter adapter = new CurrentEventsAdapter(getActivity(), currentEvents);

@@ -28,14 +28,18 @@
                 android:id="@+id/textView"
                 android:layout_gravity="center_horizontal|top" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Wisconsin Primary"
-                android:paddingBottom="10dp"
-                android:id="@+id/Election"
-                android:layout_gravity="center_horizontal|top" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Wisconsin Primary"
+                    android:paddingBottom="10dp"
+                    android:id="@+id/Election"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="0.12" />
+
+
         </LinearLayout>
 
 
