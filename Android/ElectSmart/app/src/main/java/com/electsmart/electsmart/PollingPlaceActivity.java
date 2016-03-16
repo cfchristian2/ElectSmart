@@ -1,8 +1,12 @@
 package com.electsmart.electsmart;
 
+import android.content.Context;
+import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -12,6 +16,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class PollingPlaceActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private static final String TAG = PollingPlaceActivity.class.getSimpleName();
+
+    private static final float ZOOM_AMOUNT = 13;
 
     private PreferencesManager mPrefsManager;
     private Location mUserLocation;
@@ -49,11 +57,31 @@ public class PollingPlaceActivity extends FragmentActivity implements OnMapReady
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker for the user's current location and move the camera
+        // Add a marker for the user's current location
         LatLng userLocation = new LatLng(mUserLocation.getLatitude(), mUserLocation.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(userLocation).title("Your Location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(userLocation));
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(12));
+        mMap.addMarker(new MarkerOptions().position(userLocation).title("Your Saved Address"));
+
+        Location current = null;
+        try {
+            mMap.setMyLocationEnabled(true);
+
+            Criteria criteria = new Criteria();
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            String provider = locationManager.getBestProvider(criteria, false);
+            current = locationManager.getLastKnownLocation(provider);
+
+        } catch(SecurityException e) {
+            //if location isn't enabled
+            Log.d(TAG, "Location isn't enabled");
+        }
+
+        //if couldn't find current location zoom in on saved address
+        if(null == current) {
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(userLocation, ZOOM_AMOUNT));
+        } else {
+            //zoom in on current location
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(current.getLatitude(), current.getLongitude()), ZOOM_AMOUNT));
+        }
 
         //Add a marker for their polling place
         LatLng pollingLocation = new LatLng(mPollingLocation.getLatitude(), mPollingLocation.getLongitude());
