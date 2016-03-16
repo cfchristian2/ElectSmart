@@ -15,6 +15,7 @@ public class PollingPlaceActivity extends FragmentActivity implements OnMapReady
 
     private PreferencesManager mPrefsManager;
     private Location mUserLocation;
+    private Location mPollingLocation;
 
     private GoogleMap mMap;
 
@@ -31,6 +32,7 @@ public class PollingPlaceActivity extends FragmentActivity implements OnMapReady
         mPrefsManager = PreferencesManager.getInstance();
 
         mUserLocation = mPrefsManager.getLatLng();
+        mPollingLocation = getPollingLocation();
     }
 
 
@@ -47,10 +49,23 @@ public class PollingPlaceActivity extends FragmentActivity implements OnMapReady
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
+        // Add a marker for the user's current location and move the camera
         LatLng userLocation = new LatLng(mUserLocation.getLatitude(), mUserLocation.getLongitude());
         mMap.addMarker(new MarkerOptions().position(userLocation).title("Your Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(userLocation));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(12));
+
+        //Add a marker for their polling place
+        LatLng pollingLocation = new LatLng(mPollingLocation.getLatitude(), mPollingLocation.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(pollingLocation).title("Your Polling Location"));
+    }
+
+    //TODO: Get real polling location
+    private Location getPollingLocation() {
+        Location ret = new Location("Test");
+        ret.setLatitude(43.0717390);
+        ret.setLongitude(-89.4102910);
+
+        return ret;
     }
 }
