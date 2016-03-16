@@ -12,7 +12,7 @@
     android:layout_marginBottom="12dp">
 
     <ImageView
-        android:id="@+id/ivFullScreenAd"
+        android:id="@+id/sourceImage"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_marginBottom="8dp"
