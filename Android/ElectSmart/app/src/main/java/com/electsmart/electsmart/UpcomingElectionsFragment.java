@@ -10,9 +10,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.electsmart.electsmart.Adapters.UpcomingElectionsAdapter;
+import com.electsmart.electsmart.Models.Election;
 import com.electsmart.electsmart.Models.UpcomingElectionRow;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class UpcomingElectionsFragment extends ListFragment {
@@ -33,8 +35,25 @@ public class UpcomingElectionsFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        UpcomingElectionRow row1 = new UpcomingElectionRow(01, 01, 2017, 0, "First Election", 12, 31, 2017, 1, "Second Election");
-        UpcomingElectionRow row2 = new UpcomingElectionRow(02, 02, 2018, 2, "Third Election", 07, 16, 2017, 3, "My Birthday");
+        List<String> openPositions = new ArrayList<String>();
+        List<String> candidates = new ArrayList<String>();
+        HashMap<String, List<String>> candidatePositionMap = new HashMap<String, List<String>>();
+
+        //DUMMY DATA IN PLACE OF APIS
+        for(int j = 0; j < 3; j++){
+            candidates.add("Candidate " + j);
+        }
+        for(int i = 0; i < 5; i++){
+            openPositions.add("Position " + i);
+            candidatePositionMap.put(openPositions.get(i), candidates);
+        }
+        Election elec1 = new Election(01, 01, 2017, 0, "First Election", candidatePositionMap);
+        Election elec2 = new Election(12, 31, 2017, 1, "Second Election", candidatePositionMap);
+        Election elec3 = new Election(02, 02, 2018, 2, "Third Election", candidatePositionMap);
+        Election elec4 = new Election(07, 16, 2017, 3, "My Birthday", candidatePositionMap);
+
+        UpcomingElectionRow row1 = new UpcomingElectionRow(elec1, elec2);
+        UpcomingElectionRow row2 = new UpcomingElectionRow(elec3, elec4);
 
         upcomingElectionList = new ArrayList<UpcomingElectionRow>();
         upcomingElectionList.add(row1);
@@ -49,12 +68,4 @@ public class UpcomingElectionsFragment extends ListFragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_upcoming_elections, null, false);
     }
-
-        /* NEED TO CREATE AN ELECTION FRAGMENT */
-
-        /*ElectionFragment nextFrag= new ElectionFragmen();
-        this.getFragmentManager().beginTransaction()
-                .replace(R.id.container, nextFrag, "UpcomingElectionsFragment")
-                .addToBackStack(null)
-                .commit();*/
 }

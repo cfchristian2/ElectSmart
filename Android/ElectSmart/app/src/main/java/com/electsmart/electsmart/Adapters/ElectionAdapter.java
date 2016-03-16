@@ -51,6 +51,7 @@ public class ElectionAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            System.out.println("Attemp to get listview_row");
             convertView = infalInflater.inflate(R.layout.election_view_candidate_listview_row, null);
         }
 
@@ -89,6 +90,7 @@ public class ElectionAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            System.out.println("Attempt to get group");
             convertView = infalInflater.inflate(R.layout.election_view_open_position_group, null);
         }
 
