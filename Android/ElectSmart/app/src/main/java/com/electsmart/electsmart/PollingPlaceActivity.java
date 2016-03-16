@@ -1,5 +1,6 @@
 package com.electsmart.electsmart;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
@@ -12,6 +13,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class PollingPlaceActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    private PreferencesManager mPrefsManager;
+    private Location mUserLocation;
+
     private GoogleMap mMap;
 
     @Override
@@ -22,6 +26,11 @@ public class PollingPlaceActivity extends FragmentActivity implements OnMapReady
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        PreferencesManager.initializeInstance(this);
+        mPrefsManager = PreferencesManager.getInstance();
+
+        mUserLocation = mPrefsManager.getLatLng();
     }
 
 
@@ -39,8 +48,9 @@ public class PollingPlaceActivity extends FragmentActivity implements OnMapReady
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng userLocation = new LatLng(mUserLocation.getLatitude(), mUserLocation.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(userLocation).title("Your Location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(userLocation));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(12));
     }
 }
