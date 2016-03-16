@@ -53,20 +53,14 @@
             <TextView
                 android:id="@+id/platformInfo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/SampleParagraph"/>
+
             <ListView
                 android:id="@+id/openPositions"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
             </ListView>
-
-            <TextView
-                android:id="@+id/votingHistory"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/SampleParagraph"/>
         </LinearLayout>
 </LinearLayout>
