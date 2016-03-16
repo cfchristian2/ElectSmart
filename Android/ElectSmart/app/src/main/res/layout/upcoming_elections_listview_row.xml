@@ -9,6 +9,7 @@
         android:baselineAligned="false">
 
         <RelativeLayout
+            android:id="@+id/leftElection"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
@@ -60,6 +61,7 @@
             </LinearLayout>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/rightElection"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">

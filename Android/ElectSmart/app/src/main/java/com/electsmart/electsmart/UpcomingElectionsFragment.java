@@ -50,9 +50,6 @@ public class UpcomingElectionsFragment extends ListFragment {
         return inflater.inflate(R.layout.fragment_upcoming_elections, null, false);
     }
 
-    //@Override
-    public void onItemClick(AdapterView<?> parent, View view, int position,
-                            long id) {
         /* NEED TO CREATE AN ELECTION FRAGMENT */
 
         /*ElectionFragment nextFrag= new ElectionFragmen();
@@ -60,5 +57,4 @@ public class UpcomingElectionsFragment extends ListFragment {
                 .replace(R.id.container, nextFrag, "UpcomingElectionsFragment")
                 .addToBackStack(null)
                 .commit();*/
-    }
 }

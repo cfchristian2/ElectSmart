@@ -5,14 +5,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.electsmart.electsmart.Models.UpcomingElectionRow;
 import com.electsmart.electsmart.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,8 +49,8 @@ public class UpcomingElectionsAdapter extends BaseAdapter {
         if (convertView == null) {
             LayoutInflater mInflater = (LayoutInflater) context
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = mInflater.inflate(R.layout.fragment_upcoming_elections_listview_row, null);
-            //convertView = LayoutInflater.from(getContext()).inflate(R.layout.fragment_upcoming_elections_listview_row, parent, false);
+            convertView = mInflater.inflate(R.layout.upcoming_elections_listview_row, null);
+            //convertView = LayoutInflater.from(getContext()).inflate(R.layout.upcoming_elections_listview_row, parent, false);
         }
 
         TextView leftElectionDate = (TextView) convertView.findViewById(R.id.UpcomingElection_Calendar_Date_Left);
@@ -59,14 +58,29 @@ public class UpcomingElectionsAdapter extends BaseAdapter {
         TextView leftElectionName = (TextView) convertView.findViewById(R.id.UpcomingElection_Title_Left);
         TextView rightElectionName = (TextView) convertView.findViewById(R.id.UpcomingElection_Title_Right);
 
-        UpcomingElectionRow row1 = upcomingElectionList.get(position);
+        final UpcomingElectionRow row = upcomingElectionList.get(position);
 
-        leftElectionDate.setText(" " + row1.getLeft().getDay() + " ");
-        rightElectionDate.setText(" " + row1.getRight().getDay() + " ");
+        leftElectionDate.setText(" " + row.getLeft().getDay() + " ");
+        rightElectionDate.setText(" " + row.getRight().getDay() + " ");
 
-        leftElectionName.setText(row1.getLeft().getName());
-        rightElectionName.setText(row1.getRight().getName());
+        leftElectionName.setText(row.getLeft().getName());
+        rightElectionName.setText(row.getRight().getName());
 
+        convertView.findViewById(R.id.leftElection).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Do your work here
+                Toast.makeText(context, "Left Side of " + row + "th element clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        convertView.findViewById(R.id.rightElection).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Do your work here
+                Toast.makeText(context, "Right Side of " + row + "th element clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
         return convertView;
     }
 }
