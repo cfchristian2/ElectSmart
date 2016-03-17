@@ -76,11 +76,14 @@ public class UpcomingElectionsAdapter extends BaseAdapter {
                 // Do your work here
                 //Toast.makeText(context, "Left Side of " + row + "th element clicked", Toast.LENGTH_SHORT).show();
                 ElectionFragment nextFrag = new ElectionFragment();
+
                 EventBus.getDefault().post(new ElectionMessage(row.getLeft()));
                 ((Activity) context).getFragmentManager().beginTransaction()
-                        .replace(R.id.container, nextFrag, "UpcomingElectionsFragment")
+                       .replace(R.id.container, nextFrag, "UpcomingElectionsFragment")
                 .addToBackStack(null)
                 .commit();
+
+
             }
         });
 
