@@ -42,6 +42,7 @@ public class FindLocationAndMoveOnTest {
         //checks that clicking the continue button will move to the TabActivity
         Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
 
+
         Intents.intended(IntentMatchers.hasComponent(new ComponentName(InstrumentationRegistry.getTargetContext(), TabActivity.class)));
     }
 }
