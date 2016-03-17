@@ -1,29 +1,16 @@
 package com.electsmart.electsmart;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.location.Geocoder;
-import android.location.Location;
-import android.os.Handler;
-import android.os.ResultReceiver;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.electsmart.electsmart.geolocation.FetchAddressIntentService;
-import com.electsmart.electsmart.geolocation.GeolocationConstants;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
+import android.view.View;
 
 public class TabActivity extends AppCompatActivity {
     private static final String TAG = TabActivity.class.getSimpleName();
@@ -113,6 +100,8 @@ public class TabActivity extends AppCompatActivity {
                     return UpcomingElectionsFragment.newInstance();
                 case 2:
                     return CurrentEventsFragment.newInstance();
+                case 3:
+                    return PollingPlaceFragment.newInstance();
                 default:
                     return null;
             }
@@ -136,5 +125,10 @@ public class TabActivity extends AppCompatActivity {
             }
             return null;
         }
+    }
+
+    public Fragment loadArticle(View v){
+        return Article.newInstance();
+
     }
 }

@@ -1,7 +1,6 @@
 package com.electsmart.electsmart;
 
 import android.app.Fragment;
-import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,4 +87,5 @@ public class ElectionFragment extends Fragment {
         EventBus.getDefault().unregister(this);
         super.onStop();
     }
+
 }

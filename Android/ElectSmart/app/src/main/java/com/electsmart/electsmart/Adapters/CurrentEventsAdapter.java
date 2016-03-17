@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.electsmart.electsmart.Models.CurrentEvent;
 import com.electsmart.electsmart.R;
@@ -32,6 +34,12 @@ public class CurrentEventsAdapter extends ArrayAdapter<CurrentEvent> {
         TextView tvName = (TextView) convertView.findViewById(R.id.tvName);
         TextView tvHome = (TextView) convertView.findViewById(R.id.tvHome);
         */
+
+        ImageView srcImage = (ImageView) convertView.findViewById(R.id.sourceImage);
+        srcImage.setImageResource(R.drawable.drumpf);
+
+        TextView title = (TextView) convertView.findViewById(R.id.EventTitleText);
+        title.setText("Drumpf");
 
         // Populate the data into the template view using the data object
         //tvName.setText(election.date);
