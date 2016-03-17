@@ -1,10 +1,8 @@
 package com.electsmart.electsmart;
 
 import android.content.ComponentName;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.*;
+import android.support.test.espresso.Espresso;
 import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.intent.Intents;
 import android.support.test.espresso.intent.matcher.IntentMatchers;
@@ -12,6 +10,9 @@ import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
+
+import com.electsmart.electsmart.Activities.MainActivity;
+import com.electsmart.electsmart.Activities.TabActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
