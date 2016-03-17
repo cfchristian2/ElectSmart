@@ -19,17 +19,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Home View is not yet implemented" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DMJ-3Z-mR8">
-                                <rect key="frame" x="167.5" y="289.5" width="265.5" height="20.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="178" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W2U-79-JNt">
+                                <rect key="frame" x="0.0" y="191" width="600" height="360"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="OY1-pc-GCL">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="178"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OY1-pc-GCL" id="yVv-8O-AKl">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="177.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGt-Hk-YYu">
+                                <rect key="frame" x="214" y="82" width="173" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Next Election"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mca-wU-lp8">
+                                <rect key="frame" x="237" y="120" width="127" height="30"/>
+                                <state key="normal" title="Next Election Date">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DMJ-3Z-mR8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="D9o-EC-DR2"/>
-                            <constraint firstItem="DMJ-3Z-mR8" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="kpu-pU-JTz"/>
+                            <constraint firstItem="Mca-wU-lp8" firstAttribute="top" secondItem="nGt-Hk-YYu" secondAttribute="bottom" constant="8" id="Fqm-uZ-HEy"/>
+                            <constraint firstItem="nGt-Hk-YYu" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="k0k-oa-pSg"/>
+                            <constraint firstItem="nGt-Hk-YYu" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="18" id="nh3-YC-xV8"/>
+                            <constraint firstItem="Mca-wU-lp8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="oyV-m5-Ggb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8z8-dp-ahW"/>
@@ -311,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDH-fw-aby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="1570"/>
+            <point key="canvasLocation" x="2920" y="862"/>
         </scene>
         <!--Address View Controller-->
         <scene sceneID="SZG-ck-Wfz">
@@ -486,7 +507,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltz-7J-zko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="712"/>
+            <point key="canvasLocation" x="2920" y="0.0"/>
         </scene>
     </scenes>
     <resources>
