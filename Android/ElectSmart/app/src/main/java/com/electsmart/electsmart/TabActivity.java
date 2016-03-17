@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class TabActivity extends AppCompatActivity {
     private static final String TAG = TabActivity.class.getSimpleName();
@@ -124,5 +125,10 @@ public class TabActivity extends AppCompatActivity {
             }
             return null;
         }
+    }
+
+    public Fragment loadArticle(View v){
+        return Article.newInstance();
+
     }
 }

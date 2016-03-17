@@ -1,10 +1,10 @@
 package com.electsmart.electsmart;
 
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.app.ListFragment;
 
 import com.electsmart.electsmart.Adapters.CurrentEventsAdapter;
 import com.electsmart.electsmart.Models.CurrentEvent;

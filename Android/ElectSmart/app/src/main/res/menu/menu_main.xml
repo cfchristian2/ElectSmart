@@ -7,4 +7,10 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_polling_place"
+        android:orderInCategory="101"
+        android:title="Polling Place"
+        android:icon="@mipmap/ic_polling_place"
+        app:showAsAction="always"/>
 </menu>

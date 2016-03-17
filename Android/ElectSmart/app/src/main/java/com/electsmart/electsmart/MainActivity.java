@@ -176,4 +176,9 @@ public class MainActivity extends AppCompatActivity  implements GoogleApiClient.
 
         }
     }
+
+    public void loadArticle(View v){
+
+
+    }
 }
