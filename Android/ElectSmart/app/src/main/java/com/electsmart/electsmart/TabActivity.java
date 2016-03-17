@@ -100,8 +100,6 @@ public class TabActivity extends AppCompatActivity {
                     return UpcomingElectionsFragment.newInstance();
                 case 2:
                     return CurrentEventsFragment.newInstance();
-                case 3:
-                    return PollingPlaceFragment.newInstance();
                 default:
                     return null;
             }

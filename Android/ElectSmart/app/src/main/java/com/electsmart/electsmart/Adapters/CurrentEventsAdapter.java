@@ -17,8 +17,13 @@ import java.util.ArrayList;
  * Created by Scott on 3/11/2016.
  */
 public class CurrentEventsAdapter extends ArrayAdapter<CurrentEvent> {
+    private Context context;
+    private ArrayList<CurrentEvent> currentEvents;
+
     public CurrentEventsAdapter(Context context, ArrayList<CurrentEvent> currentEvents) {
         super(context, 0, currentEvents);
+        this.context = context;
+        this.currentEvents = currentEvents;
     }
 
     @Override
