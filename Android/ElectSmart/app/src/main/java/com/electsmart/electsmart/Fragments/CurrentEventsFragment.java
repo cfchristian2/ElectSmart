@@ -38,6 +38,7 @@ public class CurrentEventsFragment extends ListFragment {
         }
         adapter = new CurrentEventsAdapter(getContext(), currentEvents);
         setListAdapter(adapter);
+
     }
 
     @Override
