@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		568E4D3D1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */; };
+		568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */; };
 		DC7CABAA1C961CE9009BB184 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABA91C961CE9009BB184 /* SettingsViewController.swift */; };
 		DC7CABAC1C961FC8009BB184 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */; };
 		DC7CABAE1C962096009BB184 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7CABAD1C962096009BB184 /* CoreLocation.framework */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingElectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionEventViewController.swift; sourceTree = "<group>"; };
 		DC7CABA91C961CE9009BB184 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		DC7CABAD1C962096009BB184 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -81,6 +85,8 @@
 				DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */,
 				DC7CABA91C961CE9009BB184 /* SettingsViewController.swift */,
 				DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */,
+				568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */,
+				568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */,
 				DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */,
 				DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */,
 				DCEF880A1C8FA283005CAF6A /* Main.storyboard */,
@@ -165,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */,
 				DC7CABDA1C966847009BB184 /* CurrentEventsTableViewController.swift in Sources */,
 				DC7CABD81C966805009BB184 /* NewsStory.swift in Sources */,
 				DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */,
@@ -174,6 +181,7 @@
 				DC7CABB41C963DA0009BB184 /* MainTabBarController.swift in Sources */,
 				DCEF88071C8FA283005CAF6A /* HomeViewController.swift in Sources */,
 				DC7CABAA1C961CE9009BB184 /* SettingsViewController.swift in Sources */,
+				568E4D3D1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

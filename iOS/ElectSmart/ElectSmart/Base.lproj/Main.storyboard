@@ -136,24 +136,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Upcoming Events View is not yet implemented" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="123.5" y="290" width="354" height="20.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m8o-KS-zdw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6XI-MP-6mE">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="30" minY="30" maxX="20" maxY="30"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="IHd-Dd-KUf" customClass="UpcomingElectionCollectionViewCell" customModule="ElectSmart" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="94" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91b-qF-Cpa">
+                                                    <rect key="frame" x="24" y="83" width="102" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="uoT-2O-B62"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-dt-sW3">
+                                                    <rect key="frame" x="26" y="21" width="99" height="45"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="91b-qF-Cpa" secondAttribute="bottom" constant="16" id="DBb-gS-Vrf"/>
+                                            <constraint firstItem="2x1-dt-sW3" firstAttribute="top" secondItem="IHd-Dd-KUf" secondAttribute="topMargin" constant="13" id="DFk-De-EbW"/>
+                                            <constraint firstItem="91b-qF-Cpa" firstAttribute="top" secondItem="2x1-dt-sW3" secondAttribute="bottom" constant="17" id="bNM-YN-hPG"/>
+                                            <constraint firstItem="2x1-dt-sW3" firstAttribute="centerX" secondItem="IHd-Dd-KUf" secondAttribute="centerX" id="cw9-uL-tRA"/>
+                                            <constraint firstItem="91b-qF-Cpa" firstAttribute="centerX" secondItem="2x1-dt-sW3" secondAttribute="centerX" id="j4m-Kr-YqZ"/>
+                                            <constraint firstItem="91b-qF-Cpa" firstAttribute="leading" secondItem="IHd-Dd-KUf" secondAttribute="leadingMargin" constant="16" id="kyH-Cx-czO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="date" destination="91b-qF-Cpa" id="Zzw-mW-YSJ"/>
+                                            <outlet property="title" destination="2x1-dt-sW3" id="O90-aj-Th5"/>
+                                            <segue destination="eSN-To-h1q" kind="show" identifier="showElection" id="odS-iO-oIc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="m8o-KS-zdw" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="DzX-hw-TT9"/>
+                            <constraint firstItem="m8o-KS-zdw" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="OXa-gG-rAV"/>
+                            <constraint firstItem="m8o-KS-zdw" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="p7p-pb-3hZ"/>
+                            <constraint firstAttribute="trailing" secondItem="m8o-KS-zdw" secondAttribute="trailing" id="qwh-J5-JaC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="E7d-sr-T7n"/>
+                    <connections>
+                        <outlet property="collectionView" destination="m8o-KS-zdw" id="Kb6-9N-9zr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1488" y="712"/>
+        </scene>
+        <!--Election Event View Controller-->
+        <scene sceneID="2HL-Na-f9k">
+            <objects>
+                <viewController id="eSN-To-h1q" customClass="ElectionEventViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="flC-qp-Ocx"/>
+                        <viewControllerLayoutGuide type="bottom" id="5bY-C9-num"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3l1-Wx-gdF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eO6-U8-Ycu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488" y="1426"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="35P-8S-Vo5">

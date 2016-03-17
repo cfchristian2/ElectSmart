@@ -8,7 +8,14 @@
 
 import UIKit
 
-class UpcomingViewController: UIViewController {
+class UpcomingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    //Collection view containing cells of elections
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    //TODO: fill in with election data
+    let titles = ["Ohio Caucus", "Wisconsin Caucus"]
+    let dates = ["March 15", "April 5"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +29,42 @@ class UpcomingViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return titles.count
+    }
 
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! UpcomingElectionCollectionViewCell
+        
+        cell.title?.text = self.titles[indexPath.row]
+        cell.date?.text = self.dates[indexPath.row]
+        
+        return cell;
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showElection", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showElection" {
+            let indexPaths = self.collectionView!.indexPathsForSelectedItems()!
+            let indexPath = indexPaths[0] as NSIndexPath
+            
+            let vc = segue.destinationViewController as! ElectionEventViewController
+            
+            //TODO: Setup election view
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
 
 }
 
