@@ -11,15 +11,15 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Article extends Fragment {
+public class ArticleFragment extends Fragment {
 
 
-    public Article() {
+    public ArticleFragment() {
         // Required empty public constructor
     }
 
-    public static Article newInstance() {
-        Article fragment = new Article();
+    public static ArticleFragment newInstance() {
+        ArticleFragment fragment = new ArticleFragment();
         return fragment;
     }
 

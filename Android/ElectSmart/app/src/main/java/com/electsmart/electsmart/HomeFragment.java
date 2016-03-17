@@ -1,11 +1,13 @@
 package com.electsmart.electsmart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class HomeFragment extends Fragment {
 
@@ -27,6 +29,8 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         //LinearLayout ElectionBanner = (LinearLayout) getView().findViewById(R.id.ElectionBanner);
         //ElectionBanner.setOnClickListener(myhandler1);
+
+
     }
 
     @Override
@@ -47,6 +51,15 @@ public class HomeFragment extends Fragment {
         //         startActivity(intent);
         //    }
         // });
+
+        RelativeLayout mainEventPeek = (RelativeLayout) view.findViewById(R.id.MainEventPeek);
+        mainEventPeek.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getActivity(), ArticleActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
 

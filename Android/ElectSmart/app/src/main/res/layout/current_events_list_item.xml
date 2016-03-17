@@ -4,12 +4,14 @@
     android:layout_height="match_parent">
 
 </LinearLayout>-->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="250dp"
     android:foregroundGravity="bottom"
     android:orientation="vertical"
-    android:layout_marginBottom="12dp">
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:id="@+id/currentEventsArticlePeek">
 
     <ImageView
         android:id="@+id/sourceImage"
@@ -24,7 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="vertical"
-        android:background="#f0f5f5f5">
+        android:background="#f0f5f5f5"
+        android:layout_alignBottom="@+id/sourceImage"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:id="@+id/EventTitleText"
@@ -41,4 +45,4 @@
 
 
     </LinearLayout>
-</FrameLayout>
+</RelativeLayout>

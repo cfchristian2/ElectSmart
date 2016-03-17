@@ -1,13 +1,16 @@
 package com.electsmart.electsmart.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.electsmart.electsmart.ArticleActivity;
 import com.electsmart.electsmart.Models.CurrentEvent;
 import com.electsmart.electsmart.R;
 
@@ -39,6 +42,15 @@ public class CurrentEventsAdapter extends ArrayAdapter<CurrentEvent> {
         TextView tvName = (TextView) convertView.findViewById(R.id.tvName);
         TextView tvHome = (TextView) convertView.findViewById(R.id.tvHome);
         */
+
+        RelativeLayout currentEventsArticlePeeker = (RelativeLayout) convertView.findViewById(R.id.currentEventsArticlePeek);
+        currentEventsArticlePeeker.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(context, ArticleActivity.class);
+                getContext().startActivity(intent);
+            }
+        });
 
         ImageView srcImage = (ImageView) convertView.findViewById(R.id.sourceImage);
         srcImage.setImageResource(R.drawable.drumpf);

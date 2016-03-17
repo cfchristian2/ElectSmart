@@ -10,16 +10,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"/>
+            android:value="@string/google_maps_key" />
 
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,8 +30,12 @@
             android:name=".geolocation.FetchAddressIntentService"
             android:exported="false" />
 
-        <activity android:name=".TabActivity"></activity>
-        <activity android:name=".PollingPlaceActivity"></activity>
+        <activity android:name=".TabActivity" />
+        <activity android:name=".PollingPlaceActivity" />
+        <activity
+            android:name=".ArticleActivity"
+            android:label="@string/title_activity_article"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
