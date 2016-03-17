@@ -1,4 +1,4 @@
-package com.electsmart.electsmart;
+package com.electsmart.electsmart.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.electsmart.electsmart.Adapters.ElectionAdapter;
 import com.electsmart.electsmart.Messages.ElectionMessage;
 import com.electsmart.electsmart.Models.Election;
+import com.electsmart.electsmart.R;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

@@ -1,17 +1,15 @@
-package com.electsmart.electsmart;
+package com.electsmart.electsmart.Fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.electsmart.electsmart.Adapters.UpcomingElectionsAdapter;
 import com.electsmart.electsmart.Models.Election;
 import com.electsmart.electsmart.Models.UpcomingElectionRow;
+import com.electsmart.electsmart.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

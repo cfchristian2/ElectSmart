@@ -1,4 +1,4 @@
-package com.electsmart.electsmart;
+package com.electsmart.electsmart.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.electsmart.electsmart.Fragments.CurrentEventsFragment;
+import com.electsmart.electsmart.Fragments.HomeFragment;
+import com.electsmart.electsmart.Fragments.UpcomingElectionsFragment;
+import com.electsmart.electsmart.R;
 
 public class TabActivity extends AppCompatActivity {
     private static final String TAG = TabActivity.class.getSimpleName();
@@ -77,7 +82,7 @@ public class TabActivity extends AppCompatActivity {
         }
         if(id == R.id.action_polling_place){
                 Intent intent = new Intent(this, PollingPlaceActivity.class);
-                startActivity(intent);
+                this.startActivity(intent);
                 return true;
         }
 
