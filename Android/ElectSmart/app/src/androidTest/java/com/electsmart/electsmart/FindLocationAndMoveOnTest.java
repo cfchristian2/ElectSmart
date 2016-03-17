@@ -13,6 +13,9 @@ import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
+import com.electsmart.electsmart.Activities.MainActivity;
+import com.electsmart.electsmart.Activities.TabActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -9,6 +9,8 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
+import com.electsmart.electsmart.Activities.TabActivity;
+
 import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
