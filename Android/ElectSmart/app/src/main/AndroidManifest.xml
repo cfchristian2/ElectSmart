@@ -15,7 +15,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -30,10 +30,10 @@
             android:name=".geolocation.FetchAddressIntentService"
             android:exported="false" />
 
-        <activity android:name=".TabActivity" />
-        <activity android:name=".PollingPlaceActivity" />
+        <activity android:name=".Activities.TabActivity" />
+        <activity android:name=".Activities.PollingPlaceActivity" />
         <activity
-            android:name=".ArticleActivity"
+            android:name=".Activities.ArticleActivity"
             android:label="@string/title_activity_article"
             android:theme="@style/AppTheme"></activity>
     </application>

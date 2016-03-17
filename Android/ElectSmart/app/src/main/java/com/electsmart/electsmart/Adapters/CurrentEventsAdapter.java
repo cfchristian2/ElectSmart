@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.electsmart.electsmart.ArticleActivity;
+import com.electsmart.electsmart.Activities.ArticleActivity;
 import com.electsmart.electsmart.Models.CurrentEvent;
 import com.electsmart.electsmart.R;
 

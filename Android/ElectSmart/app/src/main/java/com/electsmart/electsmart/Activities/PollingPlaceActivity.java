@@ -1,4 +1,4 @@
-package com.electsmart.electsmart;
+package com.electsmart.electsmart.Activities;
 
 import android.content.Context;
 import android.location.Criteria;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 
+import com.electsmart.electsmart.PreferencesManager;
+import com.electsmart.electsmart.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

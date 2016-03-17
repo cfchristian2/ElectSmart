@@ -1,4 +1,4 @@
-package com.electsmart.electsmart;
+package com.electsmart.electsmart.Fragments;
 
 
 import android.app.Dialog;
@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
+
+import com.electsmart.electsmart.R;
 
 /**
  * Created by Josh Kasuboski on 3/11/16.

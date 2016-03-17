@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.electsmart.electsmart.ElectionFragment;
+import com.electsmart.electsmart.Fragments.ElectionFragment;
 import com.electsmart.electsmart.Messages.ElectionMessage;
 import com.electsmart.electsmart.Models.UpcomingElectionRow;
 import com.electsmart.electsmart.R;

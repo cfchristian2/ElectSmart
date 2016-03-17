@@ -1,4 +1,4 @@
-package com.electsmart.electsmart;
+package com.electsmart.electsmart.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.electsmart.electsmart.Activities.ArticleActivity;
+import com.electsmart.electsmart.R;
 
 public class HomeFragment extends Fragment {
 
