@@ -1,0 +1,8 @@
+# Running the ElectSmart Android app
+1. clone the repo
+2. import the project into Android Studio
+3. run using the green play button or the run menu
+..* select to either run on an emulator or the device
+4. the tests are in the androidTest package and can be run by right clicking and selecting run
+..* FindLocationAndMoveOnTest
+..* TabNavigationTest
