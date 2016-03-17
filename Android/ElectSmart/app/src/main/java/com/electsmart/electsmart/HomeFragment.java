@@ -5,10 +5,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 public class HomeFragment extends Fragment {
 
     private static final String TAG = HomeFragment.class.getSimpleName();
+
+    private ImageView mPollingPlaceImage;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -31,7 +34,22 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_home, container, false);
+
+        //return inflater.inflate(R.layout.fragment_home, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        //mPollingPlaceImage = (ImageView) view.findViewById(R.id.PollingMarker);
+        //mPollingPlaceImage.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        Intent intent = new Intent(getActivity(), PollingPlaceActivity.class);
+        //         startActivity(intent);
+        //    }
+        // });
+
+        return view;
+
     }
 
 

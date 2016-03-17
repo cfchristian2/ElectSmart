@@ -1,5 +1,6 @@
 package com.electsmart.electsmart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 public class TabActivity extends AppCompatActivity {
     private static final String TAG = TabActivity.class.getSimpleName();
@@ -75,6 +75,11 @@ public class TabActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if(id == R.id.action_polling_place){
+                Intent intent = new Intent(this, PollingPlaceActivity.class);
+                startActivity(intent);
+                return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -123,10 +128,5 @@ public class TabActivity extends AppCompatActivity {
             }
             return null;
         }
-    }
-
-    public Fragment loadArticle(View v){
-        return Article.newInstance();
-
     }
 }
