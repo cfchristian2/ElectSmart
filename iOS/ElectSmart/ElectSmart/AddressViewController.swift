@@ -81,7 +81,7 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
         let zip = addressArray["ZIP"] as? String ?? ""
         let ext = addressArray["PostCodeExtension"] as? String ?? ""
         
-        addressLineZeroLabel.text = name
+        addressLineZeroLabel.text = "\""+name+"\""
         addressLineOneLabel.text = street
         addressLineTwoLabel.text = city+", "+state+" "+zip+"-"+ext
         

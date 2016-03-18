@@ -73,7 +73,7 @@ class SettingsTableViewController: UITableViewController {
     
     private func displayAddress() {
         let zip = addressDictionaryData["ZIP"] as? String ?? ""
-        currentLocationZipLabel.text = "Current Location ZIP: "+zip
+        currentLocationZipLabel.text = "ZIP: "+zip
     }
 
     // MARK: Table drawing functions
