@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -138,22 +138,26 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m8o-KS-zdw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6XI-MP-6mE">
-                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="itemSize" width="150" height="164"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="30" minY="30" maxX="20" maxY="30"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="IHd-Dd-KUf" customClass="UpcomingElectionCollectionViewCell" customModule="ElectSmart" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="94" width="150" height="150"/>
+                                        <rect key="frame" x="30" y="94" width="150" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91b-qF-Cpa">
-                                                    <rect key="frame" x="24" y="83" width="102" height="43"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cal-blank-128x128" translatesAutoresizingMaskIntoConstraints="NO" id="Lgh-9D-JCP">
+                                                    <rect key="frame" x="8" y="28" width="134" height="122"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Election Date" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91b-qF-Cpa">
+                                                    <rect key="frame" x="24" y="64" width="102" height="69"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="uoT-2O-B62"/>
                                                     </constraints>
@@ -161,9 +165,9 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-dt-sW3">
-                                                    <rect key="frame" x="26" y="21" width="99" height="45"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Election Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-dt-sW3">
+                                                    <rect key="frame" x="8" y="-15" width="134" height="63"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -171,12 +175,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="91b-qF-Cpa" secondAttribute="bottom" constant="16" id="DBb-gS-Vrf"/>
-                                            <constraint firstItem="2x1-dt-sW3" firstAttribute="top" secondItem="IHd-Dd-KUf" secondAttribute="topMargin" constant="13" id="DFk-De-EbW"/>
-                                            <constraint firstItem="91b-qF-Cpa" firstAttribute="top" secondItem="2x1-dt-sW3" secondAttribute="bottom" constant="17" id="bNM-YN-hPG"/>
-                                            <constraint firstItem="2x1-dt-sW3" firstAttribute="centerX" secondItem="IHd-Dd-KUf" secondAttribute="centerX" id="cw9-uL-tRA"/>
-                                            <constraint firstItem="91b-qF-Cpa" firstAttribute="centerX" secondItem="2x1-dt-sW3" secondAttribute="centerX" id="j4m-Kr-YqZ"/>
-                                            <constraint firstItem="91b-qF-Cpa" firstAttribute="leading" secondItem="IHd-Dd-KUf" secondAttribute="leadingMargin" constant="16" id="kyH-Cx-czO"/>
+                                            <constraint firstItem="Lgh-9D-JCP" firstAttribute="trailing" secondItem="IHd-Dd-KUf" secondAttribute="trailingMargin" id="13e-mR-Foa"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="2x1-dt-sW3" secondAttribute="trailing" constant="17" id="3p9-7N-Hf1"/>
+                                            <constraint firstItem="91b-qF-Cpa" firstAttribute="leading" secondItem="IHd-Dd-KUf" secondAttribute="leadingMargin" constant="16" id="888-zo-jBW"/>
+                                            <constraint firstItem="Lgh-9D-JCP" firstAttribute="leading" secondItem="IHd-Dd-KUf" secondAttribute="leadingMargin" id="GtY-5z-p48"/>
+                                            <constraint firstItem="2x1-dt-sW3" firstAttribute="leading" secondItem="IHd-Dd-KUf" secondAttribute="leadingMargin" constant="18" id="hS9-Fe-iEY"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="91b-qF-Cpa" secondAttribute="trailing" constant="16" id="zjK-TO-rgR"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="date" destination="91b-qF-Cpa" id="Zzw-mW-YSJ"/>
@@ -578,6 +582,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cal-blank-128x128" width="128" height="128"/>
         <image name="currentEvents" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
