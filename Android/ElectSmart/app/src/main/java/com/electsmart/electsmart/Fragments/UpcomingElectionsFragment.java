@@ -59,11 +59,15 @@ public class UpcomingElectionsFragment extends ListFragment {
 
         adapter = new UpcomingElectionsAdapter(getActivity(), upcomingElectionList);
         setListAdapter(adapter);
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         return inflater.inflate(R.layout.fragment_upcoming_elections, null, false);
     }
 }

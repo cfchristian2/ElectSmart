@@ -1,7 +1,7 @@
 package com.electsmart.electsmart.Fragments;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +72,7 @@ public class ElectionFragment extends Fragment {
         Toast.makeText(getActivity(), "onViewCreated ElectionFragmen!", Toast.LENGTH_SHORT).show();
     }
 
-    // This method will be called when a ElecctionMessage is posted
+    // This method will be called when a ElectionMessage is posted
     @Subscribe
     public void onMessageEvent(ElectionMessage event){
         this.election = event.election;

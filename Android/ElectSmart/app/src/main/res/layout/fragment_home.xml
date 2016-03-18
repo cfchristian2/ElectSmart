@@ -19,7 +19,8 @@
             android:orientation="vertical"
             android:id="@+id/ElectionBanner"
             android:background="@color/colorPrimaryLight"
-            android:alpha="0.8">
+            android:alpha="0.8"
+            android:clickable="true">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

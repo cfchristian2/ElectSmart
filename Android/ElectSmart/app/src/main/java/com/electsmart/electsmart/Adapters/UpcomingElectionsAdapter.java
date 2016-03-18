@@ -9,12 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.electsmart.electsmart.Fragments.ElectionFragment;
-import com.electsmart.electsmart.Messages.ElectionMessage;
 import com.electsmart.electsmart.Models.UpcomingElectionRow;
 import com.electsmart.electsmart.R;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -75,13 +71,13 @@ public class UpcomingElectionsAdapter extends BaseAdapter {
             public void onClick(View v) {
                 // Do your work here
                 //Toast.makeText(context, "Left Side of " + row + "th element clicked", Toast.LENGTH_SHORT).show();
-                ElectionFragment nextFrag = new ElectionFragment();
+                //ElectionFragment nextFrag = new ElectionFragment();
 
-                EventBus.getDefault().post(new ElectionMessage(row.getLeft()));
-                ((Activity) context).getFragmentManager().beginTransaction()
-                       .replace(R.id.container, nextFrag, "UpcomingElectionsFragment")
-                .addToBackStack(null)
-                .commit();
+                //EventBus.getDefault().post(new ElectionMessage(row.getLeft()));
+                //((Activity) context).getFragmentManager().beginTransaction()
+                //       .replace(R.id.container, nextFrag, "UpcomingElectionsFragment")
+                //.addToBackStack(null)
+                //.commit();
 
 
             }
