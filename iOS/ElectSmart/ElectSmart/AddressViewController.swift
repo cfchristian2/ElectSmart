@@ -17,6 +17,8 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
     let addressDictionaryKey = "AddressDictionary"
     var appDataPlistPath: String = ""
     
+    
+    @IBOutlet weak var addressLineZeroLabel: UILabel!
     @IBOutlet weak var addressLineOneLabel: UILabel!
     @IBOutlet weak var addressLineTwoLabel: UILabel!
     
@@ -72,12 +74,14 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
         
         let addressArray = placemark.addressDictionary!
+        let name = addressArray["Name"] as? String ?? ""
         let street = addressArray["Street"] as? String ?? ""
         let city = addressArray["City"] as? String ?? ""
         let state = addressArray["State"] as? String ?? ""
         let zip = addressArray["ZIP"] as? String ?? ""
         let ext = addressArray["PostCodeExtension"] as? String ?? ""
         
+        addressLineZeroLabel.text = "\""+name+"\""
         addressLineOneLabel.text = street
         addressLineTwoLabel.text = city+", "+state+" "+zip+"-"+ext
         
