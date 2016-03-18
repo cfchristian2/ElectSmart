@@ -1,0 +1,83 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.ArticleFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="300dp"
+                android:orientation="vertical"
+                android:layout_marginBottom="12dp"
+                android:layout_gravity="top"
+                android:id="@+id/ArticleImageHead">
+
+                <ImageView
+                    android:id="@+id/sourceImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/drumpf"/>
+
+
+                <TextView
+                    android:id="@+id/EventTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/colorTextIcons"
+                    android:textSize="30sp"
+                    android:text="Donald Drumpf vows to 'Make America Great Again'"
+                    android:layout_alignBottom="@+id/sourceImage"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/article_subtitle"
+                android:orientation="vertical"
+                android:layout_alignTop="@id/ArticleImageHead"></RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="3/17/2016"
+                    android:paddingLeft="10dp"
+                    android:layout_below="@+id/textView2"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum sem quis erat elementum sodales. Sed commodo dictum elit facilisis tincidunt. Donec consequat varius sem non pharetra. Proin mollis odio ligula. Nullam vitae magna a eros scelerisque vulputate vitae et leo. Cras nec ante consequat, convallis risus ut, maximus odio. Sed eleifend enim ac neque imperdiet, non auctor metus aliquet. Duis semper eu augue sed finibus. Sed vitae feugiat nulla.
+
+Morbi id fermentum quam. Aenean mauris odio, imperdiet et mi et, euismod rhoncus ante. Duis bibendum mollis diam, in commodo diam condimentum vitae. In eleifend justo sed augue consequat commodo. Donec vehicula mauris eget metus ultricies congue. Fusce nisl mauris, gravida blandit elit vitae, placerat luctus arcu. Pellentesque dui urna, facilisis eu molestie a, fermentum vel augue. Duis velit odio, tempor non tincidunt at, pulvinar et nisl. Donec euismod non velit feugiat efficitur. Nulla iaculis ullamcorper mi, at fermentum tellus molestie nec. Donec aliquam magna sit amet arcu convallis, ut ullamcorper sapien pellentesque.
+
+Curabitur lacinia condimentum ligula id tristique. Nulla fermentum dictum elit. Etiam a ante id nibh euismod blandit. Donec venenatis dui sed mauris porttitor commodo. Sed commodo magna diam, eu convallis sapien ultrices et. Nam venenatis aliquam nunc sit amet tempus. Maecenas sit amet turpis luctus, eleifend purus fermentum, ornare sapien. Sed lacinia ex nibh, sit amet malesuada ante blandit sit amet. Nam eget velit sed tortor auctor condimentum. Vivamus pretium ante purus, nec semper libero maximus a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+
+Praesent gravida tellus ligula, nec tincidunt risus convallis at. Suspendisse rutrum, nisl ut varius iaculis, lorem diam malesuada lectus, ac molestie nulla arcu sed eros. Quisque pellentesque libero aliquam, volutpat justo vel, venenatis augue. Donec egestas, magna ut sagittis vulputate, urna ante pharetra felis, eget sollicitudin lectus velit viverra nibh. Phasellus cursus eu felis sit amet commodo. Proin euismod dolor placerat, gravida tellus auctor, lacinia sem. Quisque velit tellus, condimentum sit amet sem eu, accumsan facilisis lorem. Sed in lacinia nunc. Donec nisi arcu, pharetra nec sollicitudin in, fringilla et nulla. Curabitur est nisi, efficitur at justo tempor, vulputate rutrum lacus. Aenean ac enim id mi ornare commodo et at augue. Praesent massa dolor, consequat tristique tempus sed, dictum at risus. Aliquam dictum lacus vitae sapien laoreet ultricies.
+
+Suspendisse ut velit fringilla, faucibus nulla sed, rhoncus ex. In convallis id orci sit amet sagittis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum varius sit amet lectus vel tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris sit amet ipsum sit amet quam mattis scelerisque nec non sem. Nunc bibendum gravida eros, vel pharetra purus dapibus quis. Aenean convallis fermentum commodo.
+"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+</FrameLayout>

@@ -1,26 +1,24 @@
-package com.electsmart.electsmart;
+package com.electsmart.electsmart.Activities;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
+import com.electsmart.electsmart.Fragments.CurrentEventsFragment;
+import com.electsmart.electsmart.Fragments.HomeFragment;
+import com.electsmart.electsmart.Fragments.UpcomingElectionsFragment;
+import com.electsmart.electsmart.R;
 
-public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
-    private static final String TAG = MainActivity.class.getSimpleName();
+public class TabActivity extends AppCompatActivity {
+    private static final String TAG = TabActivity.class.getSimpleName();
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -36,12 +34,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
      */
     private ViewPager mViewPager;
 
-    private GoogleApiClient mGoogleApiClient;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tab);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -56,39 +52,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        // Create an instance of GoogleAPIClient.
-        if (mGoogleApiClient == null) {
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .addApi(LocationServices.API)
-                    .build();
-        }
     }
 
     protected void onStart() {
-        mGoogleApiClient.connect();
         super.onStart();
     }
 
     protected void onStop() {
-        mGoogleApiClient.disconnect();
         super.onStop();
-    }
-
-    @Override
-    public void onConnected(Bundle connectionHint) {
-        try {
-            LocationServices.FusedLocationApi.getLastLocation(
-                    mGoogleApiClient);
-        } catch(SecurityException e) {
-
-        }
-    }
-
-    @Override
-    public void onConnectionSuspended(int value) {
-
     }
 
     @Override
@@ -109,13 +80,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         if (id == R.id.action_settings) {
             return true;
         }
+        if(id == R.id.action_polling_place){
+                Intent intent = new Intent(this, PollingPlaceActivity.class);
+                this.startActivity(intent);
+                return true;
+        }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-
     }
 
     /**

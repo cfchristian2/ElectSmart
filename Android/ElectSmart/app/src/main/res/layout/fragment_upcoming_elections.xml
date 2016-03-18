@@ -2,11 +2,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.electsmart.electsmart.HomeFragment">
+    tools:context=".Fragments.HomeFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryLight">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Current Location"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:id="@+id/currentLocation"
+            android:layout_gravity="center_horizontal|top" />
+    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="24sp"
+            android:text="Upcoming Elections"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:id="@+id/FragmentTitle"
+            android:layout_gravity="center_horizontal|top" />
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/upcoming_elections_list">
+        android:id="@android:id/list">
     </ListView>
+    </LinearLayout>
 </FrameLayout>

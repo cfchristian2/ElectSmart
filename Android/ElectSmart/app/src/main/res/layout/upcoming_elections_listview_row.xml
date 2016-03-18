@@ -6,9 +6,11 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:id="@+id/UpcomingElectionClicker">
 
         <RelativeLayout
+            android:id="@+id/leftElection"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
@@ -60,6 +62,7 @@
             </LinearLayout>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/rightElection"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
@@ -82,7 +85,7 @@
                         android:src="@drawable/ic_calendar_blank_black_48dp" />
 
                     <TextView
-                        android:id="@+id/UpcomingElection_Calendar_Date"
+                        android:id="@+id/UpcomingElection_Calendar_Date_Right"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceLarge"

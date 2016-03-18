@@ -6,5 +6,18 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="service_not_available">The service is not available</string>
+    <string name="invalid_lat_long_used">The latitude and longitude was invalid</string>
+    <string name="no_address_found">No address could be found</string>
+    <string name="address_found">An address was found</string>
+    <string name="no_geocoder_available">There is no geocoder available</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="dialog_correct_address">Is this the correct address</string>
+    <string name="address_correct">Yes</string>
+    <string name="address_incorrect">No</string>
     <string name="GoogleCivicAPIKey">AIzaSyDpUWbHBgy1Arp8gvAqGpwwBedXb8MvbqA</string>
+
+    <string name="SampleParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin mattis lacus, in semper diam dapibus non.</string>
+    <string name="title_activity_article">ArticleActivity</string>
 </resources>
