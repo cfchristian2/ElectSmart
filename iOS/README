@@ -1,0 +1,5 @@
+# Running the ElectSmart iOS app
+1. Clone the repo
+2. Import the project into XCode
+3. Run using the "Build and Run" Play button 
+..* Either connect and select your iOS device, or run on an XCode iOS Simulator device of your choice
