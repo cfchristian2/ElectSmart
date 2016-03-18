@@ -1,8 +1,7 @@
 package com.electsmart.electsmart.Adapters;
 
 import android.content.Context;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.electsmart.electsmart.Fragments.ArticleFragment;
+import com.electsmart.electsmart.Activities.ArticleActivity;
 import com.electsmart.electsmart.Models.CurrentEvent;
 import com.electsmart.electsmart.R;
 
@@ -52,14 +51,14 @@ public class CurrentEventsAdapter extends ArrayAdapter<CurrentEvent> {
         currentEventsArticlePeeker.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                final ArticleFragment articleFragment = ArticleFragment.newInstance();
-                final FragmentManager fragmentManager = articleFragment.getFragmentManager();
-                final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.main_content, articleFragment);
-                fragmentTransaction.commit();
+                //final ArticleFragment articleFragment = ArticleFragment.newInstance();
+                //final FragmentManager fragmentManager = articleFragment.getFragmentManager();
+                //final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                //fragmentTransaction.add(R.id.main_content, articleFragment);
+                //fragmentTransaction.commit();
 
-                //Intent intent = new Intent(context, ArticleActivity.class);
-                //getContext().startActivity(intent);
+                Intent intent = new Intent(context, ArticleActivity.class);
+                getContext().startActivity(intent);
             }
         });
 
