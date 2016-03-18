@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		568E4D3D1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */; };
 		568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */; };
+		DC2BBC251C9BC0DB00CB72AA /* HomeStoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */; };
 		DC7CABAC1C961FC8009BB184 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */; };
 		DC7CABAE1C962096009BB184 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7CABAD1C962096009BB184 /* CoreLocation.framework */; };
 		DC7CABB21C962D29009BB184 /* AppData.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC7CABB11C962D29009BB184 /* AppData.plist */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingElectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionEventViewController.swift; sourceTree = "<group>"; };
+		DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStoryTableViewController.swift; sourceTree = "<group>"; };
 		DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		DC7CABAD1C962096009BB184 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DC7CABB11C962D29009BB184 /* AppData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppData.plist; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				DCEF88041C8FA283005CAF6A /* AppDelegate.swift */,
 				DC7CABB31C963DA0009BB184 /* MainTabBarController.swift */,
 				DCEF88061C8FA283005CAF6A /* HomeViewController.swift */,
+				DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */,
 				DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */,
 				DC9214FD1C9B92C00044BE91 /* SettingsTableViewController.swift */,
 				568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */,
@@ -179,6 +182,7 @@
 			files = (
 				568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */,
 				DC7CABDA1C966847009BB184 /* CurrentEventsTableViewController.swift in Sources */,
+				DC2BBC251C9BC0DB00CB72AA /* HomeStoryTableViewController.swift in Sources */,
 				DC7CABD81C966805009BB184 /* NewsStory.swift in Sources */,
 				DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */,
 				DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */,
