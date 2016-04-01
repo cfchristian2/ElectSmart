@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		562E9C3F1CAF18C7006F213D /* calendar-blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 562E9C3E1CAF18C7006F213D /* calendar-blank.png */; };
 		568E4D3D1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */; };
 		568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */; };
 		DC2BBC251C9BC0DB00CB72AA /* HomeStoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		562E9C3E1CAF18C7006F213D /* calendar-blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "calendar-blank.png"; path = "../../../../../Desktop/calendar-blank.png"; sourceTree = "<group>"; };
 		568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingElectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionEventViewController.swift; sourceTree = "<group>"; };
 		DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStoryTableViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				DC7CABD71C966805009BB184 /* NewsStory.swift */,
 				DC9214FF1C9B9F580044BE91 /* Election.swift */,
 				DC9215011C9B9F8C0044BE91 /* Candidate.swift */,
+				562E9C3E1CAF18C7006F213D /* calendar-blank.png */,
 				DC7CABAD1C962096009BB184 /* CoreLocation.framework */,
 				DCEF88031C8FA283005CAF6A /* ElectSmart */,
 				DCEF88021C8FA283005CAF6A /* Products */,
@@ -169,6 +172,7 @@
 				DCEF88111C8FA283005CAF6A /* LaunchScreen.storyboard in Resources */,
 				DCEF880E1C8FA283005CAF6A /* Assets.xcassets in Resources */,
 				DC7CABB21C962D29009BB184 /* AppData.plist in Resources */,
+				562E9C3F1CAF18C7006F213D /* calendar-blank.png in Resources */,
 				DCEF880C1C8FA283005CAF6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

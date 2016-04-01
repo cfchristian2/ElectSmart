@@ -14,8 +14,8 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     
     //TODO: fill in with election data
-    let titles = ["Ohio Caucus", "Wisconsin Caucus"]
-    let dates = ["March 15", "April 5"]
+    let titles = ["Ohio Caucus", "Wisconsin Caucus", "Presidential Election"]
+    let dates = ["March 15", "April 5", "November 8"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
