@@ -1,6 +1,7 @@
 package com.electsmart.electsmart.API.GoogleCivicInfo;
 
 import com.electsmart.electsmart.API.GoogleCivicInfo.Models.ElectionsResponse;
+import com.electsmart.electsmart.API.GoogleCivicInfo.Models.VoterInfoResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -16,4 +17,8 @@ public interface GoogleCivicInfoAPI {
     @Headers("Accept: application/json")
     @GET("elections")
     Call<ElectionsResponse> getElections(@Query(value = "key") String apiKey);
+
+    @Headers("Accept: application/json")
+    @GET("voterinfo")
+    Call<VoterInfoResponse> getVoterInfo(@Query(value = "key") String apiKey, @Query(value = "address") String address);
 }

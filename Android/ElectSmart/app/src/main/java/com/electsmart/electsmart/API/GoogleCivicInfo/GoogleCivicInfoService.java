@@ -9,10 +9,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class GoogleCivicInfoService {
 
     private static final String API_URL = "https://www.googleapis.com/civicinfo/v2/";
-
     public static final String API_KEY = "AIzaSyCGtIc-WI9xXq-sPHbu1htXJT7WV9hxdKk";
 
     private static GoogleCivicInfoAPI apiInstance;
+
+
 
     public static GoogleCivicInfoAPI createApiInstance() {
         if(null == apiInstance) {

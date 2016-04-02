@@ -2,6 +2,7 @@ package com.electsmart.electsmart.API.GoogleCivicInfo;
 
 import com.electsmart.electsmart.API.GoogleCivicInfo.Models.ElectionsResponse;
 import com.electsmart.electsmart.API.GoogleCivicInfo.GoogleCivicInfoService;
+import com.electsmart.electsmart.API.GoogleCivicInfo.Models.VoterInfoResponse;
 
 import org.junit.Test;
 
@@ -19,7 +20,16 @@ public class GoogleCivicInfoAPITest {
         //this is not asynchronous only call like this for tests
         Response<ElectionsResponse> response = GoogleCivicInfoService.createApiInstance().getElections(GoogleCivicInfoService.API_KEY).execute();
 
-        assertNotNull(response.body());
+        assertNotNull("Response was empty", response.body());
         System.out.println(response.body());
+    }
+
+    //doesn't work for the given address
+    @Test
+    public void testGetVoterInfo() throws Exception {
+        Response<VoterInfoResponse> response = GoogleCivicInfoService.createApiInstance().getVoterInfo(GoogleCivicInfoService.API_KEY,"304 Princeton Ave Madison, WI 53726").execute();
+
+        //assertNotNull("Response was empty", response.body());
+        System.out.println(response.errorBody().string());
     }
 }
