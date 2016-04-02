@@ -13,8 +13,6 @@ public class GoogleCivicInfoService {
 
     private static GoogleCivicInfoAPI apiInstance;
 
-
-
     public static GoogleCivicInfoAPI createApiInstance() {
         if(null == apiInstance) {
             Retrofit retrofit = new Retrofit.Builder()

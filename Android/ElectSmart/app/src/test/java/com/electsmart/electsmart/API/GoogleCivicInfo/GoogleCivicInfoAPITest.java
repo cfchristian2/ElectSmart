@@ -27,9 +27,9 @@ public class GoogleCivicInfoAPITest {
     //doesn't work for the given address
     @Test
     public void testGetVoterInfo() throws Exception {
-        Response<VoterInfoResponse> response = GoogleCivicInfoService.createApiInstance().getVoterInfo(GoogleCivicInfoService.API_KEY,"304 Princeton Ave Madison, WI 53726").execute();
+        Response<VoterInfoResponse> response = GoogleCivicInfoService.createApiInstance().getVoterInfo(GoogleCivicInfoService.API_KEY,"1263 Pacific Ave. Kansas City, KS").execute();
 
-        //assertNotNull("Response was empty", response.body());
-        System.out.println(response.errorBody().string());
+        assertNotNull("Response was empty", response.body());
+        System.out.println(response.body());
     }
 }
