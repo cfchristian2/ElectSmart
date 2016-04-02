@@ -47,4 +47,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:8.4.0'
     compile 'com.android.support:support-v4:23.2.0'
     compile 'org.greenrobot:eventbus:3.0.0'
+
+    compile 'com.squareup.retrofit2:retrofit:2.0.1'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
 }
