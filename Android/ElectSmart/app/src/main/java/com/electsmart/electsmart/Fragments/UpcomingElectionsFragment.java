@@ -1,14 +1,17 @@
 package com.electsmart.electsmart.Fragments;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.electsmart.electsmart.Adapters.UpcomingElectionsAdapter;
 import com.electsmart.electsmart.Models.Election;
 import com.electsmart.electsmart.Models.UpcomingElectionRow;
+import com.electsmart.electsmart.PreferencesManager;
 import com.electsmart.electsmart.R;
 
 import java.util.ArrayList;
@@ -20,6 +23,10 @@ public class UpcomingElectionsFragment extends ListFragment {
     private static final String TAG = UpcomingElectionsFragment.class.getSimpleName();
     private List<UpcomingElectionRow> upcomingElectionList;
     UpcomingElectionsAdapter adapter;
+
+    private PreferencesManager mPreferencesManager;
+
+    private TextView currentLocTextView;
 
     public UpcomingElectionsFragment() {
         // Required empty public constructor
@@ -61,13 +68,20 @@ public class UpcomingElectionsFragment extends ListFragment {
         setListAdapter(adapter);
 
 
+        PreferencesManager.initializeInstance(this.getContext());
+        mPreferencesManager = PreferencesManager.getInstance();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        View view  = inflater.inflate(R.layout.fragment_upcoming_elections, null, false);
 
-        return inflater.inflate(R.layout.fragment_upcoming_elections, null, false);
+        currentLocTextView = (TextView) view.findViewById(R.id.currentLocation);
+        currentLocTextView.setText(mPreferencesManager.getAddress());
+
+        return view;
     }
 }
