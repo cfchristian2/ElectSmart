@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco'
 
 android {
 //    signingConfigs {
@@ -27,6 +28,7 @@ android {
         }
         debug {
             signingConfig signingConfigs.debug
+            testCoverageEnabled = true
         }
     }
 }
