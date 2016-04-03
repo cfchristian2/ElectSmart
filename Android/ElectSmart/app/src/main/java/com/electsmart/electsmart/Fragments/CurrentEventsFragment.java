@@ -55,14 +55,6 @@ public class CurrentEventsFragment extends ListFragment {
 
             }
         });
-
-       /* ArrayList<CurrentEvent> currentEvents = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            CurrentEvent CurrentEvent = new CurrentEvent();
-            CurrentEvent.title = "Drumpf";
-            currentEvents.add(CurrentEvent);
-        }*/
-        //adapter = new CurrentEventsAdapter(getContext(), currentEvents);
         setListAdapter(adapter);
 
     }
