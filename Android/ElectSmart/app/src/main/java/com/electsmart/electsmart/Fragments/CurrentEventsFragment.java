@@ -9,16 +9,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.electsmart.electsmart.API.Faroo.FarooAPI;
+import com.electsmart.electsmart.API.Faroo.FarooService;
+import com.electsmart.electsmart.API.Faroo.Models.FarooResponse;
 import com.electsmart.electsmart.Adapters.CurrentEventsAdapter;
-import com.electsmart.electsmart.Models.CurrentEvent;
 import com.electsmart.electsmart.R;
 
-import java.util.ArrayList;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CurrentEventsFragment extends ListFragment {
 
     private static final String TAG = CurrentEventsFragment.class.getSimpleName();
     CurrentEventsAdapter adapter;
+    public static final String API_KEY = "&key=1wh189GsSHUhjtseYvz5LtCNMPU_";
+
 
     public CurrentEventsFragment() {
         // Required empty public constructor
@@ -32,15 +38,31 @@ public class CurrentEventsFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // ListView listView = (ListView) view.findViewById(R.id.current_event_list);
+        FarooAPI service = FarooService.createApiInstance();
+        Call<FarooResponse> call = service.getNews();
+        call.enqueue(new Callback<FarooResponse>() {
+            @Override
+            public void onResponse(Call<FarooResponse> call, Response<FarooResponse> response) {
+                int statusCode = response.code();
+                FarooResponse farooResponse = response.body();
+                adapter = new CurrentEventsAdapter(getContext(), farooResponse.getFarooArticles());
+                setListAdapter(adapter);
 
-        ArrayList<CurrentEvent> currentEvents = new ArrayList<>();
+            }
+
+            @Override
+            public void onFailure(Call<FarooResponse> call, Throwable t) {
+
+            }
+        });
+
+       /* ArrayList<CurrentEvent> currentEvents = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             CurrentEvent CurrentEvent = new CurrentEvent();
             CurrentEvent.title = "Drumpf";
             currentEvents.add(CurrentEvent);
-        }
-        adapter = new CurrentEventsAdapter(getContext(), currentEvents);
+        }*/
+        //adapter = new CurrentEventsAdapter(getContext(), currentEvents);
         setListAdapter(adapter);
 
     }
@@ -60,28 +82,6 @@ public class CurrentEventsFragment extends ListFragment {
         super.onViewCreated(view, savedInstanceState);
 
     }
-
-    //@Override
-
-    /**
-     * public void onActivityCreated(Bundle savedInstanceState){
-     * ListView currentEventsList = getListView();
-     * currentEventsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-     *
-     * @Override public void onItemClick(AdapterView<?> list, View view, int position, long id) {
-     * CurrentEvent currentEvent = (CurrentEvent) list.getItemAtPosition(position);
-     * FragmentManager fragmentManager = getFragmentManager();
-     * FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-     * ArticleFragment articleFragment = new ArticleFragment();
-     * //fragmentTransaction.remove(R.id.main_content, )
-     * fragmentTransaction.replace(R.id.main_content, articleFragment);
-     * fragmentTransaction.addToBackStack(null);
-     * fragmentTransaction.commit();
-     * }
-     * });
-     * super.onActivityCreated(savedInstanceState);
-     * }
-     **/
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
