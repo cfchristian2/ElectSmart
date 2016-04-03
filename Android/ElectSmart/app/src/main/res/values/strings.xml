@@ -20,4 +20,7 @@
 
     <string name="SampleParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin mattis lacus, in semper diam dapibus non.</string>
     <string name="title_activity_article">ArticleActivity</string>
+
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 </resources>
