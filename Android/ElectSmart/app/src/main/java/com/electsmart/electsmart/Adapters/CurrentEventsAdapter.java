@@ -2,6 +2,7 @@ package com.electsmart.electsmart.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.electsmart.electsmart.API.Faroo.Models.FarooArticle;
-import com.electsmart.electsmart.Activities.ArticleActivity;
 import com.electsmart.electsmart.DownloadImageTask;
 import com.electsmart.electsmart.R;
 
@@ -33,7 +33,7 @@ public class CurrentEventsAdapter extends ArrayAdapter<FarooArticle> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        FarooArticle currentEvent = getItem(position);
+        final FarooArticle currentEvent = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.current_events_list_item, parent, false);
@@ -47,14 +47,22 @@ public class CurrentEventsAdapter extends ArrayAdapter<FarooArticle> {
         currentEventsArticlePeeker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ArticleActivity.class);
+
+                Uri uri = Uri.parse(currentEvent.getUrl());
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 getContext().startActivity(intent);
+                //Uri uri = Uri.parse(currentEvent.getUrl());
+                //Intent intent = new Intent(context, ArticleActivity.class);
+                //intent.putExtra("uri", uri);
+                //getContext().startActivity(intent);
             }
         });
 
         TextView title = (TextView) convertView.findViewById(R.id.EventTitleText);
         title.setText(currentEvent.getTitle());
         getImage(currentEvent.getIurl(), convertView);
+
+
 
 
         // Populate the data into the template view using the data object

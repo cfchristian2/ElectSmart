@@ -2,6 +2,7 @@ package com.electsmart.electsmart.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -50,6 +51,8 @@ public class TabActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        NavigationView navDrawer = (NavigationView) findViewById(R.id.nvView);
+        setUpDrawerContent(navDrawer);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open, R.string.drawer_close) {
 
             @Override
@@ -65,6 +68,8 @@ public class TabActivity extends AppCompatActivity {
                 super.onDrawerOpened(drawerView);
             }
         };
+
+
 
         //Setting the actionbarToggle to drawer layout
         mDrawer.setDrawerListener(actionBarDrawerToggle);
@@ -83,6 +88,56 @@ public class TabActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+    }
+
+    private void setUpDrawerContent(NavigationView navigationView){
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener(){
+                @Override
+                public boolean onNavigationItemSelected(MenuItem menuItem) {
+                    selectDrawerItem(menuItem);
+                return true;
+            }
+        });
+    }
+
+    public void selectDrawerItem(MenuItem menuItem) {
+        // Create a new fragment and specify the fragment to show based on nav item clicked
+        Fragment fragment = null;
+        Class fragmentClass;
+        int menuItemId = menuItem.getItemId();
+        switch(menuItem.getItemId()) {
+            case R.id.nav_first_fragment:
+                fragmentClass = HomeFragment.class;
+                break;
+            case R.id.nav_second_fragment:
+                fragmentClass = null;
+                break;
+            case R.id.nav_third_fragment:
+                fragmentClass = null;
+                break;
+            default:
+                fragmentClass = HomeFragment.class;
+                break;
+
+        }
+
+        try {
+            //fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        //fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+
+        // Highlight the selected item has been done by NavigationView
+        menuItem.setChecked(true);
+        // Set action bar title
+        setTitle(menuItem.getTitle());
+        // Close the navigation drawer
+        mDrawer.closeDrawers();
     }
 
     protected void onStart() {

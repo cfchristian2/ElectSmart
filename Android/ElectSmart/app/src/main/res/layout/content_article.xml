@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -85,4 +85,12 @@ Suspendisse ut velit fringilla, faucibus nulla sed, rhoncus ex. In convallis id 
         </LinearLayout>
     </ScrollView>
 
-</RelativeLayout>
+</RelativeLayout>-->
+
+<WebView
+    android:id="@+id/articleWebView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"/>
+
+
