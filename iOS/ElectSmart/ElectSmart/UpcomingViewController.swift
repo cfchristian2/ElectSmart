@@ -20,8 +20,6 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor? = UIColor.whiteColor()
-        
         title = "Upcoming Dates"
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green: 139.0/255.0, blue: 139.0/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -34,7 +32,6 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.didReceiveMemoryWarning()
     }
     
-    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return titles.count
     }
@@ -45,7 +42,7 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell.title?.text = self.titles[indexPath.row]
         cell.date?.text = self.dates[indexPath.row]
         
-        return cell;
+        return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -62,13 +59,6 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
             //TODO: Setup election view
         }
     }
-    
-    
-    
-    
-    
-    
-    
 
 }
 

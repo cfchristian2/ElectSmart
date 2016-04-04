@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -192,13 +193,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rc1-EQ-yeD">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="164"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Election Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-dt-sW3">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Election Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-dt-sW3">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="calendar-blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="1hp-fm-kWM">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="calendar-blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="1hp-fm-kWM">
                                                             <rect key="frame" x="0.0" y="17" width="150" height="147"/>
                                                         </imageView>
                                                     </subviews>
@@ -234,9 +235,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="m8o-KS-zdw" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="DzX-hw-TT9"/>
-                            <constraint firstItem="m8o-KS-zdw" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="OXa-gG-rAV"/>
                             <constraint firstItem="m8o-KS-zdw" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="p7p-pb-3hZ"/>
                             <constraint firstAttribute="trailing" secondItem="m8o-KS-zdw" secondAttribute="trailing" id="qwh-J5-JaC"/>
+                            <constraint firstItem="m8o-KS-zdw" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" id="uFw-it-mDS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="E7d-sr-T7n"/>
@@ -259,12 +260,94 @@
                     <view key="view" contentMode="scaleToFill" id="3l1-Wx-gdF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlU-jl-9f0">
+                                <rect key="frame" x="0.0" y="64" width="600" height="49"/>
+                                <color key="backgroundColor" red="0.90120522698897454" green="0.94924315594517938" blue="0.95453615837696337" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="pXf-JI-uOg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="REE-s4-HYW">
+                                <rect key="frame" x="38" y="137" width="90" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="REE-s4-HYW" secondAttribute="height" multiplier="90:89" id="2Yg-J9-qvy"/>
+                                    <constraint firstAttribute="width" constant="90" id="QqX-f2-nNZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNP-rT-qe5">
+                                <rect key="frame" x="391" y="153" width="189" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="9z7-6y-5lc"/>
+                                    <constraint firstAttribute="height" constant="21" id="NP8-0K-5o2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="J55-XR-DBO">
+                                <rect key="frame" x="391" y="184" width="189" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="3pn-f7-e7V"/>
+                                </constraints>
+                                <state key="normal" title="Find My Polling Place"/>
+                                <connections>
+                                    <segue destination="j83-9V-Oi4" kind="show" identifier="showMap" id="Xv8-wf-DgW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J55-XR-DBO" firstAttribute="top" secondItem="uNP-rT-qe5" secondAttribute="bottom" constant="10" id="3Rc-zR-RJ5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NlU-jl-9f0" secondAttribute="trailing" constant="-20" id="C4C-fA-n4c"/>
+                            <constraint firstItem="REE-s4-HYW" firstAttribute="top" secondItem="NlU-jl-9f0" secondAttribute="bottom" constant="24" id="C98-Ve-0Ck"/>
+                            <constraint firstItem="J55-XR-DBO" firstAttribute="trailing" secondItem="3l1-Wx-gdF" secondAttribute="trailingMargin" id="DoV-nS-tDt"/>
+                            <constraint firstItem="uNP-rT-qe5" firstAttribute="top" secondItem="NlU-jl-9f0" secondAttribute="bottom" constant="40" id="FFf-zq-EIc"/>
+                            <constraint firstItem="NlU-jl-9f0" firstAttribute="top" secondItem="flC-qp-Ocx" secondAttribute="bottom" id="JHb-hl-HZw"/>
+                            <constraint firstItem="uNP-rT-qe5" firstAttribute="trailing" secondItem="3l1-Wx-gdF" secondAttribute="trailingMargin" id="KkM-dB-NQR"/>
+                            <constraint firstItem="REE-s4-HYW" firstAttribute="leading" secondItem="3l1-Wx-gdF" secondAttribute="leadingMargin" constant="18" id="fbk-wj-UL4"/>
+                            <constraint firstItem="NlU-jl-9f0" firstAttribute="leading" secondItem="3l1-Wx-gdF" secondAttribute="leadingMargin" constant="-20" id="guv-TE-jmS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eO6-U8-Ycu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1488" y="1426"/>
+        </scene>
+        <!--Polling Place View Controller-->
+        <scene sceneID="c2A-N0-FyI">
+            <objects>
+                <viewController id="j83-9V-Oi4" customClass="PollingPlaceViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CDr-cR-W6B"/>
+                        <viewControllerLayoutGuide type="bottom" id="6VO-HG-hGY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZWz-xR-IWi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Qk-iP-esB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Qk-iP-esB" firstAttribute="bottom" secondItem="ZWz-xR-IWi" secondAttribute="bottomMargin" id="Xc2-fy-PYc"/>
+                            <constraint firstItem="1Qk-iP-esB" firstAttribute="leading" secondItem="ZWz-xR-IWi" secondAttribute="leadingMargin" constant="-20" id="jRa-0V-VYY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Qk-iP-esB" secondAttribute="trailing" constant="-20" id="pZR-Jb-e2i"/>
+                            <constraint firstItem="1Qk-iP-esB" firstAttribute="top" secondItem="ZWz-xR-IWi" secondAttribute="topMargin" id="wkK-KI-Bis"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="1Qk-iP-esB" id="X1B-Hz-ZwL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ypi-PM-pfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488" y="2156"/>
         </scene>
         <!--Address View Controller-->
         <scene sceneID="SZG-ck-Wfz">

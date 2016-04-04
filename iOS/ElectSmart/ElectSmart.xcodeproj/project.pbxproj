@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561CA3441CB231AB00CF776D /* PollingPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */; };
 		562E9C3F1CAF18C7006F213D /* calendar-blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 562E9C3E1CAF18C7006F213D /* calendar-blank.png */; };
 		568E4D3D1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */; };
 		568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingPlaceViewController.swift; sourceTree = "<group>"; };
 		562E9C3E1CAF18C7006F213D /* calendar-blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "calendar-blank.png"; path = "../../../../../Desktop/calendar-blank.png"; sourceTree = "<group>"; };
 		568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingElectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionEventViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */,
 				DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */,
 				DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */,
+				561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */,
 				DCEF880A1C8FA283005CAF6A /* Main.storyboard */,
 				DCEF880D1C8FA283005CAF6A /* Assets.xcassets */,
 				DCEF880F1C8FA283005CAF6A /* LaunchScreen.storyboard */,
@@ -197,6 +200,7 @@
 				DC9215021C9B9F8C0044BE91 /* Candidate.swift in Sources */,
 				DC9214FE1C9B92C00044BE91 /* SettingsTableViewController.swift in Sources */,
 				DCEF88071C8FA283005CAF6A /* HomeViewController.swift in Sources */,
+				561CA3441CB231AB00CF776D /* PollingPlaceViewController.swift in Sources */,
 				568E4D3D1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
