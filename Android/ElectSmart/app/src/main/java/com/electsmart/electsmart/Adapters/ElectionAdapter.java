@@ -9,12 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.electsmart.electsmart.API.GoogleCivicInfo.Models.Candidate;
 import com.electsmart.electsmart.Activities.CandidateActivity;
 import com.electsmart.electsmart.Activities.ElectionActivity;
+import com.electsmart.electsmart.DownloadImageTask;
 import com.electsmart.electsmart.R;
+
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.List;
@@ -51,7 +55,8 @@ public class ElectionAdapter extends BaseExpandableListAdapter {
     public View getChildView(final int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
 
-        final String childText = ((Candidate) getChild(groupPosition, childPosition)).getName();
+        final String candidateName = ((Candidate) getChild(groupPosition, childPosition)).getName();
+        final String candidateParty = ((Candidate) getChild(groupPosition, childPosition)).getParty();
 
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
@@ -60,22 +65,29 @@ public class ElectionAdapter extends BaseExpandableListAdapter {
             convertView = infalInflater.inflate(R.layout.election_view_candidate_listview_row, null);
         }
 
+        System.out.println("PHOTO URL : "+ ((Candidate) getChild(groupPosition, childPosition)).getPhotoUrl());
+
+        new DownloadImageTask(((ImageView) convertView.findViewById(R.id.candidatePhoto)))
+                .execute(((Candidate) getChild(groupPosition, childPosition)).getPhotoUrl());
+
         convertView.findViewById(R.id.candidates).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(_context, CandidateActivity.class);
                 Candidate c = candidates.get(getGroup(groupPosition)).get(childPosition);
-                if(c != null) {
+                if (c != null) {
                     intent.putExtra("candidate", c);
                     _context.startActivity(intent);
                 }
             }
         });
 
-        TextView candidateName = (TextView) convertView
-                .findViewById(R.id.candidateName);
+        TextView candidateNameView = (TextView) convertView.findViewById(R.id.candidateName);
+        TextView candidatePartyView = (TextView) convertView.findViewById(R.id.candidateDescr);
 
-        candidateName.setText(childText);
+        candidateNameView.setText(candidateName);
+        candidatePartyView.setText(candidateParty);
+
         return convertView;
     }
 

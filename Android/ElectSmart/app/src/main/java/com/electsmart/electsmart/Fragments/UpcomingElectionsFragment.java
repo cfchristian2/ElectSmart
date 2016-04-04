@@ -42,7 +42,7 @@ public class UpcomingElectionsFragment extends ListFragment {
 
         //DUMMY DATA IN PLACE OF APIS
         for(int j = 0; j < 3; j++){
-            candidates.add(new Candidate("Candidate " + j, null, null, null, null, null, 0, null));
+            candidates.add(new Candidate("Candidate " + j, "Democrat", null, null, "http://amiloszportraits.com/wp-content/uploads/2015/12/barack%20obama%20thumbs%20up%20meme-drunk-obama-thumbs-up.jpg", null, 0, null));
         }
         for(int i = 0; i < 5; i++){
             openPositions.add("Position " + i);
