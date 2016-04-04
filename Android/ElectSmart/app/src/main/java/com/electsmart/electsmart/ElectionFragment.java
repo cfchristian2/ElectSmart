@@ -1,6 +1,7 @@
 package com.electsmart.electsmart;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,10 @@ public class ElectionFragment extends Fragment {
     View rootView;
     ExpandableListView expListView;
 
+    public ElectionFragment(){
+
+    }
+
     public static ElectionFragment newInstance(Election election) {
         ElectionFragment fragment = new ElectionFragment();
         return fragment;
@@ -37,8 +42,11 @@ public class ElectionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //DUMMY DATA, can't get upcomingElections to pass data to election view
-        //DUMMY DATA IN PLACE OF APIS
+        Bundle bundle = getArguments();
+        this.election = (Election) bundle.getSerializable("election");
+
+        System.out.println("ElectionFragment: " + election.getName());
+
         List<String> openPositions = new ArrayList<String>();
         List<String> candidates = new ArrayList<String>();
         HashMap<String, List<String>> candidatePositionMap = new HashMap<String, List<String>>();
@@ -50,13 +58,13 @@ public class ElectionFragment extends Fragment {
             openPositions.add("Position " + i);
             candidatePositionMap.put(openPositions.get(i), candidates);
         }
-        election = new Election(01, 01, 2017, 0, "First Election", candidatePositionMap);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_election_view, null);
+        System.out.println("ElectionFragment: Inflate View!");
         return rootView;
     }
 
@@ -64,28 +72,10 @@ public class ElectionFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        expListView = (ExpandableListView) view.findViewById(R.id.expList);
-        adapter = new ElectionAdapter(getActivity(), election.getOpenPositions(), election.getMap());
-        expListView.setAdapter(adapter);
-        expListView.setGroupIndicator(null);
-        Toast.makeText(getActivity(), "onViewCreated ElectionFragmen!", Toast.LENGTH_SHORT).show();
+        //expListView = (ExpandableListView) view.findViewById(R.id.expList);
+        //adapter = new ElectionAdapter(getActivity(), election.getOpenPositions(), election.getMap());
+        //expListView.setAdapter(adapter);
+        //expListView.setGroupIndicator(null);
+        System.out.println("ElectionFragment: Set adapter for expandableListView!");
     }
-
-    // This method will be called when a ElecctionMessage is posted
-    @Subscribe
-    public void onMessageEvent(ElectionMessage event){
-        this.election = event.election;
-    }
-    @Override
-    public void onStart() {
-        super.onStart();
-        EventBus.getDefault().register(this);
-    }
-
-    @Override
-    public void onStop() {
-        EventBus.getDefault().unregister(this);
-        super.onStop();
-    }
-
 }

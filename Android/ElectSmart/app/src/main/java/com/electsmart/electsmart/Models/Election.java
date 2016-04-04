@@ -1,5 +1,6 @@
 package com.electsmart.electsmart.Models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 /**
  * Created by brand on 3/11/2016.
  */
-public class Election {
+public class Election implements Serializable{
 
     private int day;
     private int month;

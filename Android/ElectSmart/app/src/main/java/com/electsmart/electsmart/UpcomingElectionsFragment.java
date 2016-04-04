@@ -1,8 +1,7 @@
 package com.electsmart.electsmart;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
+import android.support.v4.app.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,18 +9,21 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.electsmart.electsmart.Adapters.UpcomingElectionsAdapter;
+import com.electsmart.electsmart.Messages.ElectionMessage;
 import com.electsmart.electsmart.Models.Election;
 import com.electsmart.electsmart.Models.UpcomingElectionRow;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class UpcomingElectionsFragment extends ListFragment {
+public class UpcomingElectionsFragment extends ListFragment implements UpcomingElectionsCallback{
 
     private static final String TAG = UpcomingElectionsFragment.class.getSimpleName();
     private List<UpcomingElectionRow> upcomingElectionList;
-    UpcomingElectionsAdapter adapter;
+    private UpcomingElectionsAdapter adapter;
 
     public UpcomingElectionsFragment() {
         // Required empty public constructor
@@ -59,7 +61,7 @@ public class UpcomingElectionsFragment extends ListFragment {
         upcomingElectionList.add(row1);
         upcomingElectionList.add(row2);
 
-        adapter = new UpcomingElectionsAdapter(getActivity(), upcomingElectionList);
+        adapter = new UpcomingElectionsAdapter(getActivity(), upcomingElectionList, this);
         setListAdapter(adapter);
     }
 
@@ -67,5 +69,19 @@ public class UpcomingElectionsFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_upcoming_elections, null, false);
+    }
+
+    public void onElectionClick(Election e){
+        Bundle b = new Bundle();
+        b.putSerializable("election", e);
+        ElectionFragment nextFrag = new ElectionFragment();
+        nextFrag.setArguments(b);
+
+        //EventBus.getDefault().post(new ElectionMessage(e));
+
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, nextFrag, "UpcomingElectionsFragment")
+                .addToBackStack(null)
+                .commit();
     }
 }

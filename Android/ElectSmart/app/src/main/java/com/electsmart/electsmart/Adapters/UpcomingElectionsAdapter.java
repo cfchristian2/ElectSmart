@@ -1,7 +1,10 @@
 package com.electsmart.electsmart.Adapters;
 
 import android.app.Activity;
+
+import android.support.v4.app.*;
 import android.content.Context;
+import android.support.v7.widget.util.SortedListAdapterCallback;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,7 @@ import com.electsmart.electsmart.ElectionFragment;
 import com.electsmart.electsmart.Messages.ElectionMessage;
 import com.electsmart.electsmart.Models.UpcomingElectionRow;
 import com.electsmart.electsmart.R;
+import com.electsmart.electsmart.UpcomingElectionsCallback;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -21,13 +25,14 @@ import java.util.List;
 /**
  * Created by brand on 3/11/2016.
  */
-public class UpcomingElectionsAdapter extends BaseAdapter {
+public class UpcomingElectionsAdapter extends BaseAdapter{
     Context context;
     List<UpcomingElectionRow> upcomingElectionList;
-
-    public UpcomingElectionsAdapter(Context context, List<UpcomingElectionRow> upcomingElectionsList) {
+    private UpcomingElectionsCallback mAdapterCallback;
+    public UpcomingElectionsAdapter(Context context, List<UpcomingElectionRow> upcomingElectionsList, UpcomingElectionsCallback callback) {
         this.context = context;
         this.upcomingElectionList = upcomingElectionsList;
+        this.mAdapterCallback = callback;
     }
 
     @Override
@@ -54,7 +59,6 @@ public class UpcomingElectionsAdapter extends BaseAdapter {
             LayoutInflater mInflater = (LayoutInflater) context
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = mInflater.inflate(R.layout.upcoming_elections_listview_row, null);
-            //convertView = LayoutInflater.from(getContext()).inflate(R.layout.upcoming_elections_listview_row, parent, false);
         }
 
         TextView leftElectionDate = (TextView) convertView.findViewById(R.id.UpcomingElection_Calendar_Date_Left);
@@ -73,25 +77,14 @@ public class UpcomingElectionsAdapter extends BaseAdapter {
         convertView.findViewById(R.id.leftElection).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Do your work here
-                //Toast.makeText(context, "Left Side of " + row + "th element clicked", Toast.LENGTH_SHORT).show();
-                ElectionFragment nextFrag = new ElectionFragment();
-
-                EventBus.getDefault().post(new ElectionMessage(row.getLeft()));
-                ((Activity) context).getFragmentManager().beginTransaction()
-                       .replace(R.id.container, nextFrag, "UpcomingElectionsFragment")
-                .addToBackStack(null)
-                .commit();
-
-
+                mAdapterCallback.onElectionClick(row.getLeft());
             }
         });
 
         convertView.findViewById(R.id.rightElection).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Do your work here
-                Toast.makeText(context, "Right Side of " + row + "th element clicked", Toast.LENGTH_SHORT).show();
+                mAdapterCallback.onElectionClick(row.getLeft());
             }
         });
         return convertView;
