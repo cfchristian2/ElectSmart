@@ -20,4 +20,6 @@
 
     <string name="SampleParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin mattis lacus, in semper diam dapibus non.</string>
     <string name="title_activity_article">ArticleActivity</string>
+    <string name="title_election">ElectionActivity</string>
+    <string name="title_candidate">ElectionActivity</string>
 </resources>

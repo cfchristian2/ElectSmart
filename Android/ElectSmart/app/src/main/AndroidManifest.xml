@@ -36,6 +36,14 @@
             android:name=".Activities.ArticleActivity"
             android:label="@string/title_activity_article"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".Activities.ElectionActivity"
+            android:label="@string/title_election"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".Activities.CandidateActivity"
+            android:label="@string/title_candidate"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
