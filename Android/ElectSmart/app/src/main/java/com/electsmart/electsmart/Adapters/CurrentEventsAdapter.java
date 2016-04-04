@@ -39,10 +39,6 @@ public class CurrentEventsAdapter extends ArrayAdapter<FarooArticle> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.current_events_list_item, parent, false);
         }
 
-
-
-
-
         RelativeLayout currentEventsArticlePeeker = (RelativeLayout) convertView.findViewById(R.id.currentEventsArticlePeek);
         currentEventsArticlePeeker.setOnClickListener(new View.OnClickListener() {
             @Override

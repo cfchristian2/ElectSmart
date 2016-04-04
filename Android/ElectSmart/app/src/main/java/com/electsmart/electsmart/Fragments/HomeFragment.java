@@ -91,7 +91,6 @@ public class HomeFragment extends Fragment {
             public void onClick(View v){
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                ElectionFragment electionFragment = new ElectionFragment();
 
                 fragmentTransaction.replace(R.id.container, electionFragment);
                 fragmentTransaction.addToBackStack(null);

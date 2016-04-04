@@ -1,15 +1,24 @@
 package com.electsmart.electsmart.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.electsmart.electsmart.API.GoogleCivicInfo.Models.Candidate;
+import com.electsmart.electsmart.Activities.CandidateActivity;
+import com.electsmart.electsmart.Activities.ElectionActivity;
+import com.electsmart.electsmart.DownloadImageTask;
 import com.electsmart.electsmart.R;
+
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,10 +31,10 @@ public class ElectionAdapter extends BaseExpandableListAdapter {
     private Context _context;
     private List<String> openPositions; // header titles
     // child data in format of header title, child title
-    private HashMap<String, List<String>> candidates;
+    private HashMap<String, List<Candidate>> candidates;
 
     public ElectionAdapter(Context context, List<String> listDataHeader,
-                                 HashMap<String, List<String>> listChildData) {
+                                 HashMap<String, List<Candidate>> listChildData) {
         this._context = context;
         this.openPositions = listDataHeader;
         this.candidates = listChildData;
@@ -43,22 +52,42 @@ public class ElectionAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getChildView(int groupPosition, final int childPosition,
+    public View getChildView(final int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
 
-        final String childText = (String) getChild(groupPosition, childPosition);
+        final String candidateName = ((Candidate) getChild(groupPosition, childPosition)).getName();
+        final String candidateParty = ((Candidate) getChild(groupPosition, childPosition)).getParty();
 
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            System.out.println("Attemp to get listview_row");
+            System.out.println("Attempt to get listview_row");
             convertView = infalInflater.inflate(R.layout.election_view_candidate_listview_row, null);
         }
 
-        TextView candidateName = (TextView) convertView
-                .findViewById(R.id.candidateName);
+        System.out.println("PHOTO URL : "+ ((Candidate) getChild(groupPosition, childPosition)).getPhotoUrl());
 
-        candidateName.setText(childText);
+        new DownloadImageTask(((ImageView) convertView.findViewById(R.id.candidatePhoto)))
+                .execute(((Candidate) getChild(groupPosition, childPosition)).getPhotoUrl());
+
+        convertView.findViewById(R.id.candidates).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(_context, CandidateActivity.class);
+                Candidate c = candidates.get(getGroup(groupPosition)).get(childPosition);
+                if (c != null) {
+                    intent.putExtra("candidate", c);
+                    _context.startActivity(intent);
+                }
+            }
+        });
+
+        TextView candidateNameView = (TextView) convertView.findViewById(R.id.candidateName);
+        TextView candidatePartyView = (TextView) convertView.findViewById(R.id.candidateDescr);
+
+        candidateNameView.setText(candidateName);
+        candidatePartyView.setText(candidateParty);
+
         return convertView;
     }
 

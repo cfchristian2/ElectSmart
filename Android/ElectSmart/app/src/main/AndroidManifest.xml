@@ -44,6 +44,14 @@
             android:name=".Activities.QuizActivity"
             android:label="@string/title_activity_quiz"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".Activities.ElectionActivity"
+            android:label="@string/title_election"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".Activities.CandidateActivity"
+            android:label="@string/title_candidate"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

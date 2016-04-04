@@ -25,4 +25,8 @@
     <string name="drawer_close">close</string>
     <string name="title_activity_forum">Forum</string>
     <string name="title_activity_quiz">QuizActivity</string>
+
+    <string name="title_election">ElectionActivity</string>
+    <string name="title_candidate">ElectionActivity</string>
+
 </resources>
