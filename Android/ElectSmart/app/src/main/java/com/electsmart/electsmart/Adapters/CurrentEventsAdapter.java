@@ -52,7 +52,7 @@ public class CurrentEventsAdapter extends ArrayAdapter<FarooArticle> {
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 getContext().startActivity(intent);
                 //Uri uri = Uri.parse(currentEvent.getUrl());
-                //Intent intent = new Intent(context, ArticleActivity.class);
+                //Intent intent = new Intent(, ArticleActivity.class);
                 //intent.putExtra("uri", uri);
                 //getContext().startActivity(intent);
             }

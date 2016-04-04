@@ -36,20 +36,18 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
-
     androidTestCompile 'com.android.support:support-annotations:23.2.0'
-
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
     compile 'com.google.android.gms:play-services-location:8.4.0'
     compile 'com.google.android.gms:play-services-maps:8.4.0'
     compile 'com.android.support:support-v4:23.2.0'
     compile 'org.greenrobot:eventbus:3.0.0'
-
     compile 'com.squareup.retrofit2:retrofit:2.0.1'
     compile 'com.squareup.retrofit2:converter-gson:2.0.1'
+    compile files('C:/Users/Scott/Documents/cs506_software_engineering/Android/ElectSmart/.idea/libraries/Disqus-2.16.1.jar')
+    compile files('C:/Users/Scott/Documents/cs506_software_engineering/Android/ElectSmart/.idea/libraries/temboo-android-sdk-core-2.16.1.jar')
 }

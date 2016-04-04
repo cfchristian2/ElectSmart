@@ -35,6 +35,14 @@
         <activity
             android:name=".Activities.ArticleActivity"
             android:label="@string/title_activity_article"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.Forum"
+            android:label="@string/title_activity_forum"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.QuizActivity"
+            android:label="@string/title_activity_quiz"
             android:theme="@style/AppTheme"></activity>
     </application>
 
