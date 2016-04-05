@@ -8,22 +8,22 @@
 
 import UIKit
 
-class HomeStoryTableViewCellController: UITableViewCell {
+class CurrentEventsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var newsStoryTitleLabel: UILabel!
-    @IBOutlet weak var newsStoryContentLabel: UILabel!
+    @IBOutlet weak var currentEventTitleLabel: UILabel!
+    @IBOutlet weak var currentEventContentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         // Configure the story title
-        newsStoryTitleLabel.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
-        newsStoryTitleLabel.font = UIFont.boldSystemFontOfSize(17.0)
-        newsStoryTitleLabel.textColor = UIColor.blackColor()
+        currentEventTitleLabel.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
+        currentEventTitleLabel.font = UIFont.boldSystemFontOfSize(17.0)
+        currentEventTitleLabel.textColor = UIColor.blackColor()
         
         // Configure the story content
-        newsStoryContentLabel.backgroundColor = UIColor.whiteColor()
+        currentEventContentLabel.backgroundColor = UIColor.whiteColor()
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

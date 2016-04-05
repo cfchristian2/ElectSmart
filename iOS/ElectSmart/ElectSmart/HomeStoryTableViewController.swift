@@ -36,7 +36,7 @@ class HomeStoryTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("homeStoryCell", forIndexPath: indexPath) as! HomeStoryTableViewCellController
+        let cell = tableView.dequeueReusableCellWithIdentifier("homeStoryCell", forIndexPath: indexPath) as! HomeStoryTableViewCell
         
         // get story for cell
         let story: NewsStory = self.stories[indexPath.row]
