@@ -78,18 +78,63 @@
         <scene sceneID="bFU-Nh-g1P">
             <objects>
                 <tableViewController id="Sj3-cb-fka" customClass="HomeStoryTableViewController" customModule="ElectSmart" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" id="evt-ve-ghw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="evt-ve-ghw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="385"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeStoryCell" rowHeight="180" id="ye5-gi-n7C">
-                                <rect key="frame" x="0.0" y="28" width="600" height="180"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeStoryCell" rowHeight="150" id="ye5-gi-n7C" customClass="HomeStoryTableViewCellController" customModule="ElectSmart" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ye5-gi-n7C" id="nhX-D8-Jcj">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="179.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Story Content" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dj-7o-twc">
+                                            <rect key="frame" x="8" y="40" width="592" height="109.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLv-oU-Ags">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="pBZ-4F-0ld"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="News Story Title">
+                                                    <attributes>
+                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3dj-7o-twc" secondAttribute="trailing" constant="-8" id="6Bb-2w-dM6"/>
+                                        <constraint firstItem="XLv-oU-Ags" firstAttribute="top" secondItem="nhX-D8-Jcj" secondAttribute="topMargin" constant="-8" id="6bX-Vn-KjU"/>
+                                        <constraint firstItem="XLv-oU-Ags" firstAttribute="leading" secondItem="nhX-D8-Jcj" secondAttribute="leadingMargin" constant="-8" id="8ni-ox-Qi2"/>
+                                        <constraint firstItem="XLv-oU-Ags" firstAttribute="width" secondItem="nhX-D8-Jcj" secondAttribute="width" id="MXp-Q7-Z5F"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="3dj-7o-twc" secondAttribute="bottom" constant="-8" id="OxW-5T-XsK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="XLv-oU-Ags" secondAttribute="trailing" constant="-8" id="kaz-da-59X"/>
+                                        <constraint firstItem="3dj-7o-twc" firstAttribute="width" secondItem="nhX-D8-Jcj" secondAttribute="width" id="kq3-iz-JJR"/>
+                                        <constraint firstItem="3dj-7o-twc" firstAttribute="leading" secondItem="nhX-D8-Jcj" secondAttribute="leadingMargin" id="rP2-kC-pBr"/>
+                                        <constraint firstItem="3dj-7o-twc" firstAttribute="top" secondItem="XLv-oU-Ags" secondAttribute="bottom" id="sgt-4c-UI2"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="MXp-Q7-Z5F"/>
+                                            <exclude reference="kq3-iz-JJR"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="newsStoryContentLabel" destination="3dj-7o-twc" id="tCI-nw-eOa"/>
+                                    <outlet property="newsStoryTitleLabel" destination="XLv-oU-Ags" id="HVJ-gY-Qg0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -100,7 +145,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouI-7n-XUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="1304.5"/>
+            <point key="canvasLocation" x="758" y="1356.5"/>
         </scene>
         <!--Current Events Table View Controller-->
         <scene sceneID="McV-mh-Afz">
@@ -165,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjc-Wx-SZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2221" y="1426"/>
+            <point key="canvasLocation" x="2221" y="1464"/>
         </scene>
         <!--Upcoming View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -199,13 +244,16 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rc1-EQ-yeD">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="164"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Election Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-dt-sW3">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Election Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-dt-sW3">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="36"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="36" id="lRZ-1G-xNs"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="calendar-blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="1hp-fm-kWM">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="1hp-fm-kWM">
                                                             <rect key="frame" x="0.0" y="36" width="150" height="128"/>
                                                         </imageView>
                                                     </subviews>
@@ -398,7 +446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eO6-U8-Ycu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1488" y="1426"/>
+            <point key="canvasLocation" x="1488" y="1464"/>
         </scene>
         <!--Candidate View Controller-->
         <scene sceneID="5ab-yO-0kX">
@@ -416,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAX-Ei-fic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="2206"/>
+            <point key="canvasLocation" x="1176" y="2246"/>
         </scene>
         <!--Polling Place View Controller-->
         <scene sceneID="c2A-N0-FyI">
@@ -448,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypi-PM-pfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="2206"/>
+            <point key="canvasLocation" x="1804" y="2246"/>
         </scene>
         <!--Address View Controller-->
         <scene sceneID="SZG-ck-Wfz">
@@ -983,7 +1031,7 @@
         <image name="upcoming" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qLC-0R-sVR"/>
+        <segue reference="odS-iO-oIc"/>
         <segue reference="kIs-hp-1WO"/>
     </inferredMetricsTieBreakers>
 </document>
