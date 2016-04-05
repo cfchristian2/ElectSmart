@@ -28,7 +28,7 @@ extension String
 
 public class BingTask{
     
-    let newsurl = "https://api.datamarket.azure.com/Bing/Search/v1/News?Query=%27Hillary%20Clinton%27&$format=JSON"
+    let newsurl = "https://api.datamarket.azure.com/Bing/Search/v1/News?Query=%27Hillary%20Clinton%27&$format=JSON&$top=10"
     let keyString:String = "fDs4/JuSlVn0HIG0tp4QaQwxuLnfe35r8Kq6ej51RL0:fDs4/JuSlVn0HIG0tp4QaQwxuLnfe35r8Kq6ej51RL0"
     
 
@@ -41,7 +41,19 @@ public class BingTask{
         
     }
     
-    func makeNewsRequest(){
+    //let title: String
+    //let ID: int
+    //let url: String
+    //let date: NSDate
+    //let source: String
+    //let description: String
+    
+    func makeNewsRequest() -> [NewsStory] {
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        
+        var stories: [NewsStory] = [NewsStory]()
         
         let headers = ["Authorization": "Basic \(keyEncoded)"]
         Alamofire.request(.GET, newsurl, parameters: nil, encoding: .JSON, headers: headers)
@@ -57,12 +69,40 @@ public class BingTask{
                     //Handle parsing of results
                     //print("Response was" + responseValue.description)
                     
+                    
+                    
+                    
                     //for each News item, populate data models
                     for item in responseValue["d"]["results"].arrayValue {
-                        print(item["Title"].stringValue)
+                        let title = item["Title"].stringValue
+                        let ID = item["ID"].stringValue
+                        let url = item["Url"].stringValue
+                        //date has 10 useful chars
+                        let dateText:String = item["Date"].stringValue
+                        //let relevantDT = (dateText as NSString).substringToIndex(10)
+                        let date: NSDate = formatter.dateFromString(dateText)!
+                        let source = item["Source"].stringValue
+                        let description = item["Description"].stringValue
+                        
+                        
+                        
+                        
+                        
+                        //let newStory = NewsStory(title: title, ID: ID, url: url, date: date, source: source, description: description)
+                        
+                        stories.append(NewsStory(title: title, ID: ID, url: url, date: date, source: source, description: description))
+                        print(title)
+                        print(ID)
+                        print(url)
+                        print(date)
+                        print(source)
+                        print(description)
+                        
                     }
                 }
+                
                 }
+        return stories
     }
     
     

@@ -49,7 +49,7 @@ class HomeStoryTableViewController: UITableViewController {
         let labelView = UILabel()
         
         // Add image BG
-        if let checkedUrl = NSURL(string: story.image!) {
+        if let checkedUrl = NSURL(string: story.url) {
             imageView.contentMode = .ScaleAspectFit
             downloadImage(checkedUrl, imageView: imageView)
         }

@@ -58,10 +58,20 @@ class HomeViewController: UIViewController {
     
     // MARK: Populating stories array
     
+    //let title: String
+    //let ID: Int
+    //let url: String
+    //let date: NSDate
+    //let source: String
+    //let description: String
+    
     private func getStories() {
-        stories.append(NewsStory(title: "Blah", subtitle: "subtitle text", author: "Donald Drumpf", date: NSDate(timeIntervalSinceNow: 20000), publisher: "Drumpf Media", content: "ds sadsads dsads sad sa dsa dsadsddsd sdsd", image: "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", meta: "meta"))
-        stories.append(NewsStory(title: "Some cool news story", subtitle: "subtitle text", author: "Hillz", date: NSDate(timeIntervalSinceNow: 20000), publisher: "HRC", content: "ds sadsads dsads sad sa dsa dsadsddsd sdsd", image: "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", meta: "meta"))
-        stories.append(NewsStory(title: "Update!!", subtitle: "subtitle text", author: "The Bern", date: NSDate(timeIntervalSinceNow: 20000), publisher: "The people", content: "ds sadsads dsads sad sa dsa dsadsddsd sdsd", image: "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150", meta: "meta"))
+        let testAPI:BingTask = BingTask()
+        //testAPI.makeNewsRequest()
+        stories = testAPI.makeNewsRequest()
+        stories.append(NewsStory(title: "Blah", ID: "1", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
+        stories.append(NewsStory(title: "Blah", ID: "2", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
+        stories.append(NewsStory(title: "Blah", ID: "3", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
     }
     
     // MARK: Navigation
