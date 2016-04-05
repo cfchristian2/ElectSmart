@@ -15,6 +15,7 @@ import com.electsmart.electsmart.API.Faroo.FarooAPI;
 import com.electsmart.electsmart.API.Faroo.FarooService;
 import com.electsmart.electsmart.API.Faroo.Models.FarooArticle;
 import com.electsmart.electsmart.API.Faroo.Models.FarooResponse;
+import com.electsmart.electsmart.API.bing.BingTask;
 import com.electsmart.electsmart.DownloadImageTask;
 import com.electsmart.electsmart.R;
 
@@ -26,6 +27,7 @@ public class HomeFragment extends Fragment {
 
     private static final String TAG = HomeFragment.class.getSimpleName();
     private FarooResponse farooResponse;
+
 
     private ImageView mPollingPlaceImage;
 
@@ -45,10 +47,10 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private void getImage(String ImageUrl, View view){
-        try{
+    private void getImage(String ImageUrl, View view) {
+        try {
             new DownloadImageTask((ImageView) view.findViewById(R.id.sourceImageHome)).execute(ImageUrl);
-        }catch (Exception ex){
+        } catch (Exception ex) {
 
         }
     }
@@ -57,6 +59,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        new BingTask().execute();
         FarooAPI service = FarooService.createApiInstance();
         Call<FarooResponse> call = service.getHeadNews();
         call.enqueue(new Callback<FarooResponse>() {
@@ -67,6 +70,7 @@ public class HomeFragment extends Fragment {
                 final FarooArticle article = farooResponse.getFarooArticles().get(0);
                 setupMainEventArticleUI(article);
             }
+
             @Override
             public void onFailure(Call<FarooResponse> call, Throwable t) {
 
@@ -86,13 +90,13 @@ public class HomeFragment extends Fragment {
                 Uri uri = Uri.parse(article.getUrl());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 getContext().startActivity(intent);
-                //Uri uri = Uri.parse(currentEvent.getUrl());
-                //Intent intent = new Intent(, ArticleActivity.class);
-                //intent.putExtra("uri", uri);
-                //getContext().startActivity(intent);
             }
         });
     }
+
+    public void callWebService() {
+
+    } // end callWebService
 
 
 }
