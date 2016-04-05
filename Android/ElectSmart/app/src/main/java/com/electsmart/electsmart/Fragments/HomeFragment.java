@@ -11,17 +11,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.electsmart.electsmart.API.Faroo.FarooAPI;
-import com.electsmart.electsmart.API.Faroo.FarooService;
 import com.electsmart.electsmart.API.Faroo.Models.FarooArticle;
 import com.electsmart.electsmart.API.Faroo.Models.FarooResponse;
 import com.electsmart.electsmart.API.bing.BingTask;
 import com.electsmart.electsmart.DownloadImageTask;
 import com.electsmart.electsmart.R;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
@@ -59,8 +53,10 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        new BingTask().execute();
-        FarooAPI service = FarooService.createApiInstance();
+        new BingTask(view).execute();
+
+
+        /*FarooAPI service = FarooService.createApiInstance();
         Call<FarooResponse> call = service.getHeadNews();
         call.enqueue(new Callback<FarooResponse>() {
             @Override
@@ -75,7 +71,7 @@ public class HomeFragment extends Fragment {
             public void onFailure(Call<FarooResponse> call, Throwable t) {
 
             }
-        });
+        });*/
         return view;
     }
 
