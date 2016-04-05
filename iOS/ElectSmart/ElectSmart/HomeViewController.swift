@@ -48,6 +48,10 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func nextElectionButtonPress(sender: AnyObject) {
+        self.performSegueWithIdentifier("goToElectionEventView", sender: self)
+    }
+    
     
     // MARK: Populate next event
     
@@ -77,11 +81,20 @@ class HomeViewController: UIViewController {
     // MARK: Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let tableScene = segue.destinationViewController as! HomeStoryTableViewController
         
-        getStories()
+        if (segue.identifier == "goToElectionEventView") {
+            let vc = segue.destinationViewController as! ElectionEventViewController
+            
+            vc.electionDate = nextEventDateLabel.text
+            vc.electionTitle = nextEventTitleButton.titleLabel?.text
         
-        tableScene.stories = stories
-        tableScene.tableView.reloadData()
+        } else {
+            let vc = segue.destinationViewController as! HomeStoryTableViewController
+            
+            getStories()
+            
+            vc.stories = stories
+            vc.tableView.reloadData()
+        }
     }
 }

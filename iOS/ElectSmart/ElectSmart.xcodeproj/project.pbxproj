@@ -21,6 +21,8 @@
 		568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */; };
 		82C014E4A8CAA3D0DA1F81F5 /* Pods_ElectSmart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0786BC91F6E9AC5AC2B18D94 /* Pods_ElectSmart.framework */; };
 		DC2BBC251C9BC0DB00CB72AA /* HomeStoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */; };
+		DC2DE6F21CB459BF00B50A42 /* HomeStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2DE6F11CB459BF00B50A42 /* HomeStoryTableViewCell.swift */; };
+		DC2DE6F61CB4657800B50A42 /* CurrentEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2DE6F51CB4657800B50A42 /* CurrentEventsTableViewCell.swift */; };
 		DC7CABAC1C961FC8009BB184 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */; };
 		DC7CABAE1C962096009BB184 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7CABAD1C962096009BB184 /* CoreLocation.framework */; };
 		DC7CABB21C962D29009BB184 /* AppData.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC7CABB11C962D29009BB184 /* AppData.plist */; };
@@ -56,6 +58,8 @@
 		A3DBFDB6CA0F9F19A4924578 /* Pods-ElectSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElectSmart/Pods-ElectSmart.debug.xcconfig"; sourceTree = "<group>"; };
 		B77019F5BAE6EA95469CCF3E /* Pods-ElectSmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectSmart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ElectSmart/Pods-ElectSmart.release.xcconfig"; sourceTree = "<group>"; };
 		DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStoryTableViewController.swift; sourceTree = "<group>"; };
+		DC2DE6F11CB459BF00B50A42 /* HomeStoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStoryTableViewCell.swift; sourceTree = "<group>"; };
+		DC2DE6F51CB4657800B50A42 /* CurrentEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventsTableViewCell.swift; sourceTree = "<group>"; };
 		DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		DC7CABAD1C962096009BB184 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DC7CABB11C962D29009BB184 /* AppData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppData.plist; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				DC7CABB31C963DA0009BB184 /* MainTabBarController.swift */,
 				DCEF88061C8FA283005CAF6A /* HomeViewController.swift */,
 				DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */,
+				DC2DE6F11CB459BF00B50A42 /* HomeStoryTableViewCell.swift */,
 				DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */,
 				DC9214FD1C9B92C00044BE91 /* SettingsTableViewController.swift */,
 				DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */,
@@ -155,6 +160,7 @@
 				561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */,
 				5650D8E71CB2BB9900B8160A /* CandidateViewController.swift */,
 				DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */,
+				DC2DE6F51CB4657800B50A42 /* CurrentEventsTableViewCell.swift */,
 				DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */,
 				DCEF880A1C8FA283005CAF6A /* Main.storyboard */,
 				DCEF880D1C8FA283005CAF6A /* Assets.xcassets */,
@@ -310,6 +316,8 @@
 				5683DA951CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift in Sources */,
 				DC7CABD81C966805009BB184 /* NewsStory.swift in Sources */,
 				5650D8E81CB2BB9900B8160A /* CandidateViewController.swift in Sources */,
+				DC2DE6F61CB4657800B50A42 /* CurrentEventsTableViewCell.swift in Sources */,
+				DC2DE6F21CB459BF00B50A42 /* HomeStoryTableViewCell.swift in Sources */,
 				5683DA971CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift in Sources */,
 				DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */,
 				DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */,
