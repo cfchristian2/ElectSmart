@@ -12,6 +12,10 @@ public class PreferencesManager {
     private static final String PREF_NAME = "com.electsmart.electsmart.preferences";
     private static final String ADDRESS_KEY = "com.electsmart.electsmart.ADDRESS_KEY";
     private static final String LATLNG_KEY = "com.electsmart.electsmart.LATLNG_KEY";
+    private static final String NATIONAL_TOGGLE = "com.electsmart.electsmart.NATIONAL_TOGGLE";
+    private static final String STATE_TOGGLE = "com.electsmart.electsmart.STATE_TOGGLE";
+    private static final String LOCAL_TOGGLE = "com.electsmart.electsmart.LOCAL_TOGGLE";
+    private static final String NOTIFICATIONS_TOGGLE = "com.electsmart.electsmart.NOTIFICATIONS_TOGGLE";
 
     private static PreferencesManager sInstance;
     private final SharedPreferences mPref;
@@ -47,6 +51,50 @@ public class PreferencesManager {
 
     public void removeAddress() {
         remove(ADDRESS_KEY);
+    }
+
+    public void setNationalToggle(boolean toggle) {
+        Log.d(TAG, "National toggle set to " + toggle);
+        mPref.edit()
+                .putBoolean(NATIONAL_TOGGLE, toggle)
+                .apply();
+    }
+
+    public boolean getNationalToggle() {
+        return mPref.getBoolean(NATIONAL_TOGGLE, true);
+    }
+
+    public void setStateToggle(boolean toggle) {
+        Log.d(TAG, "State toggle set to " + toggle);
+        mPref.edit()
+                .putBoolean(STATE_TOGGLE, toggle)
+                .apply();
+    }
+
+    public boolean getStateToggle() {
+        return mPref.getBoolean(STATE_TOGGLE, true);
+    }
+
+    public void setLocalToggle(boolean toggle) {
+        Log.d(TAG, "Local toggle set to " + toggle);
+        mPref.edit()
+                .putBoolean(LOCAL_TOGGLE, toggle)
+                .apply();
+    }
+
+    public boolean getLocalToggle() {
+        return mPref.getBoolean(LOCAL_TOGGLE, true);
+    }
+
+    public void setNotificationsToggle(boolean toggle) {
+        Log.d(TAG, "Notifications toggle set to " + toggle);
+        mPref.edit()
+                .putBoolean(NOTIFICATIONS_TOGGLE, toggle)
+                .apply();
+    }
+
+    public boolean getNotificationsToggle() {
+        return mPref.getBoolean(NOTIFICATIONS_TOGGLE, true);
     }
 
     public void setLatLng(Location latlng) {
