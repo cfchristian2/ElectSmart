@@ -10,6 +10,8 @@ import UIKit
 import Fabric
 import Crashlytics
 import TwitterKit
+import Alamofire
+
 
 
 @UIApplicationMain
