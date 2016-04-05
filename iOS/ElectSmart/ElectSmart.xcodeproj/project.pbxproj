@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		561CA3441CB231AB00CF776D /* PollingPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */; };
 		562E9C3F1CAF18C7006F213D /* calendar-blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 562E9C3E1CAF18C7006F213D /* calendar-blank.png */; };
+		5650D8E81CB2BB9900B8160A /* CandidateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5650D8E71CB2BB9900B8160A /* CandidateViewController.swift */; };
+		5683DA951CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683DA941CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift */; };
+		5683DA971CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683DA961CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift */; };
 		568E4D3D1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */; };
 		568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */; };
 		DC2BBC251C9BC0DB00CB72AA /* HomeStoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingPlaceViewController.swift; sourceTree = "<group>"; };
 		562E9C3E1CAF18C7006F213D /* calendar-blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "calendar-blank.png"; path = "../../../../../Desktop/calendar-blank.png"; sourceTree = "<group>"; };
+		5650D8E71CB2BB9900B8160A /* CandidateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateViewController.swift; sourceTree = "<group>"; };
+		5683DA941CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		5683DA961CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionCandidateTableViewCell.swift; sourceTree = "<group>"; };
 		568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingElectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionEventViewController.swift; sourceTree = "<group>"; };
 		DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStoryTableViewController.swift; sourceTree = "<group>"; };
@@ -98,12 +104,15 @@
 				DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */,
 				DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */,
 				DC9214FD1C9B92C00044BE91 /* SettingsTableViewController.swift */,
+				DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */,
 				568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */,
 				568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */,
-				DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */,
-				DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */,
-				DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */,
+				5683DA941CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift */,
+				5683DA961CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift */,
 				561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */,
+				5650D8E71CB2BB9900B8160A /* CandidateViewController.swift */,
+				DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */,
+				DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */,
 				DCEF880A1C8FA283005CAF6A /* Main.storyboard */,
 				DCEF880D1C8FA283005CAF6A /* Assets.xcassets */,
 				DCEF880F1C8FA283005CAF6A /* LaunchScreen.storyboard */,
@@ -190,7 +199,10 @@
 				568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */,
 				DC7CABDA1C966847009BB184 /* CurrentEventsTableViewController.swift in Sources */,
 				DC2BBC251C9BC0DB00CB72AA /* HomeStoryTableViewController.swift in Sources */,
+				5683DA951CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift in Sources */,
 				DC7CABD81C966805009BB184 /* NewsStory.swift in Sources */,
+				5650D8E81CB2BB9900B8160A /* CandidateViewController.swift in Sources */,
+				5683DA971CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift in Sources */,
 				DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */,
 				DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */,
 				DC7CABAC1C961FC8009BB184 /* AddressViewController.swift in Sources */,

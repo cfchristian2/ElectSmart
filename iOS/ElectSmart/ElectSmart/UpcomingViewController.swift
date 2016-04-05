@@ -56,6 +56,7 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
             
             let vc = segue.destinationViewController as! ElectionEventViewController
             
+            
             //TODO: Setup election view
         }
     }
