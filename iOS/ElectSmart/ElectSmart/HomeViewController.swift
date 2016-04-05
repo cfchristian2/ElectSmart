@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
     // MARK: Populate next event
     
     private func getNextEvent() {
