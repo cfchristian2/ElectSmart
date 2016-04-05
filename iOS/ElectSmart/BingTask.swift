@@ -28,8 +28,10 @@ extension String
 
 public class BingTask{
     
-    let newsurl = "https://api.datamarket.azure.com/Bing/Search/v1/News?Query=%27Hilary%20Clinton%27&$format=JSON"
-    let keyString:String = "fDs4/JuSlVn0HIG0tp4QaQwxuLnfe35r8Kq6ej51RL0"
+    let newsurl = "https://api.datamarket.azure.com/Bing/Search/v1/News?Query=%27Hillary%20Clinton%27&$format=JSON"
+    let keyString:String = "fDs4/JuSlVn0HIG0tp4QaQwxuLnfe35r8Kq6ej51RL0:fDs4/JuSlVn0HIG0tp4QaQwxuLnfe35r8Kq6ej51RL0"
+    
+
     let keyEncoded:String
     
     init(){
@@ -40,10 +42,12 @@ public class BingTask{
     }
     
     func makeNewsRequest(){
-        Alamofire.request(.GET, newsurl)
+        
+        let headers = ["Authorization": "Basic \(keyEncoded)"]
+        Alamofire.request(.GET, newsurl, parameters: nil, encoding: .JSON, headers: headers)
             .responseJSON{ response in
                 guard response.2.error == nil else {
-                    print("error")
+                    print("error" + response.2.error.debugDescription + " code was " + response.2.debugDescription)
                     return
                 }
                 
@@ -51,14 +55,12 @@ public class BingTask{
                     //handle the returned JSON
                     let responseValue = JSON(value)
                     //Handle parsing of results
-                    print("Response was" + responseValue.description)
+                    //print("Response was" + responseValue.description)
                     
-                    //handle accessing fields
-                    //if let bio = post["bio"].string {
-                    //print("Bio was " + bio)
-                    // } else {
-                    // print ("error")
-                    // }
+                    //for each News item, populate data models
+                    for item in responseValue["d"]["results"].arrayValue {
+                        print(item["Title"].stringValue)
+                    }
                 }
                 }
     }

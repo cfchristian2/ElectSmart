@@ -35,6 +35,12 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         getNextEvent()
+        
+        //Testing for JSON stuff
+        //let testAPI:BingTask = BingTask()
+        //testAPI.makeNewsRequest()
+        
+        //
     }
 
     override func didReceiveMemoryWarning() {
