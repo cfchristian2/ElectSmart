@@ -26,6 +26,9 @@
                                 <rect key="frame" x="218" y="72" width="164" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Next Election"/>
+                                <connections>
+                                    <action selector="nextElectionButtonPress:" destination="9pv-A4-QxB" eventType="touchUpInside" id="bMB-Pq-epl"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOl-IB-ZVK">
                                 <rect key="frame" x="0.0" y="166" width="600" height="385"/>
@@ -64,6 +67,7 @@
                     <connections>
                         <outlet property="nextEventDateLabel" destination="Faf-lg-P7g" id="Lzy-HF-qit"/>
                         <outlet property="nextEventTitleButton" destination="nGt-Hk-YYu" id="i8Z-I9-PIx"/>
+                        <segue destination="eSN-To-h1q" kind="show" identifier="goToElectionEventView" id="qLC-0R-sVR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -979,6 +983,7 @@
         <image name="upcoming" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qLC-0R-sVR"/>
         <segue reference="kIs-hp-1WO"/>
     </inferredMetricsTieBreakers>
 </document>
