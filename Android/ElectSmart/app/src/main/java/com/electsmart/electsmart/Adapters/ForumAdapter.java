@@ -1,13 +1,16 @@
 package com.electsmart.electsmart.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.electsmart.electsmart.API.Choreo.Models.Response;
+import com.electsmart.electsmart.Activities.ThreadActivity;
 import com.electsmart.electsmart.R;
 
 import java.util.List;
@@ -34,9 +37,22 @@ public class ForumAdapter extends ArrayAdapter<Response> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.forum_list_item, parent, false);
         }
         TextView threadTitle = (TextView) convertView.findViewById(R.id.ForumTitle);
-        TextView threadOther = (TextView) convertView.findViewById(R.id.OtherText);
+        TextView threadTime = (TextView) convertView.findViewById(R.id.TimePassed);
+        TextView threadReplies = (TextView) convertView.findViewById(R.id.repliesText);
         threadTitle.setText(currentThread.getTitle());
-        threadOther.setText(currentThread.getLink());
+        threadTime.setText(currentThread.getCreatedAt());
+        threadReplies.setText(currentThread.getPosts() + " Posts");
+
+        RelativeLayout threadContainer = (RelativeLayout) convertView.findViewById(R.id.ForumContent);
+        threadContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ThreadActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
+
 
 
         // Populate the data into the template view using the data object

@@ -43,15 +43,24 @@
         <activity
             android:name=".Activities.QuizActivity"
             android:label="@string/title_activity_quiz"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Activities.ElectionActivity"
             android:label="@string/title_election"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Activities.CandidateActivity"
             android:label="@string/title_candidate"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.ThreadActivity"
+            android:label="@string/title_activity_thread"
+            android:parentActivityName=".Activities.Forum"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.electsmart.electsmart.Activities.Forum" />
+        </activity>
     </application>
 
 </manifest>

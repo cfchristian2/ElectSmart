@@ -28,5 +28,6 @@
 
     <string name="title_election">ElectionActivity</string>
     <string name="title_candidate">ElectionActivity</string>
+    <string name="title_activity_thread">ThreadActivity</string>
 
 </resources>
