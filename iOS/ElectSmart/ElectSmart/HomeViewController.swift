@@ -72,7 +72,13 @@ class HomeViewController: UIViewController {
     private func getStories() {
         let testAPI:BingTask = BingTask()
         //testAPI.makeNewsRequest()
-        stories = testAPI.makeNewsRequest()
+        
+        
+          stories = testAPI.makeNewsRequest()
+        for story in stories{
+          //  print(story.description)
+        }
+        
         stories.append(NewsStory(title: "Blah", ID: "1", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
         stories.append(NewsStory(title: "Blah", ID: "2", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
         stories.append(NewsStory(title: "Blah", ID: "3", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))

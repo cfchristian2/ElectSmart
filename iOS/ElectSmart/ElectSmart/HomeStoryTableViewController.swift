@@ -48,11 +48,11 @@ class HomeStoryTableViewController: UITableViewController {
         // Add image BG
         if let checkedUrl = NSURL(string: story.url) {
             imageView.contentMode = .ScaleAspectFit
-            downloadImage(checkedUrl, imageView: imageView)
+           // downloadImage(checkedUrl, imageView: imageView)
         }
         
         // Add text overlay
-        drawTitle(story.title, labelView: labelView, imageViewToReference: imageView)
+        //drawTitle(story.title, labelView: labelView, imageViewToReference: imageView)
         
         // Layer subviews
         self.view.addSubview(imageView)
