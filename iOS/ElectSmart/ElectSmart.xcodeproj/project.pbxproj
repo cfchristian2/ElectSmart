@@ -13,6 +13,8 @@
 		01988CCE1CB34F1C008BE98B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01988CCB1CB34F1C008BE98B /* TwitterKit.framework */; };
 		01988CCF1CB34F1C008BE98B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01988CCC1CB34F1C008BE98B /* TwitterKitResources.bundle */; };
 		01988CD01CB34F1C008BE98B /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01988CCD1CB34F1C008BE98B /* TwitterCore.framework */; };
+		01DA1FD01CB4A578002B0C58 /* ElectSmartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1FCF1CB4A578002B0C58 /* ElectSmartTests.swift */; };
+		01DA1FDE1CB4BC2F002B0C58 /* ElectSmartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1FDD1CB4BC2F002B0C58 /* ElectSmartUITests.swift */; };
 		561CA3441CB231AB00CF776D /* PollingPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */; };
 		5650D8E81CB2BB9900B8160A /* CandidateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5650D8E71CB2BB9900B8160A /* CandidateViewController.swift */; };
 		5683DA951CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683DA941CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift */; };
@@ -41,6 +43,23 @@
 		DCEF88111C8FA283005CAF6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCEF880F1C8FA283005CAF6A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		01DA1FD21CB4A578002B0C58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCEF87F91C8FA283005CAF6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCEF88001C8FA283005CAF6A;
+			remoteInfo = ElectSmart;
+		};
+		01DA1FE01CB4BC2F002B0C58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCEF87F91C8FA283005CAF6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCEF88001C8FA283005CAF6A;
+			remoteInfo = ElectSmart;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		015B0ABD1CB3911C0036A819 /* BingTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingTask.swift; sourceTree = "<group>"; };
 		01988CC71CB34E0B008BE98B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -48,6 +67,12 @@
 		01988CCB1CB34F1C008BE98B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		01988CCC1CB34F1C008BE98B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		01988CCD1CB34F1C008BE98B /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		01DA1FCD1CB4A577002B0C58 /* ElectSmartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectSmartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01DA1FCF1CB4A578002B0C58 /* ElectSmartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectSmartTests.swift; sourceTree = "<group>"; };
+		01DA1FD11CB4A578002B0C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01DA1FDB1CB4BC2F002B0C58 /* ElectSmartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectSmartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01DA1FDD1CB4BC2F002B0C58 /* ElectSmartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectSmartUITests.swift; sourceTree = "<group>"; };
+		01DA1FDF1CB4BC2F002B0C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0786BC91F6E9AC5AC2B18D94 /* Pods_ElectSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElectSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingPlaceViewController.swift; sourceTree = "<group>"; };
 		5650D8E71CB2BB9900B8160A /* CandidateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +106,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		01DA1FCA1CB4A577002B0C58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01DA1FD81CB4BC2F002B0C58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCEF87FE1C8FA283005CAF6A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,6 +136,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01DA1FCE1CB4A578002B0C58 /* ElectSmartTests */ = {
+			isa = PBXGroup;
+			children = (
+				01DA1FCF1CB4A578002B0C58 /* ElectSmartTests.swift */,
+				01DA1FD11CB4A578002B0C58 /* Info.plist */,
+			);
+			path = ElectSmartTests;
+			sourceTree = "<group>";
+		};
+		01DA1FDC1CB4BC2F002B0C58 /* ElectSmartUITests */ = {
+			isa = PBXGroup;
+			children = (
+				01DA1FDD1CB4BC2F002B0C58 /* ElectSmartUITests.swift */,
+				01DA1FDF1CB4BC2F002B0C58 /* Info.plist */,
+			);
+			path = ElectSmartUITests;
+			sourceTree = "<group>";
+		};
 		4A7242724E0F8E18513A1375 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +185,8 @@
 				DC9215011C9B9F8C0044BE91 /* Candidate.swift */,
 				DC7CABAD1C962096009BB184 /* CoreLocation.framework */,
 				DCEF88031C8FA283005CAF6A /* ElectSmart */,
+				01DA1FCE1CB4A578002B0C58 /* ElectSmartTests */,
+				01DA1FDC1CB4BC2F002B0C58 /* ElectSmartUITests */,
 				DCEF88021C8FA283005CAF6A /* Products */,
 				5985DE293B638E3799B61B93 /* Pods */,
 				4A7242724E0F8E18513A1375 /* Frameworks */,
@@ -138,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				DCEF88011C8FA283005CAF6A /* ElectSmart.app */,
+				01DA1FCD1CB4A577002B0C58 /* ElectSmartTests.xctest */,
+				01DA1FDB1CB4BC2F002B0C58 /* ElectSmartUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,6 +235,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		01DA1FCC1CB4A577002B0C58 /* ElectSmartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01DA1FD61CB4A578002B0C58 /* Build configuration list for PBXNativeTarget "ElectSmartTests" */;
+			buildPhases = (
+				01DA1FC91CB4A577002B0C58 /* Sources */,
+				01DA1FCA1CB4A577002B0C58 /* Frameworks */,
+				01DA1FCB1CB4A577002B0C58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01DA1FD31CB4A578002B0C58 /* PBXTargetDependency */,
+			);
+			name = ElectSmartTests;
+			productName = ElectSmartTests;
+			productReference = 01DA1FCD1CB4A577002B0C58 /* ElectSmartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		01DA1FDA1CB4BC2F002B0C58 /* ElectSmartUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01DA1FE21CB4BC2F002B0C58 /* Build configuration list for PBXNativeTarget "ElectSmartUITests" */;
+			buildPhases = (
+				01DA1FD71CB4BC2F002B0C58 /* Sources */,
+				01DA1FD81CB4BC2F002B0C58 /* Frameworks */,
+				01DA1FD91CB4BC2F002B0C58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01DA1FE11CB4BC2F002B0C58 /* PBXTargetDependency */,
+			);
+			name = ElectSmartUITests;
+			productName = ElectSmartUITests;
+			productReference = 01DA1FDB1CB4BC2F002B0C58 /* ElectSmartUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		DCEF88001C8FA283005CAF6A /* ElectSmart */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCEF88151C8FA283005CAF6A /* Build configuration list for PBXNativeTarget "ElectSmart" */;
@@ -205,6 +302,16 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Stephen Gaschignard";
 				TargetAttributes = {
+					01DA1FCC1CB4A577002B0C58 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = KZ5Y22JK7H;
+						TestTargetID = DCEF88001C8FA283005CAF6A;
+					};
+					01DA1FDA1CB4BC2F002B0C58 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = KZ5Y22JK7H;
+						TestTargetID = DCEF88001C8FA283005CAF6A;
+					};
 					DCEF88001C8FA283005CAF6A = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = KZ5Y22JK7H;
@@ -225,11 +332,27 @@
 			projectRoot = "";
 			targets = (
 				DCEF88001C8FA283005CAF6A /* ElectSmart */,
+				01DA1FCC1CB4A577002B0C58 /* ElectSmartTests */,
+				01DA1FDA1CB4BC2F002B0C58 /* ElectSmartUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		01DA1FCB1CB4A577002B0C58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01DA1FD91CB4BC2F002B0C58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCEF87FF1C8FA283005CAF6A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +429,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		01DA1FC91CB4A577002B0C58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01DA1FD01CB4A578002B0C58 /* ElectSmartTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01DA1FD71CB4BC2F002B0C58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01DA1FDE1CB4BC2F002B0C58 /* ElectSmartUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCEF87FD1C8FA283005CAF6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +475,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		01DA1FD31CB4A578002B0C58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCEF88001C8FA283005CAF6A /* ElectSmart */;
+			targetProxy = 01DA1FD21CB4A578002B0C58 /* PBXContainerItemProxy */;
+		};
+		01DA1FE11CB4BC2F002B0C58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCEF88001C8FA283005CAF6A /* ElectSmart */;
+			targetProxy = 01DA1FE01CB4BC2F002B0C58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DCEF880A1C8FA283005CAF6A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -356,6 +508,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		01DA1FD41CB4A578002B0C58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ElectSmartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ElectSmartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElectSmart.app/ElectSmart";
+			};
+			name = Debug;
+		};
+		01DA1FD51CB4A578002B0C58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ElectSmartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ElectSmartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElectSmart.app/ElectSmart";
+			};
+			name = Release;
+		};
+		01DA1FE31CB4BC2F002B0C58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ElectSmartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ElectSmartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ElectSmart;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		01DA1FE41CB4BC2F002B0C58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ElectSmartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ElectSmartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ElectSmart;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		DCEF88131C8FA283005CAF6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -474,6 +674,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		01DA1FD61CB4A578002B0C58 /* Build configuration list for PBXNativeTarget "ElectSmartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01DA1FD41CB4A578002B0C58 /* Debug */,
+				01DA1FD51CB4A578002B0C58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		01DA1FE21CB4BC2F002B0C58 /* Build configuration list for PBXNativeTarget "ElectSmartUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01DA1FE31CB4BC2F002B0C58 /* Debug */,
+				01DA1FE41CB4BC2F002B0C58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		DCEF87FC1C8FA283005CAF6A /* Build configuration list for PBXProject "ElectSmart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
