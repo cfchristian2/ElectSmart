@@ -31,7 +31,7 @@ public class DisqusTask extends AsyncTask<Void, Void, String> {
 
             // Set inputs
             listThreadsInputs.set_PublicKey("veLosqnJ37IHa8xvvE3jv7yTDBMfNdq9FkUm44HYWLLLxhxUdOZ1ys3ka5Agyvuc");
-            listThreadsInputs.set_Forum("winbeta");
+            listThreadsInputs.set_Forum("electsmart");
 
             // Execute Choreo
             ListThreads.ListThreadsResultSet listThreadsResults = listThreadsChoreo.execute(listThreadsInputs);

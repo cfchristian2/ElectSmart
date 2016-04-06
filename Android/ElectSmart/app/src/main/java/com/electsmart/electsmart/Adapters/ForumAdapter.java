@@ -40,7 +40,7 @@ public class ForumAdapter extends ArrayAdapter<Response> {
         TextView threadTime = (TextView) convertView.findViewById(R.id.TimePassed);
         TextView threadReplies = (TextView) convertView.findViewById(R.id.repliesText);
         threadTitle.setText(currentThread.getTitle());
-        threadTime.setText(currentThread.getCreatedAt());
+        threadTime.setText(currentThread.getCreatedAt().substring(0, 10));
         threadReplies.setText(currentThread.getPosts() + " Posts");
 
         RelativeLayout threadContainer = (RelativeLayout) convertView.findViewById(R.id.ForumContent);

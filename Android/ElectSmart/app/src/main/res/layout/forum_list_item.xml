@@ -31,10 +31,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/repliesText"
                 android:text="8 replies"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
                 android:textColor="@color/colorAccent"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
         </RelativeLayout>
     </LinearLayout>
     <LinearLayout
