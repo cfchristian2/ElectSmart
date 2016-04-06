@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +46,8 @@ public class CurrentEventsFragment extends ListFragment {
                 int statusCode = response.code();
                 FarooResponse farooResponse = response.body();
                 adapter = new CurrentEventsAdapter(getContext(), farooResponse.getFarooArticles());
-                //setListAdapter(adapter);
+                setListAdapter(adapter);
+
             }
 
             @Override
@@ -55,15 +55,16 @@ public class CurrentEventsFragment extends ListFragment {
 
             }
         });
-        Log.d("CURRENTEVENTSFRAG", "FINISHED ON CREATE METHOD");
-        //setListAdapter(adapter);
+        setListAdapter(adapter);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_current_events, null, false);
+        View view = inflater.inflate(R.layout.fragment_current_events, container, false);
+
         // Inflate the layout for this fragment
         return view;
     }
@@ -71,8 +72,7 @@ public class CurrentEventsFragment extends ListFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ListView lView = (ListView) getView().findViewById(R.id.currentEventsList);
-        lView.setAdapter(adapter);
+
     }
 
     @Override
