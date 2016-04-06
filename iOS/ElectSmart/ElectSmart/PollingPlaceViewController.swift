@@ -23,6 +23,8 @@ class PollingPlaceViewController: UIViewController, MKMapViewDelegate, CLLocatio
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
+        self.mapView.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,8 +32,33 @@ class PollingPlaceViewController: UIViewController, MKMapViewDelegate, CLLocatio
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Get polling pin location
+    
+    func getPollingPin(address: String) -> MKPointAnnotation {
+        let annotation = MKPointAnnotation()
+        
+        let localSearchRequest = MKLocalSearchRequest()
+        localSearchRequest.naturalLanguageQuery = address
+        let localSearch = MKLocalSearch(request: localSearchRequest)
+        localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
+            
+            if localSearchResponse == nil{
+                let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                return
+            }
+            
+            annotation.title = "Polling Place"
+            annotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude: localSearchResponse!.boundingRegion.center.longitude)
+            
+        }
+        
+        return annotation
+    }
+    
 
-    // MARK: - Location Delegate Methods
+    // MARK: Location Delegate Methods
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -42,6 +69,14 @@ class PollingPlaceViewController: UIViewController, MKMapViewDelegate, CLLocatio
         self.mapView.setRegion(region, animated: true)
         
         self.locationManager.stopUpdatingLocation()
+        
+        //
+        // Mark pin for polling location
+        //
+        
+        // TODO: Get polling place address
+        let annotation = getPollingPin("5 Embarcadero Center, San Francisco, CA 94111")
+        mapView.addAnnotation(annotation)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
