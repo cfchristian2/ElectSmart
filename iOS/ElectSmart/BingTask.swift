@@ -100,8 +100,8 @@ public class BingTask{
                    
                     
                 }
-                    completionHandler(stories as? [NewsStory], nil)
-                
+                    completionHandler(stories as [NewsStory], nil)
+    
                 }
         
     }
