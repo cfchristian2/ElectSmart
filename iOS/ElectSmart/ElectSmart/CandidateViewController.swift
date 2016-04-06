@@ -10,6 +10,8 @@ import UIKit
 
 class CandidateViewController: UIViewController {
 
+    var candidate: Candidate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
