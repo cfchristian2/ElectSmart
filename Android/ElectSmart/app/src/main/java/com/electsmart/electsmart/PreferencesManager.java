@@ -108,11 +108,24 @@ public class PreferencesManager {
     }
 
     public Location getLatLng() {
-        String[] vals = mPref.getString(LATLNG_KEY, "").split(",");
+        String[] vals = mPref.getString(LATLNG_KEY, " , ").split(",");
 
         Location ret = new Location("Preferences");
-        ret.setLatitude(Double.valueOf(vals[0]));
-        ret.setLongitude(Double.valueOf(vals[1]));
+        double lat = 0;
+        double lng = 0;
+
+        try {
+            lat = Double.valueOf(vals[0]);
+        } catch (NumberFormatException e) {
+
+        }
+        try {
+            lng = Double.valueOf(vals[1]);
+        } catch (NumberFormatException e) {
+
+        }
+        ret.setLatitude(lat);
+        ret.setLongitude(lng);
 
         return ret;
     }
