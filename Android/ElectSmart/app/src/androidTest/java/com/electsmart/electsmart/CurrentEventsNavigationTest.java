@@ -36,6 +36,7 @@ public class CurrentEventsNavigationTest extends ActivityUnitTestCase<TabActivit
                 .perform(ViewActions.click());
 
         Espresso.onData(Matchers.allOf()).inAdapterView(ViewMatchers.withId(android.R.id.list))
+
                 .atPosition(0)
                 .perform(ViewActions.click());
     }
