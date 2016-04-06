@@ -100,9 +100,12 @@ class ElectionEventViewController: UIViewController, UITableViewDelegate, UITabl
             
         } else if segue.identifier == "showCandidate" {
             
-            segue.destinationViewController as! CandidateViewController
+            let detScene = segue.destinationViewController as! CandidateViewController
             
-            // TODO: Pass in candidate info
+            if let indexPath = self.electionTable.indexPathForSelectedRow {
+                let selectedCandidate = self.election?.candidates[indexPath.row-1]
+                detScene.candidate = selectedCandidate
+            }
         }
     }
     

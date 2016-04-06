@@ -449,7 +449,7 @@
                                             <outlet property="candidateDescription" destination="CTP-Ft-rWh" id="qwr-N1-pRz"/>
                                             <outlet property="candidateImage" destination="Zjr-un-HoJ" id="sOc-0y-qeF"/>
                                             <outlet property="candidateName" destination="clN-OC-iqv" id="IO4-nh-w6k"/>
-                                            <segue destination="AIn-6u-ouM" kind="show" id="25x-Ib-77t"/>
+                                            <segue destination="AIn-6u-ouM" kind="show" identifier="showCandidate" id="25x-Ib-77t"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -482,8 +482,50 @@
                     <view key="view" contentMode="scaleToFill" id="Agq-vu-LMC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWJ-YZ-SyO">
+                                <rect key="frame" x="283.5" y="84" width="33.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKc-nJ-IGu">
+                                <rect key="frame" x="280" y="124.5" width="40.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-NV-0YW">
+                                <rect key="frame" x="288" y="205.5" width="24.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJ7-4H-M2z">
+                                <rect key="frame" x="284" y="165" width="32.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eiH-NV-0YW" firstAttribute="top" secondItem="dJ7-4H-M2z" secondAttribute="bottom" constant="20" id="1hB-FI-fzX"/>
+                            <constraint firstItem="eiH-NV-0YW" firstAttribute="centerX" secondItem="Agq-vu-LMC" secondAttribute="centerX" id="4Qm-Ns-NCZ"/>
+                            <constraint firstItem="dJ7-4H-M2z" firstAttribute="centerX" secondItem="Agq-vu-LMC" secondAttribute="centerX" id="EN7-Jc-wBr"/>
+                            <constraint firstItem="SWJ-YZ-SyO" firstAttribute="centerX" secondItem="Agq-vu-LMC" secondAttribute="centerX" id="Jnv-XO-WE0"/>
+                            <constraint firstItem="dJ7-4H-M2z" firstAttribute="top" secondItem="CKc-nJ-IGu" secondAttribute="bottom" constant="20" id="YSM-cU-BQd"/>
+                            <constraint firstItem="CKc-nJ-IGu" firstAttribute="top" secondItem="SWJ-YZ-SyO" secondAttribute="bottom" constant="20" id="pPz-l4-uXJ"/>
+                            <constraint firstItem="CKc-nJ-IGu" firstAttribute="centerX" secondItem="Agq-vu-LMC" secondAttribute="centerX" id="vPr-iQ-bur"/>
+                            <constraint firstItem="SWJ-YZ-SyO" firstAttribute="top" secondItem="ieP-JZ-L0A" secondAttribute="bottom" constant="20" id="wT8-1Q-gQs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bioLabel" destination="eiH-NV-0YW" id="xaw-Pp-pHQ"/>
+                        <outlet property="partyLabel" destination="CKc-nJ-IGu" id="4Ze-xz-JZj"/>
+                        <outlet property="titleLabel" destination="SWJ-YZ-SyO" id="asf-HD-moH"/>
+                        <outlet property="urlLabel" destination="dJ7-4H-M2z" id="Irk-CI-LzL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAX-Ei-fic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

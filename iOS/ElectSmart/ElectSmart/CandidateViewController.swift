@@ -9,13 +9,21 @@
 import UIKit
 
 class CandidateViewController: UIViewController {
-
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var partyLabel: UILabel!
+    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    
     var candidate: Candidate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        titleLabel.text = candidate?.title
+        partyLabel.text = candidate?.party
+        urlLabel.text = candidate?.candidate_url
+        bioLabel.text = candidate?.bio
     }
 
     override func didReceiveMemoryWarning() {
