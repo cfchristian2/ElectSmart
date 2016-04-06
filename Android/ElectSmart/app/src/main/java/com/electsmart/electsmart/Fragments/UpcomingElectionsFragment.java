@@ -1,12 +1,10 @@
 package com.electsmart.electsmart.Fragments;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.electsmart.electsmart.API.GoogleCivicInfo.Models.Candidate;
 import com.electsmart.electsmart.R;
@@ -20,7 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class UpcomingElectionsFragment extends Fragment {
+public class UpcomingElectionsFragment extends ListFragment {
 
     private static final String TAG = UpcomingElectionsFragment.class.getSimpleName();
     private List<UpcomingElectionRow> upcomingElectionList;
@@ -38,19 +36,6 @@ public class UpcomingElectionsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_upcoming_elections, null, false);
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState){
-        super.onViewCreated(view, savedInstanceState);
         List<String> openPositions = new ArrayList<String>();
         List<Candidate> candidates = new ArrayList<Candidate>();
         HashMap<String, List<Candidate>> candidatePositionMap = new HashMap<String, List<Candidate>>();
@@ -76,8 +61,12 @@ public class UpcomingElectionsFragment extends Fragment {
         upcomingElectionList.add(row2);
 
         adapter = new UpcomingElectionsAdapter(getActivity(), upcomingElectionList);
-        ListView lView = (ListView) getView().findViewById(R.id.upcomingElectionList);
-        lView.setAdapter(adapter);
-        //setListAdapter(adapter);
+        setListAdapter(adapter);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_upcoming_elections, null, false);
     }
 }
