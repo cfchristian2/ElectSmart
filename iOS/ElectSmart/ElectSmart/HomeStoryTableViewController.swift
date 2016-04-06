@@ -38,25 +38,10 @@ class HomeStoryTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homeStoryCell", forIndexPath: indexPath) as! HomeStoryTableViewCell
         
-        // get story for cell
-        let story: NewsStory = self.stories[indexPath.row]
+        let story = stories[indexPath.row]
         
-        // Configure the cell
-        let imageView = UIImageView(frame: cell.frame)
-        let labelView = UILabel()
-        
-        // Add image BG
-        if let checkedUrl = NSURL(string: story.url) {
-            imageView.contentMode = .ScaleAspectFit
-           // downloadImage(checkedUrl, imageView: imageView)
-        }
-        
-        // Add text overlay
-        //drawTitle(story.title, labelView: labelView, imageViewToReference: imageView)
-        
-        // Layer subviews
-        self.view.addSubview(imageView)
-        self.view.addSubview(labelView)
+        cell.newsStoryTitleLabel.text = "  "+story.title
+        cell.newsStoryContentLabel.text = story.description
         
         return cell
     }
@@ -66,9 +51,10 @@ class HomeStoryTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detScene = segue.destinationViewController as! NewsStoryViewController
         
-        // TODO: Pass real URL and title to next view taken from NewsStory item
-        detScene.url = NSURL(string: "https://www.apple.com")
-        detScene.storyTitle = "Apple FTW"
-        
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            let selectedStory = self.stories[indexPath.row]
+            detScene.url = NSURL(string: selectedStory.url)
+            detScene.storyTitle = selectedStory.title
+        }
     }
 }

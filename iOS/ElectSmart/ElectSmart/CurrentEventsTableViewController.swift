@@ -20,7 +20,9 @@ class CurrentEventsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
-        getStories()
+        NSOperationQueue.mainQueue().addOperationWithBlock {
+            self.getStories()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,9 +32,19 @@ class CurrentEventsTableViewController: UITableViewController {
     // MARK: Populating stories array
     
     private func getStories() {
-        stories.append(NewsStory(title: "Blah", ID: "1", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
-        stories.append(NewsStory(title: "Blah", ID: "2", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
-        stories.append(NewsStory(title: "Blah", ID: "3", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
+        
+        let testAPI:BingTask = BingTask()
+        testAPI.makeRequest() { responseObject, error in
+            if (responseObject?.count > 0){
+                for story in responseObject! {
+                    self.stories.append(story)
+                }
+                self.tableView.reloadData()
+            } else {
+                print("We didn't get the right data returned")
+            }
+        }
+        self.tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -63,9 +75,11 @@ class CurrentEventsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detScene = segue.destinationViewController as! NewsStoryViewController
         
-        // TODO: Pass real URL and title to next view taken from NewsStory item
-        detScene.url = NSURL(string: "https://www.apple.com")
-        detScene.storyTitle = "Apple FTW"
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            let selectedStory = self.stories[indexPath.row]
+            detScene.url = NSURL(string: selectedStory.url)
+            detScene.storyTitle = selectedStory.title
+        }
         
     }
 }
