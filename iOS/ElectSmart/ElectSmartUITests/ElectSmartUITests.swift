@@ -42,7 +42,7 @@ class ElectSmartUITests: XCTestCase {
         tablesQuery.buttons["Set New Location"].tap()
         app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.childrenMatchingType(.Button).matchingIdentifier("Continue").elementBoundByIndex(1).tap()
         tabBarsQuery.buttons["Home"].tap()
-        tablesQuery.staticTexts["  Bernie Sanders\U2019 Supporters Overwhelmingly Refuse To Support Hillary Clinton If She Wins Democratic Nomination"].pressForDuration(0.6);
+        XCTAssertEqual(tablesQuery.cells.count, 10)
         
         //XCTAssertTrue(table.exists)
         //XCTAssertEqual(table.cells.count, 10)
