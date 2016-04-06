@@ -22,7 +22,6 @@ class ElectionEventViewController: UIViewController, UITableViewDelegate, UITabl
         electionTable.dataSource = self
         electionTable.delegate = self
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +61,7 @@ class ElectionEventViewController: UIViewController, UITableViewDelegate, UITabl
             let cell = tableView.dequeueReusableCellWithIdentifier("candidateCell", forIndexPath: indexPath) as! ElectionCandidateTableViewCell
             
             // TODO: Populate with candidate data
-            let url = NSURL(string: "https://upload.wikimedia.org/wikipedia/commons/8/83/Bernie_Sanders_1991.jpg")
+            let url = NSURL(string: election!.candidates[indexPath.row - 1].photo)
             let data = NSData(contentsOfURL:url!)
             
             if (data != nil) {
@@ -88,21 +87,26 @@ class ElectionEventViewController: UIViewController, UITableViewDelegate, UITabl
             return 100
         }
     }
+
     
     // MARK: Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMap" {
             
-            segue.destinationViewController as! PollingPlaceViewController
+            let vc = segue.destinationViewController as! PollingPlaceViewController
 
             // TODO: Pass in polling place
             
         } else if segue.identifier == "showCandidate" {
             
-            segue.destinationViewController as! CandidateViewController
+            let index = self.electionTable.indexPathForCell(sender as! UITableViewCell)
+            let vc = segue.destinationViewController as! CandidateViewController
+                
+            vc.candidate = election!.candidates[(index?.row)! - 1]
+                
             
-            // TODO: Pass in candidate info
+            
         }
     }
     

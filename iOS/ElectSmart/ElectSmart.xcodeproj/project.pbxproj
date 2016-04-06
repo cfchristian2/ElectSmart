@@ -14,6 +14,9 @@
 		01988CCF1CB34F1C008BE98B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01988CCC1CB34F1C008BE98B /* TwitterKitResources.bundle */; };
 		01988CD01CB34F1C008BE98B /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01988CCD1CB34F1C008BE98B /* TwitterCore.framework */; };
 		561CA3441CB231AB00CF776D /* PollingPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */; };
+		56458AB91CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56458AB81CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift */; };
+		56458ABB1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56458ABA1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift */; };
+		56458ABD1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56458ABC1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift */; };
 		5650D8E81CB2BB9900B8160A /* CandidateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5650D8E71CB2BB9900B8160A /* CandidateViewController.swift */; };
 		5683DA951CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683DA941CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift */; };
 		5683DA971CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683DA961CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift */; };
@@ -50,6 +53,9 @@
 		01988CCD1CB34F1C008BE98B /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		0786BC91F6E9AC5AC2B18D94 /* Pods_ElectSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElectSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingPlaceViewController.swift; sourceTree = "<group>"; };
+		56458AB81CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		56458ABA1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateBioTableViewCell.swift; sourceTree = "<group>"; };
+		56458ABC1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		5650D8E71CB2BB9900B8160A /* CandidateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateViewController.swift; sourceTree = "<group>"; };
 		5683DA941CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		5683DA961CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionCandidateTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,11 +164,14 @@
 				5683DA941CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift */,
 				5683DA961CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift */,
 				5650D8E71CB2BB9900B8160A /* CandidateViewController.swift */,
+				56458AB81CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift */,
+				56458ABA1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift */,
+				56458ABC1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift */,
 				561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */,
 				DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */,
 				DC2DE6F51CB4657800B50A42 /* CurrentEventsTableViewCell.swift */,
-				DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */,
 				DCEF880A1C8FA283005CAF6A /* Main.storyboard */,
+				DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */,
 				DCEF880D1C8FA283005CAF6A /* Assets.xcassets */,
 				DCEF880F1C8FA283005CAF6A /* LaunchScreen.storyboard */,
 				DCEF88121C8FA283005CAF6A /* Info.plist */,
@@ -312,18 +321,21 @@
 			files = (
 				568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */,
 				DC7CABDA1C966847009BB184 /* CurrentEventsTableViewController.swift in Sources */,
+				56458AB91CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift in Sources */,
 				DC2BBC251C9BC0DB00CB72AA /* HomeStoryTableViewController.swift in Sources */,
 				5683DA951CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift in Sources */,
 				DC7CABD81C966805009BB184 /* NewsStory.swift in Sources */,
 				5650D8E81CB2BB9900B8160A /* CandidateViewController.swift in Sources */,
 				DC2DE6F61CB4657800B50A42 /* CurrentEventsTableViewCell.swift in Sources */,
 				DC2DE6F21CB459BF00B50A42 /* HomeStoryTableViewCell.swift in Sources */,
+				56458ABB1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift in Sources */,
 				5683DA971CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift in Sources */,
 				DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */,
 				DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */,
 				DC7CABAC1C961FC8009BB184 /* AddressViewController.swift in Sources */,
 				DC7CABDD1C96793D009BB184 /* NewsStoryViewController.swift in Sources */,
 				DC7CABB41C963DA0009BB184 /* MainTabBarController.swift in Sources */,
+				56458ABD1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift in Sources */,
 				DC9215001C9B9F580044BE91 /* Election.swift in Sources */,
 				DC9215021C9B9F8C0044BE91 /* Candidate.swift in Sources */,
 				DC9214FE1C9B92C00044BE91 /* SettingsTableViewController.swift in Sources */,

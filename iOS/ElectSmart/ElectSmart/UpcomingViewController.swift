@@ -18,10 +18,10 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
     var candidates1 = [Candidate]()
     var candidates2 = [Candidate]()
     
-    var bernie: Candidate = Candidate(title: "Bernie Sanders", meta: "", party: "Democrat", candidate_url: "", bio: "The man", photo: "")
-    var hillary: Candidate = Candidate(title: "Hillary Clinton", meta: "", party: "Democrat", candidate_url: "", bio: "She's definitely running", photo: "")
-    var donald: Candidate = Candidate(title: "Donald Drumpf", meta: "", party: "Republican", candidate_url: "", bio: "A terrible human being", photo: "")
-    var ted: Candidate = Candidate(title: "Ted Cruz", meta: "", party: "Republican", candidate_url: "", bio: "Maybe better than drumpf but probably not", photo: "")
+    var bernie: Candidate = Candidate(title: "Bernie Sanders", meta: "", party: "Democrat", candidate_url: "", bio: "The man", photo: "https://upload.wikimedia.org/wikipedia/commons/8/83/Bernie_Sanders_1991.jpg")
+    var hillary: Candidate = Candidate(title: "Hillary Clinton", meta: "", party: "Democrat", candidate_url: "", bio: "She's definitely running", photo: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Defense.gov_photo_essay_091203-N-0696M-239.jpg")
+    var donald: Candidate = Candidate(title: "Donald Drumpf", meta: "", party: "Republican", candidate_url: "", bio: "A terrible human being", photo: "https://pbs.twimg.com/profile_images/704163604703158272/LtrEadTR.jpg")
+    var ted: Candidate = Candidate(title: "Ted Cruz", meta: "", party: "Republican", candidate_url: "", bio: "Maybe better than drumpf but probably not", photo: "https://cdn.evbuc.com/eventlogos/4918511/tedcruz.jpg")
     
     var election1: Election?
     var election2: Election?

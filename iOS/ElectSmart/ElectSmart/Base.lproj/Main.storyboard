@@ -482,8 +482,141 @@
                     <view key="view" contentMode="scaleToFill" id="Agq-vu-LMC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kef-WZ-bnE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="candidateHeaderCell" rowHeight="164" id="ivD-UI-Rxp" customClass="CandidateHeaderTableViewCell" customModule="ElectSmart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="164"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ivD-UI-Rxp" id="tQr-zo-7F5">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="163.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candidate Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIx-qu-jsw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                    <color key="backgroundColor" red="0.92313467319999998" green="0.93635877729999994" blue="0.95273642020000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="bze-eF-kKO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cKv-Hm-4dq">
+                                                    <rect key="frame" x="0.0" y="43" width="600" height="204"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="204" id="df4-Ug-lQV"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qIx-qu-jsw" firstAttribute="leading" secondItem="tQr-zo-7F5" secondAttribute="leading" id="7GZ-e3-GLg"/>
+                                                <constraint firstItem="cKv-Hm-4dq" firstAttribute="leading" secondItem="qIx-qu-jsw" secondAttribute="leading" id="8dP-HY-8AO"/>
+                                                <constraint firstAttribute="trailing" secondItem="qIx-qu-jsw" secondAttribute="trailing" id="E9d-s8-eXi"/>
+                                                <constraint firstItem="cKv-Hm-4dq" firstAttribute="top" secondItem="qIx-qu-jsw" secondAttribute="bottom" id="GV7-TQ-ryM"/>
+                                                <constraint firstItem="qIx-qu-jsw" firstAttribute="top" secondItem="tQr-zo-7F5" secondAttribute="top" id="UTk-DK-bkS"/>
+                                                <constraint firstItem="cKv-Hm-4dq" firstAttribute="trailing" secondItem="qIx-qu-jsw" secondAttribute="trailing" id="k75-2F-vID"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="candidateImageView" destination="cKv-Hm-4dq" id="MJf-Hc-MNv"/>
+                                            <outlet property="candidateNameLabel" destination="qIx-qu-jsw" id="nM6-eB-IFR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bioCell" rowHeight="148" id="SZj-6u-bXV" customClass="CandidateBioTableViewCell" customModule="ElectSmart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="256" width="600" height="148"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SZj-6u-bXV" id="m6v-zL-C2m">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="147.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candidate Bio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxj-OR-94M">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                    <color key="backgroundColor" red="0.92313467319999998" green="0.93635877729999994" blue="0.95273642020000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="9mD-Ra-JZ7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-kX-ycL">
+                                                    <rect key="frame" x="0.0" y="43" width="600" height="237"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HvJ-kX-ycL" secondAttribute="bottom" constant="-8.5" id="6Cp-WY-ZRN"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rxj-OR-94M" secondAttribute="trailing" id="Bt4-nh-F0T"/>
+                                                <constraint firstItem="HvJ-kX-ycL" firstAttribute="leading" secondItem="Rxj-OR-94M" secondAttribute="leading" id="PsW-KO-5F8"/>
+                                                <constraint firstItem="HvJ-kX-ycL" firstAttribute="top" secondItem="Rxj-OR-94M" secondAttribute="bottom" id="Z4O-zE-QiG"/>
+                                                <constraint firstItem="Rxj-OR-94M" firstAttribute="top" secondItem="m6v-zL-C2m" secondAttribute="top" id="fqf-B8-UIi"/>
+                                                <constraint firstItem="HvJ-kX-ycL" firstAttribute="trailing" secondItem="Rxj-OR-94M" secondAttribute="trailing" id="wwv-Ze-wdM"/>
+                                                <constraint firstItem="Rxj-OR-94M" firstAttribute="leading" secondItem="m6v-zL-C2m" secondAttribute="leading" id="xLC-w6-9ll"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="candidateBioTextView" destination="HvJ-kX-ycL" id="eRN-DY-vqC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="196" id="d3O-3M-gSY" customClass="CandidateHistoryTableViewCell" customModule="ElectSmart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="404" width="600" height="196"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d3O-3M-gSY" id="UWP-Wt-cMe">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="195.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candidate History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdz-kN-sHu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                    <color key="backgroundColor" red="0.92313467319999998" green="0.93635877729999994" blue="0.95273642020000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="PH1-gi-g3j"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZUz-uF-Akh">
+                                                    <rect key="frame" x="0.0" y="43" width="600" height="305"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fdz-kN-sHu" firstAttribute="top" secondItem="UWP-Wt-cMe" secondAttribute="top" id="J4e-8o-138"/>
+                                                <constraint firstItem="ZUz-uF-Akh" firstAttribute="trailing" secondItem="fdz-kN-sHu" secondAttribute="trailing" id="MTo-Fz-h9G"/>
+                                                <constraint firstItem="ZUz-uF-Akh" firstAttribute="top" secondItem="fdz-kN-sHu" secondAttribute="bottom" id="aat-yv-86s"/>
+                                                <constraint firstItem="fdz-kN-sHu" firstAttribute="leading" secondItem="UWP-Wt-cMe" secondAttribute="leading" id="b5U-TE-roU"/>
+                                                <constraint firstAttribute="trailing" secondItem="fdz-kN-sHu" secondAttribute="trailing" id="dhx-jG-8AJ"/>
+                                                <constraint firstItem="ZUz-uF-Akh" firstAttribute="leading" secondItem="fdz-kN-sHu" secondAttribute="leading" id="hkD-Y5-UtP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZUz-uF-Akh" secondAttribute="bottom" constant="-8.5" id="phW-k3-Veq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="candidateHistoryTextView" destination="ZUz-uF-Akh" id="nvc-99-iSt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kef-WZ-bnE" secondAttribute="trailing" id="D4f-jv-Mnv"/>
+                            <constraint firstAttribute="bottom" secondItem="kef-WZ-bnE" secondAttribute="bottom" id="KdV-cg-SUF"/>
+                            <constraint firstItem="kef-WZ-bnE" firstAttribute="top" secondItem="Agq-vu-LMC" secondAttribute="top" id="fcD-A8-oQa"/>
+                            <constraint firstItem="kef-WZ-bnE" firstAttribute="leading" secondItem="Agq-vu-LMC" secondAttribute="leading" id="jKz-ws-swA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="candidateTable" destination="kef-WZ-bnE" id="Vrm-0u-oJS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAX-Ei-fic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
