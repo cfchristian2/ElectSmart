@@ -101,6 +101,7 @@ class HomeViewController: UIViewController {
             
             vc.electionDate = nextEventDateLabel.text
             vc.electionTitle = nextEventTitleButton.titleLabel?.text
+            vc.election = nextEvent
         
         } else {
             let vc = segue.destinationViewController as! HomeStoryTableViewController
