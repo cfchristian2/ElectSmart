@@ -33,18 +33,20 @@ class ElectSmartUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let app = XCUIApplication()
-        
-        let element = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element
-        element.tap()
-        element.childrenMatchingType(.Button).matchingIdentifier("Continue").elementBoundByIndex(1).tap()
-        
         let tabBarsQuery = app.tabBars
         tabBarsQuery.buttons["Upcoming"].tap()
         tabBarsQuery.buttons["Current Events"].tap()
         tabBarsQuery.buttons["Settings"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.buttons["Set New Location"].tap()
+        app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.childrenMatchingType(.Button).matchingIdentifier("Continue").elementBoundByIndex(1).tap()
         tabBarsQuery.buttons["Home"].tap()
-        app.tables.childrenMatchingType(.Cell).elementBoundByIndex(1).staticTexts["News Story Content"].tap()
-        //app.navigationBars["Home"].buttons["Home"].tap()
+        tablesQuery.staticTexts["  Bernie Sanders\U2019 Supporters Overwhelmingly Refuse To Support Hillary Clinton If She Wins Democratic Nomination"].pressForDuration(0.6);
+        
+        //XCTAssertTrue(table.exists)
+        //XCTAssertEqual(table.cells.count, 10)
+        
         
     }
     
