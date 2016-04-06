@@ -53,7 +53,11 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        new BingTask(view).execute();
+        try{
+            new BingTask(view).execute();
+        }catch (NullPointerException ex){
+            String here = "1";
+        }
         return view;
     }
 
