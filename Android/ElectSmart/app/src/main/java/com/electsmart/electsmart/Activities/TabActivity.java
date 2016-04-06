@@ -111,15 +111,20 @@ public class TabActivity extends AppCompatActivity {
                 fragmentClass = HomeFragment.class;
                 break;
             case R.id.nav_second_fragment:
-                fragmentClass = null;
+                Intent quizIntent = new Intent(TabActivity.this, QuizActivity.class);
+                startActivity(quizIntent);
+                mDrawer.closeDrawers();
+                // activityClass= null;
                 break;
             case R.id.nav_third_fragment:
-                fragmentClass = null;
+                Intent forumIntent = new Intent(TabActivity.this, Forum.class);
+                startActivity(forumIntent);
+                mDrawer.closeDrawers();
+                //activityClass = null;
                 break;
             default:
                 fragmentClass = HomeFragment.class;
                 break;
-
         }
 
         try {

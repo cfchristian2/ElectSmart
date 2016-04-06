@@ -1,23 +1,18 @@
 package com.electsmart.electsmart.Fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
-import com.electsmart.electsmart.API.Faroo.FarooAPI;
-import com.electsmart.electsmart.API.Faroo.FarooService;
-import com.electsmart.electsmart.API.Faroo.Models.FarooResponse;
+import com.electsmart.electsmart.API.bing.BingTask;
+import com.electsmart.electsmart.API.bing.Models.BingSearchResults;
 import com.electsmart.electsmart.Adapters.CurrentEventsAdapter;
 import com.electsmart.electsmart.R;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CurrentEventsFragment extends ListFragment {
 
@@ -38,25 +33,10 @@ public class CurrentEventsFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FarooAPI service = FarooService.createApiInstance();
-        Call<FarooResponse> call = service.getNews();
-        call.enqueue(new Callback<FarooResponse>() {
-            @Override
-            public void onResponse(Call<FarooResponse> call, Response<FarooResponse> response) {
-                int statusCode = response.code();
-                FarooResponse farooResponse = response.body();
-                adapter = new CurrentEventsAdapter(getContext(), farooResponse.getFarooArticles());
-                setListAdapter(adapter);
-
-            }
-
-            @Override
-            public void onFailure(Call<FarooResponse> call, Throwable t) {
-
-            }
-        });
-        setListAdapter(adapter);
-
+        List<BingSearchResults.Result> results = new ArrayList<>();
+        CurrentEventsAdapter currentEventsAdapter = new CurrentEventsAdapter(this.getContext(), results);
+        setListAdapter(currentEventsAdapter);
+        new BingTask(currentEventsAdapter).execute();
     }
 
     @Override
@@ -75,14 +55,4 @@ public class CurrentEventsFragment extends ListFragment {
 
     }
 
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        ArticleFragment articleFragment = new ArticleFragment();
-        //fragmentTransaction.remove(R.id.main_content, )
-        fragmentTransaction.replace(R.id.main_content, articleFragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-    }
 }

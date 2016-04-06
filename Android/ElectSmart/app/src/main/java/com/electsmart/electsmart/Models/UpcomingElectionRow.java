@@ -19,6 +19,10 @@ public class UpcomingElectionRow {
         this.right = electionRight;
     }
 
+    public boolean equals(Object obj){
+        return (this.left.equals(((UpcomingElectionRow) obj).left) && this.right.equals(((UpcomingElectionRow) obj).right));
+    }
+
     public Election getLeft(){
         return this.left;
     }

@@ -1,14 +1,16 @@
 package com.electsmart.electsmart.Adapters;
 
 import android.app.Activity;
+
+import android.content.Intent;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.electsmart.electsmart.Activities.ElectionActivity;
 import com.electsmart.electsmart.Models.UpcomingElectionRow;
 import com.electsmart.electsmart.R;
 
@@ -17,7 +19,7 @@ import java.util.List;
 /**
  * Created by brand on 3/11/2016.
  */
-public class UpcomingElectionsAdapter extends BaseAdapter {
+public class UpcomingElectionsAdapter extends BaseAdapter{
     Context context;
     List<UpcomingElectionRow> upcomingElectionList;
 
@@ -50,7 +52,6 @@ public class UpcomingElectionsAdapter extends BaseAdapter {
             LayoutInflater mInflater = (LayoutInflater) context
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = mInflater.inflate(R.layout.upcoming_elections_listview_row, null);
-            //convertView = LayoutInflater.from(getContext()).inflate(R.layout.upcoming_elections_listview_row, parent, false);
         }
 
         TextView leftElectionDate = (TextView) convertView.findViewById(R.id.UpcomingElection_Calendar_Date_Left);
@@ -69,25 +70,18 @@ public class UpcomingElectionsAdapter extends BaseAdapter {
         convertView.findViewById(R.id.leftElection).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Do your work here
-                //Toast.makeText(context, "Left Side of " + row + "th element clicked", Toast.LENGTH_SHORT).show();
-                //ElectionFragment nextFrag = new ElectionFragment();
-
-                //EventBus.getDefault().post(new ElectionMessage(row.getLeft()));
-                //((Activity) context).getFragmentManager().beginTransaction()
-                //       .replace(R.id.container, nextFrag, "UpcomingElectionsFragment")
-                //.addToBackStack(null)
-                //.commit();
-
-
+                Intent intent = new Intent(context, ElectionActivity.class);
+                intent.putExtra("election", row.getLeft());
+                ((Activity) context).startActivity(intent);
             }
         });
 
         convertView.findViewById(R.id.rightElection).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Do your work here
-                Toast.makeText(context, "Right Side of " + row + "th element clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, ElectionActivity.class);
+                intent.putExtra("election", row.getRight());
+                ((Activity) context).startActivity(intent);
             }
         });
         return convertView;
