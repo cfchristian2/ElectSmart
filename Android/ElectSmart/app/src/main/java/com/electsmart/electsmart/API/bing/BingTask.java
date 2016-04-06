@@ -16,6 +16,7 @@ import com.google.gson.GsonBuilder;
 import org.apache.commons.codec.binary.Base64;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Scott on 4/4/2016.
@@ -55,33 +56,45 @@ public class BingTask extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String result) {
         try {
             // Will update UI here
-            String theResponseFromBing = result;
-
-            Gson gson = (new GsonBuilder()).create();
-            BingSearchResults bingResult = gson.fromJson(result, BingSearchResults.class);
-            if(isHome){
-                String eventTitle = bingResult.d.results[0].Title;
-                String eventDescription = bingResult.d.results[0].Description;
-                TextView titleText = (TextView) context.findViewById(R.id.EventTitleText);
-                titleText.setText(eventTitle);
-                TextView description = (TextView) context.findViewById(R.id.MainEventDescription);
-                description.setText(eventDescription);
-            }else{
-                ArrayList<BingSearchResults.Result> resultsConverted = new ArrayList<>();
-                BingSearchResults.Result[] results = bingResult.d.results;
-                for(int i = 1; i < results.length; i++){
-                    resultsConverted.add(results[i]);
+            if(result != null){
+                Gson gson = (new GsonBuilder()).create();
+                BingSearchResults bingResult = gson.fromJson(result, BingSearchResults.class);
+                if(isHome){
+                    String eventTitle = bingResult.d.results[0].Title;
+                    String eventDescription = bingResult.d.results[0].Description;
+                    TextView titleText = (TextView) context.findViewById(R.id.EventTitleText);
+                    titleText.setText(eventTitle);
+                    TextView description = (TextView) context.findViewById(R.id.MainEventDescription);
+                    description.setText(eventDescription);
+                }else{
+                    ArrayList<BingSearchResults.Result> resultsConverted = new ArrayList<>();
+                    BingSearchResults.Result[] results = bingResult.d.results;
+                    for(int i = 1; i < results.length; i++){
+                        resultsConverted.add(results[i]);
+                    }
+                    currentEventsAdapter.clear();
+                    currentEventsAdapter.addAll(resultsConverted);
+                    currentEventsAdapter.notifyDataSetChanged();
                 }
-                ArrayList<BingSearchResults.Result> results1 = resultsConverted;
-                currentEventsAdapter.clear();
-                currentEventsAdapter.addAll(resultsConverted);
-                currentEventsAdapter.notifyDataSetChanged();
+            }else{
+                if(isHome){
+                    TextView titleText = (TextView) context.findViewById(R.id.EventTitleText);
+                    titleText.setText(" ");
+                    TextView description = (TextView) context.findViewById(R.id.MainEventDescription);
+                    description.setText(" ");
+                }else{
+                    List<BingSearchResults.Result> results = new ArrayList<>();
+                    currentEventsAdapter.clear();
+                    currentEventsAdapter.addAll(results);
+                    currentEventsAdapter.notifyDataSetChanged();
+                }
+
             }
-
-
-        } catch(Exception e) {
+        } catch(NullPointerException e) {
             // if an exception occurred, show an error message
             Log.e(result.toString(), e.getMessage());
+
+            //throw new NullPointerException();
         }
     }
 
