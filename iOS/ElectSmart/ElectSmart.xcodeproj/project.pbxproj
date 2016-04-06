@@ -231,8 +231,8 @@
 				561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */,
 				DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */,
 				DC2DE6F51CB4657800B50A42 /* CurrentEventsTableViewCell.swift */,
-				DCEF880A1C8FA283005CAF6A /* Main.storyboard */,
 				DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */,
+				DCEF880A1C8FA283005CAF6A /* Main.storyboard */,
 				DCEF880D1C8FA283005CAF6A /* Assets.xcassets */,
 				DCEF880F1C8FA283005CAF6A /* LaunchScreen.storyboard */,
 				DCEF88121C8FA283005CAF6A /* Info.plist */,
@@ -693,6 +693,7 @@
 				01DA1FD51CB4A578002B0C58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01DA1FE21CB4BC2F002B0C58 /* Build configuration list for PBXNativeTarget "ElectSmartUITests" */ = {
 			isa = XCConfigurationList;
@@ -701,6 +702,7 @@
 				01DA1FE41CB4BC2F002B0C58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCEF87FC1C8FA283005CAF6A /* Build configuration list for PBXProject "ElectSmart" */ = {
 			isa = XCConfigurationList;
