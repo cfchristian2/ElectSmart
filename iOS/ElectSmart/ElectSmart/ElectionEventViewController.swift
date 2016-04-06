@@ -22,6 +22,7 @@ class ElectionEventViewController: UIViewController, UITableViewDelegate, UITabl
         electionTable.dataSource = self
         electionTable.delegate = self
 
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,13 +101,12 @@ class ElectionEventViewController: UIViewController, UITableViewDelegate, UITabl
             
         } else if segue.identifier == "showCandidate" {
             
-            let index = self.electionTable.indexPathForCell(sender as! UITableViewCell)
-            let vc = segue.destinationViewController as! CandidateViewController
-                
-            vc.candidate = election!.candidates[(index?.row)! - 1]
-                
+            let detScene = segue.destinationViewController as! CandidateViewController
             
-            
+            if let indexPath = self.electionTable.indexPathForSelectedRow {
+                let selectedCandidate = self.election?.candidates[indexPath.row-1]
+                detScene.candidate = selectedCandidate
+            }
         }
     }
     

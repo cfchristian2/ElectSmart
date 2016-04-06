@@ -12,6 +12,11 @@ class CandidateViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var candidateTable: UITableView!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var partyLabel: UILabel!
+    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    
     var candidate: Candidate?
     
     override func viewDidLoad() {
