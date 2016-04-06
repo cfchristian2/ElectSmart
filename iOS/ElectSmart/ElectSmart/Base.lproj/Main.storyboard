@@ -211,11 +211,11 @@
                         <viewControllerLayoutGuide type="bottom" id="IHn-uH-OEW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6dq-8R-c4p">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="385"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhp-sB-ejw">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="385"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
@@ -1072,7 +1072,13 @@
         <scene sceneID="kNr-7y-wU8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HnS-eq-N6y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="J2t-TT-1If"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="J2t-TT-1If">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.10980392247438431" green="0.54901963472366333" blue="0.54509806632995605" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jOA-uD-AwK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1097,7 +1103,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="odS-iO-oIc"/>
+        <segue reference="gDX-sk-bGt"/>
         <segue reference="kIs-hp-1WO"/>
-        <segue reference="aio-kD-gFl"/>
     </inferredMetricsTieBreakers>
 </document>
