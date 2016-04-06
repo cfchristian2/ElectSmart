@@ -36,7 +36,6 @@ public class CurrentEventsAdapter extends ArrayAdapter<BingSearchResults.Result>
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.current_events_list_item, parent, false);
         }
-
         RelativeLayout currentEventsArticlePeeker = (RelativeLayout) convertView.findViewById(R.id.currentEventsArticlePeek);
         currentEventsArticlePeeker.setOnClickListener(new View.OnClickListener() {
             @Override

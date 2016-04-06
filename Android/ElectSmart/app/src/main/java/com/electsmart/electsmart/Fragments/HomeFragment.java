@@ -54,24 +54,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         new BingTask(view).execute();
-
-
-        /*FarooAPI service = FarooService.createApiInstance();
-        Call<FarooResponse> call = service.getHeadNews();
-        call.enqueue(new Callback<FarooResponse>() {
-            @Override
-            public void onResponse(Call<FarooResponse> call, final Response<FarooResponse> response) {
-                int statusCode = response.code();
-                farooResponse = response.body();
-                final FarooArticle article = farooResponse.getFarooArticles().get(0);
-                setupMainEventArticleUI(article);
-            }
-
-            @Override
-            public void onFailure(Call<FarooResponse> call, Throwable t) {
-
-            }
-        });*/
         return view;
     }
 
