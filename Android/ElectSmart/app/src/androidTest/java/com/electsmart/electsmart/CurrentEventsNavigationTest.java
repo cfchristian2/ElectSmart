@@ -60,7 +60,7 @@ public class CurrentEventsNavigationTest extends ActivityUnitTestCase<TabActivit
         onView(Matchers.allOf(ViewMatchers.isDescendantOfA(ViewMatchers.withId(R.id.tabs)), ViewMatchers.withText("Current Events")))
                 .perform(ViewActions.click());
 
-        Espresso.onData(Matchers.allOf()).inAdapterView(ViewMatchers.withId(R.id.currentEventsList))
+        Espresso.onData(Matchers.allOf()).inAdapterView(ViewMatchers.withId(R.id.upcomingElectionList))
                 .atPosition(0)
                 .perform(ViewActions.click());
     }
