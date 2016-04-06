@@ -13,4 +13,6 @@ class UpcomingElectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var date: UILabel!
+    
+    var election: Election!
 }

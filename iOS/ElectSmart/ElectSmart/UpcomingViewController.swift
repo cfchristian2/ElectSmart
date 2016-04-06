@@ -13,9 +13,29 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
     //Collection view containing cells of elections
     @IBOutlet weak var collectionView: UICollectionView!
     
-    //TODO: fill in with election data
+    //TODO: fill in with election data somewhere
+    var elections = [Election]()
+    var candidates1 = [Candidate]()
+    var candidates2 = [Candidate]()
+    
+    var bernie: Candidate = Candidate(title: "Bernie Sanders", meta: "", party: "Democrat", candidate_url: "", bio: "The man", photo: "")
+    var hillary: Candidate = Candidate(title: "Hillary Clinton", meta: "", party: "Democrat", candidate_url: "", bio: "She's definitely running", photo: "")
+    var donald: Candidate = Candidate(title: "Donald Drumpf", meta: "", party: "Republican", candidate_url: "", bio: "A terrible human being", photo: "")
+    var ted: Candidate = Candidate(title: "Ted Cruz", meta: "", party: "Republican", candidate_url: "", bio: "Maybe better than drumpf but probably not", photo: "")
+    
+    var election1: Election?
+    var election2: Election?
+    var election3: Election?
+    
+    
+    
+    
+    // TODO: Delete
     let titles = ["Ohio Caucus", "Wisconsin Caucus", "Presidential Election"]
     let dates = ["March 15", "April 5", "November 8"]
+    //
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +46,24 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         collectionView.dataSource = self
+        
+        // TEST
+        candidates1.append(bernie)
+        candidates1.append(hillary)
+        candidates1.append(donald)
+        candidates1.append(ted)
+        
+        candidates2.append(bernie)
+        candidates2.append(ted)
+        
+        election1 = Election(title: "Ohio Caucus", date: NSDate.init(), candidates: candidates1, meta: "")
+        election2 = Election(title: "Wisconsin Caucus", date: NSDate.init(), candidates: candidates1, meta: "")
+        election3 = Election(title: "Presidential Election" , date: NSDate.init(), candidates: candidates2, meta: "")
+        
+        elections.append(election1!)
+        elections.append(election2!)
+        elections.append(election3!)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,13 +71,13 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
+        return elections.count
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! UpcomingElectionCollectionViewCell
         
-        cell.title?.text = self.titles[indexPath.row]
+        cell.title?.text = self.elections[indexPath.row].title
         cell.date?.text = self.dates[indexPath.row]
         
         return cell
@@ -53,11 +91,13 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
         if segue.identifier == "showElection" {
             let indexPaths = self.collectionView!.indexPathsForSelectedItems()!
             let indexPath = indexPaths[0] as NSIndexPath
-            
             let vc = segue.destinationViewController as! ElectionEventViewController
             
             
             //TODO: Setup election view
+            
+            vc.election = elections[indexPath.row]
+            
         }
     }
 
