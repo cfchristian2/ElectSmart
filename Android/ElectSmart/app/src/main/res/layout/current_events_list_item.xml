@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</LinearLayout>-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="250dp"
@@ -19,7 +14,7 @@
         android:layout_height="fill_parent"
         android:layout_marginBottom="8dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/drumpf"/>
+        android:src="@drawable/redbluegrad"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -27,7 +22,8 @@
         android:layout_gravity="bottom"
         android:orientation="vertical"
         android:background="#f0f5f5f5"
-        android:layout_alignBottom="@+id/sourceImage"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
         <TextView
@@ -40,9 +36,31 @@
             android:paddingBottom="15dp"
             android:textColor="@color/colorSecondaryText"
             android:textSize="20sp"
-            android:text="Drumpf"
             />
 
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="#f0f5f5f5"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/sourceImage"
+        android:alpha="0.8">
+        <TextView
+            android:id="@+id/EventDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="17sp"
+            />
+    </LinearLayout>
+
 </RelativeLayout>

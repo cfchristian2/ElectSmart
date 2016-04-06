@@ -20,7 +20,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Candidate Name"
                     android:paddingBottom="15dp"
                     android:paddingTop="15dp"
                     android:id="@+id/Candidate_Name"

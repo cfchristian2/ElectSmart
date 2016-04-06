@@ -14,7 +14,7 @@ public interface FarooAPI {
     @GET("/api?q=&start=1&length=10&l=en&src=news&f=json&key=1wh189GsSHUhjtseYvz5LtCNMPU_")
     Call<FarooResponse> getNews();
 
-    @Headers("Accept: applicatian/json")
+    @Headers("Accept: application/json")
     @GET("/api?q=&start=1&length=1&l=en&src=news&f=json&key=1wh189GsSHUhjtseYvz5LtCNMPU_")
     Call<FarooResponse> getHeadNews();
 }

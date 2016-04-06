@@ -1,11 +1,12 @@
 package com.electsmart.electsmart.API.GoogleCivicInfo.Models;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Josh Kasuboski on 4/2/16.
  */
-public class Candidate {
+public class Candidate implements Serializable{
     private String name;
     private String party;
     private String candidateUrl;
