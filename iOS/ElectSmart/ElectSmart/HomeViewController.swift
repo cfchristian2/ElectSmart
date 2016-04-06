@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
         df.timeStyle = .NoStyle
         return df
     }()
+   
     
     
     
@@ -36,11 +37,6 @@ class HomeViewController: UIViewController {
         
         getNextEvent()
         
-        //Testing for JSON stuff
-        //let testAPI:BingTask = BingTask()
-        //testAPI.makeNewsRequest()
-        
-        //
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,20 +65,32 @@ class HomeViewController: UIViewController {
     //let source: String
     //let description: String
     
+    
+    /*
     private func getStories() {
+        
+        
         let testAPI:BingTask = BingTask()
-        //testAPI.makeNewsRequest()
         
         
-          stories = testAPI.makeNewsRequest()
-        for story in stories{
-          //  print(story.description)
+        
+        testAPI.makeRequest() { responseObject, error in
+            //print(responseObject)
+            for story in responseObject! {
+                self.stories.append(story)
+            }
+            
+            print(self.stories)
+            
+            
         }
         
-        stories.append(NewsStory(title: "Blah", ID: "1", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
-        stories.append(NewsStory(title: "Blah", ID: "2", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
-        stories.append(NewsStory(title: "Blah", ID: "3", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
+        
+        //stories.append(NewsStory(title: "Blah", ID: "1", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
+        //stories.append(NewsStory(title: "Blah", ID: "2", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
+        //stories.append(NewsStory(title: "Blah", ID: "3", url: "www.apple.com", date: NSDate(timeIntervalSinceNow: 20000), source: "Drumpf Media", description: "ds sadsads dsads sad sa dsa dsadsddsd sdsd"))
     }
+*/
     
     // MARK: Navigation
     
@@ -97,7 +105,27 @@ class HomeViewController: UIViewController {
         } else {
             let vc = segue.destinationViewController as! HomeStoryTableViewController
             
-            getStories()
+            let testAPI:BingTask = BingTask()
+            
+            
+            
+            testAPI.makeRequest() { responseObject, error in
+                //print(responseObject)
+                if (responseObject?.count > 0){
+                for story in responseObject! {
+                    self.stories.append(story)
+                }
+                
+                    //debug stories
+                //print(self.stories)
+                vc.stories = self.stories
+                vc.tableView.reloadData()
+                } else {
+                    print("We didn't get the right data returned")
+                }
+                
+                
+            }
             
             vc.stories = stories
             vc.tableView.reloadData()

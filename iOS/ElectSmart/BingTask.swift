@@ -48,7 +48,11 @@ public class BingTask{
     //let source: String
     //let description: String
     
-    func makeNewsRequest() -> [NewsStory] {
+    func makeRequest(completionHandler: ([NewsStory]?, String?) -> ()) {
+        makeNewsRequest(completionHandler)
+    }
+    
+    func makeNewsRequest(completionHandler: ([NewsStory]?, String?) -> ()) {
         
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
@@ -60,6 +64,8 @@ public class BingTask{
             .responseJSON{ response in
                 guard response.2.error == nil else {
                     print("error" + response.2.error.debugDescription + " code was " + response.2.debugDescription)
+                    
+                    completionHandler(nil, response.2.debugDescription)
                     return
                 }
                 
@@ -77,32 +83,27 @@ public class BingTask{
                         let title = item["Title"].stringValue
                         let ID = item["ID"].stringValue
                         let url = item["Url"].stringValue
-                        //date has 10 useful chars
                         let dateText:String = item["Date"].stringValue
-                        //let relevantDT = (dateText as NSString).substringToIndex(10)
                         let date: NSDate = formatter.dateFromString(dateText)!
                         let source = item["Source"].stringValue
                         let description = item["Description"].stringValue
                         
-                        
-                        
-                        
-                        
-                        //let newStory = NewsStory(title: title, ID: ID, url: url, date: date, source: source, description: description)
-                        
                         stories.append(NewsStory(title: title, ID: ID, url: url, date: date, source: source, description: description))
-                        print(title)
+                       /* print(title)
                         print(ID)
                         print(url)
                         print(date)
                         print(source)
-                        print(description)
+                        print(description)*/
                         
                     }
+                   
+                    
                 }
+                    completionHandler(stories as? [NewsStory], nil)
                 
                 }
-        return stories
+        
     }
     
     
