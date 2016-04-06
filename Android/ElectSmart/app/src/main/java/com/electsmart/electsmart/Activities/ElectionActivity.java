@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.test.InstrumentationTestCase;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ public class ElectionActivity extends AppCompatActivity {
     ElectionAdapter adapter;
     View rootView;
     ExpandableListView expListView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

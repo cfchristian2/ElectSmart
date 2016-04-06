@@ -54,4 +54,16 @@ public class Election implements Serializable{
     public HashMap<String, List<Candidate>> getMap(){
         return candidatePositionMap;
     }
+    public boolean equals(Object obj){
+        Election e = (Election) obj;
+        if(this.day == e.getDay() &&
+                this.year == e.getYear() &&
+                this.month == e.getMonth() &&
+                this.id == e.getId() &&
+                this.name == e.getName()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
