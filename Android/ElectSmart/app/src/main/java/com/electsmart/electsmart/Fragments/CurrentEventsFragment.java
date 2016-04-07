@@ -5,7 +5,6 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
 
 import com.electsmart.electsmart.API.bing.BingTask;
 import com.electsmart.electsmart.API.bing.Models.BingSearchResults;
@@ -36,8 +35,8 @@ public class CurrentEventsFragment extends ListFragment {
         super.onCreate(savedInstanceState);
         List<BingSearchResults.Result> results = new ArrayList<>();
         CurrentEventsAdapter currentEventsAdapter = new CurrentEventsAdapter(this.getContext(), results);
-        SearchView search = (SearchView) getView().findViewById(R.id.queryNews);
-        String query = search.getQuery().toString();
+        //SearchView search = (SearchView) getView().findViewById(R.id.queryNews);
+        //String query = search.getQuery().toString();
         setListAdapter(currentEventsAdapter);
         new BingTask(currentEventsAdapter).execute();
     }
