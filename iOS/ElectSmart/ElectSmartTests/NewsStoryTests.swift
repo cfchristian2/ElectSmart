@@ -40,11 +40,11 @@ class NewsStoryTests: XCTestCase {
         let expectedDescription = "Awesome Story"
         
         XCTAssertEqual(expectedTitle, testStory?.title, "the title should be \"This is a News Story\"")
-        XCTAssertEqual(expectedId, testStory?.ID, "the title should be \"12345\"")
-        XCTAssertEqual(expectedUrl, testStory?.url, "the title should be \"http://www.apple.com\"")
-        XCTAssertEqual(expectedDate, testStory?.date, "the title should be 10000000 since 1970")
-        XCTAssertEqual(expectedSource, testStory?.source, "the title should be \"Apple\"")
-        XCTAssertEqual(expectedDescription, testStory?.description, "the title should be \"Awesome Story\"")
+        XCTAssertEqual(expectedId, testStory?.ID, "the ID should be \"12345\"")
+        XCTAssertEqual(expectedUrl, testStory?.url, "the URL should be \"http://www.apple.com\"")
+        XCTAssertEqual(expectedDate, testStory?.date, "the date should be 10000000 since 1970")
+        XCTAssertEqual(expectedSource, testStory?.source, "the source should be \"Apple\"")
+        XCTAssertEqual(expectedDescription, testStory?.description, "the description should be \"Awesome Story\"")
     }
 
     func testPerformanceExample() {
