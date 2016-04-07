@@ -31,10 +31,15 @@ class CandidateViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goToDiscussionForumButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("goToDiscussionForum", sender: self)
+    }
+    
+    
     // MARK: Table View
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -56,7 +61,7 @@ class CandidateViewController: UIViewController, UITableViewDelegate, UITableVie
             
             return cell
             
-        } else {
+        } else if (indexPath.row == 2) {
             
             let cell = tableView.dequeueReusableCellWithIdentifier("historyCell", forIndexPath: indexPath) as! CandidateHistoryTableViewCell
             
@@ -64,6 +69,13 @@ class CandidateViewController: UIViewController, UITableViewDelegate, UITableVie
             
             return cell
             
+        } else {
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("discussionCell", forIndexPath: indexPath)
+            
+            // configure cell here
+            
+            return cell
         }
     }
     
