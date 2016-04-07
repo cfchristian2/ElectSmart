@@ -122,6 +122,9 @@ public class TabActivity extends AppCompatActivity {
                 mDrawer.closeDrawers();
                 //activityClass = null;
                 break;
+            case R.id.nav_fourth_fragment:
+                Intent candidatesListIntent = new Intent(TabActivity.this, CandidatesActivity.class);
+                startActivity(candidatesListIntent);
             default:
                 fragmentClass = HomeFragment.class;
                 break;

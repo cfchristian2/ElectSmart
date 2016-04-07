@@ -1,30 +1,19 @@
 package com.electsmart.electsmart.Activities;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.electsmart.electsmart.API.GoogleCivicInfo.Models.Candidate;
 import com.electsmart.electsmart.Adapters.ElectionAdapter;
 import com.electsmart.electsmart.DownloadImageTask;
-import com.electsmart.electsmart.Models.Election;
 import com.electsmart.electsmart.R;
-
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class CandidateActivity extends AppCompatActivity {
 
@@ -46,6 +35,15 @@ public class CandidateActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.Candidate_Name)).setText(candidate.getName());
 
         new DownloadImageTask(((ImageView) findViewById(R.id.CandidatePhoto))).execute(candidate.getPhotoUrl());
+
+        ImageButton candidateButton = (ImageButton) findViewById(R.id.candidateForum);
+        candidateButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(v.getContext(), Forum.class);
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 }
 

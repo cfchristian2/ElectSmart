@@ -37,7 +37,6 @@
             android:label="@string/title_activity_article"
             android:theme="@style/AppTheme" />
         <activity android:name=".Activities.SettingsActivity" />
-
         <activity
             android:name=".Activities.Forum"
             android:label="@string/title_activity_forum"
@@ -63,6 +62,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.electsmart.electsmart.Activities.Forum" />
         </activity>
+        <activity
+            android:name=".Activities.CandidatesActivity"
+            android:label="@string/title_activity_candidates"></activity>
     </application>
 
 </manifest>
