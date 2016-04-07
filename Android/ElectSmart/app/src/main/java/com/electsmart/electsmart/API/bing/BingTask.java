@@ -1,9 +1,12 @@
 package com.electsmart.electsmart.API.bing;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.electsmart.electsmart.API.bing.Models.BingSearchResults;
@@ -60,10 +63,19 @@ public class BingTask extends AsyncTask<Void, Void, String> {
                 Gson gson = (new GsonBuilder()).create();
                 BingSearchResults bingResult = gson.fromJson(result, BingSearchResults.class);
                 if(isHome){
-                    BingSearchResults.Result mainEventResult = bingResult.d.results[0];
+                    final BingSearchResults.Result mainEventResult = bingResult.d.results[0];
                     String eventTitle = mainEventResult.Title;
                     String eventDescription = mainEventResult.Description;
                     HandleSetupForHomeMainEvent(eventTitle, eventDescription);
+                    RelativeLayout mainEventArticlePeeker = (RelativeLayout) context.findViewById(R.id.MainEventPeek);
+                    mainEventArticlePeeker.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Uri uri = Uri.parse(mainEventResult.Url);
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            context.getContext().startActivity(intent);
+                        }
+                    });
                 }else{
                     List<BingSearchResults.Result> resultsConverted = new ArrayList<>();
                     BingSearchResults.Result[] results = bingResult.d.results;
@@ -92,6 +104,7 @@ public class BingTask extends AsyncTask<Void, Void, String> {
         titleText.setText(eventTitle);
         TextView descriptionText = (TextView) context.findViewById(R.id.MainEventDescription);
         descriptionText.setText(eventDescription);
+
     }
 
     private void HandleCurrentEventsAdapterSetup(List<BingSearchResults.Result> resultsConverted) {
