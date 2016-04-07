@@ -30,7 +30,7 @@ class CandidateTests: XCTestCase {
         super.tearDown()
     }
 
-    func testExample() {
+    func testInit() {
         let expectedTitle = "Hillz"
         let expectedMeta = "Ready4Hillary"
         let expectedParty = "Democrat"
