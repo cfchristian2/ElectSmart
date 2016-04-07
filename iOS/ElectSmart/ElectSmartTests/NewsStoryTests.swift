@@ -1,6 +1,6 @@
 //
 //  NewsStoryTests.swift
-//  ElectSmart
+//  ElectSmartTests
 //
 //  Created by Stephen Gaschignard on 4/6/16.
 //  Copyright © 2016 Stephen Gaschignard. All rights reserved.
@@ -16,13 +16,12 @@ class NewsStoryTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        testStory = NewsStory(
-            title: "This is a News Story",
-            ID: "12345",
-            url: "http://www.apple.com",
-            date: NSDate(timeIntervalSince1970: 10000000),
-            source: "Apple",
-            description: "Awesome Story")
+        testStory = NewsStory(title: "This is a News Story",
+                              ID: "12345",
+                              url: "http://www.apple.com",
+                              date: NSDate(timeIntervalSince1970: 10000000),
+                              source: "Apple",
+                              description: "Awesome Story")
     }
     
     override func tearDown() {

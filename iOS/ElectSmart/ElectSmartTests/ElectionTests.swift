@@ -1,6 +1,6 @@
 //
 //  ElectionTests.swift
-//  ElectSmart
+//  ElectSmartTests
 //
 //  Created by Stephen Gaschignard on 4/6/16.
 //  Copyright © 2016 Stephen Gaschignard. All rights reserved.
@@ -23,11 +23,10 @@ class ElectionTests: XCTestCase {
         testCandidateForElection2 = Candidate(title: "Donald Drumpf", meta: "Clinton", party: "Republican", candidate_url: "http://www.apple.com", bio: "Test Bio", photo: "http://www.apple.com")
         testCandidatesForElection = [testCandidateForElection1!, testCandidateForElection2!]
         
-        testElection = Election(
-            title: "Test Election",
-            date: NSDate(timeIntervalSince1970: 10000000),
-            candidates: testCandidatesForElection!,
-            meta: "Some test metadata")
+        testElection = Election(title: "Test Election",
+                                date: NSDate(timeIntervalSince1970: 10000000),
+                                candidates: testCandidatesForElection!,
+                                meta: "Some test metadata")
     }
     
     override func tearDown() {
