@@ -13,6 +13,10 @@
 		01988CCE1CB34F1C008BE98B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01988CCB1CB34F1C008BE98B /* TwitterKit.framework */; };
 		01988CCF1CB34F1C008BE98B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01988CCC1CB34F1C008BE98B /* TwitterKitResources.bundle */; };
 		01988CD01CB34F1C008BE98B /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01988CCD1CB34F1C008BE98B /* TwitterCore.framework */; };
+		01AA1C141CB5FFD600463145 /* DisqusAuthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA1C101CB5FFD600463145 /* DisqusAuthenticateViewController.swift */; };
+		01AA1C151CB5FFD600463145 /* DisqusComentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA1C111CB5FFD600463145 /* DisqusComentsViewController.swift */; };
+		01AA1C161CB5FFD600463145 /* DisqusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA1C121CB5FFD600463145 /* DisqusManager.swift */; };
+		01AA1C171CB5FFD600463145 /* DisqusSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA1C131CB5FFD600463145 /* DisqusSettings.swift */; };
 		01DA1FD01CB4A578002B0C58 /* ElectSmartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1FCF1CB4A578002B0C58 /* ElectSmartTests.swift */; };
 		01DA1FDE1CB4BC2F002B0C58 /* ElectSmartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1FDD1CB4BC2F002B0C58 /* ElectSmartUITests.swift */; };
 		561CA3441CB231AB00CF776D /* PollingPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */; };
@@ -70,6 +74,10 @@
 		01988CCB1CB34F1C008BE98B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		01988CCC1CB34F1C008BE98B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		01988CCD1CB34F1C008BE98B /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		01AA1C101CB5FFD600463145 /* DisqusAuthenticateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisqusAuthenticateViewController.swift; sourceTree = "<group>"; };
+		01AA1C111CB5FFD600463145 /* DisqusComentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisqusComentsViewController.swift; sourceTree = "<group>"; };
+		01AA1C121CB5FFD600463145 /* DisqusManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisqusManager.swift; sourceTree = "<group>"; };
+		01AA1C131CB5FFD600463145 /* DisqusSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisqusSettings.swift; sourceTree = "<group>"; };
 		01DA1FCD1CB4A577002B0C58 /* ElectSmartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectSmartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01DA1FCF1CB4A578002B0C58 /* ElectSmartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectSmartTests.swift; sourceTree = "<group>"; };
 		01DA1FD11CB4A578002B0C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,6 +193,10 @@
 				01988CCD1CB34F1C008BE98B /* TwitterCore.framework */,
 				01988CC71CB34E0B008BE98B /* Fabric.framework */,
 				01988CC81CB34E0B008BE98B /* Crashlytics.framework */,
+				01AA1C101CB5FFD600463145 /* DisqusAuthenticateViewController.swift */,
+				01AA1C111CB5FFD600463145 /* DisqusComentsViewController.swift */,
+				01AA1C121CB5FFD600463145 /* DisqusManager.swift */,
+				01AA1C131CB5FFD600463145 /* DisqusSettings.swift */,
 				DC7CABD71C966805009BB184 /* NewsStory.swift */,
 				015B0ABD1CB3911C0036A819 /* BingTask.swift */,
 				DC9214FF1C9B9F580044BE91 /* Election.swift */,
@@ -307,6 +319,7 @@
 		DCEF87F91C8FA283005CAF6A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Stephen Gaschignard";
@@ -459,14 +472,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */,
+				01AA1C151CB5FFD600463145 /* DisqusComentsViewController.swift in Sources */,
 				DC7CABDA1C966847009BB184 /* CurrentEventsTableViewController.swift in Sources */,
 				56458AB91CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift in Sources */,
 				DC2BBC251C9BC0DB00CB72AA /* HomeStoryTableViewController.swift in Sources */,
+				01AA1C161CB5FFD600463145 /* DisqusManager.swift in Sources */,
 				5683DA951CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift in Sources */,
 				DC7CABD81C966805009BB184 /* NewsStory.swift in Sources */,
 				5650D8E81CB2BB9900B8160A /* CandidateViewController.swift in Sources */,
 				DC2DE6F61CB4657800B50A42 /* CurrentEventsTableViewCell.swift in Sources */,
 				DC2DE6F21CB459BF00B50A42 /* HomeStoryTableViewCell.swift in Sources */,
+				01AA1C141CB5FFD600463145 /* DisqusAuthenticateViewController.swift in Sources */,
 				56458ABB1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift in Sources */,
 				5683DA971CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift in Sources */,
 				DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */,
@@ -477,6 +493,7 @@
 				56458ABD1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift in Sources */,
 				DC9215001C9B9F580044BE91 /* Election.swift in Sources */,
 				DC9215021C9B9F8C0044BE91 /* Candidate.swift in Sources */,
+				01AA1C171CB5FFD600463145 /* DisqusSettings.swift in Sources */,
 				DC9214FE1C9B92C00044BE91 /* SettingsTableViewController.swift in Sources */,
 				DCEF88071C8FA283005CAF6A /* HomeViewController.swift in Sources */,
 				015B0ABE1CB3911C0036A819 /* BingTask.swift in Sources */,
