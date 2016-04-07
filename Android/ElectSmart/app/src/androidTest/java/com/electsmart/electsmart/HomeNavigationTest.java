@@ -56,8 +56,8 @@ public class HomeNavigationTest extends ApplicationTestCase<Application> {
             //do nothing
         }
 
-        UiObject mainArticle = mDevice.findObject(new UiSelector()
-                .resourceId("MainEventPeek"));
+        UiObject mainArticle = mDevice.findObject(new UiSelector().className("android.widget.RelativeLayout")
+                .resourceId("com.electsmart.electsmart:id/MainEventPeek");
         try {
             if (mainArticle.exists() && mainArticle.isEnabled()) {
                 mainArticle.click();
@@ -73,7 +73,7 @@ public class HomeNavigationTest extends ApplicationTestCase<Application> {
         }
 
         try{
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         }catch(InterruptedException e) {
             //do nothing
         }
