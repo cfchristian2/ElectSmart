@@ -38,6 +38,7 @@
 		DC9214FE1C9B92C00044BE91 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9214FD1C9B92C00044BE91 /* SettingsTableViewController.swift */; };
 		DC9215001C9B9F580044BE91 /* Election.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9214FF1C9B9F580044BE91 /* Election.swift */; };
 		DC9215021C9B9F8C0044BE91 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9215011C9B9F8C0044BE91 /* Candidate.swift */; };
+		DCE8AE7B1CB5FC4700F918E0 /* NewsStoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8AE7A1CB5FC4700F918E0 /* NewsStoryTests.swift */; };
 		DCEF88051C8FA283005CAF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88041C8FA283005CAF6A /* AppDelegate.swift */; };
 		DCEF88071C8FA283005CAF6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88061C8FA283005CAF6A /* HomeViewController.swift */; };
 		DCEF88091C8FA283005CAF6A /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */; };
@@ -101,6 +102,7 @@
 		DC9214FD1C9B92C00044BE91 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		DC9214FF1C9B9F580044BE91 /* Election.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Election.swift; sourceTree = "<group>"; };
 		DC9215011C9B9F8C0044BE91 /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		DCE8AE7A1CB5FC4700F918E0 /* NewsStoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStoryTests.swift; sourceTree = "<group>"; };
 		DCEF88011C8FA283005CAF6A /* ElectSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElectSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEF88041C8FA283005CAF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCEF88061C8FA283005CAF6A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				01DA1FCF1CB4A578002B0C58 /* ElectSmartTests.swift */,
+				DCE8AE7A1CB5FC4700F918E0 /* NewsStoryTests.swift */,
 				01DA1FD11CB4A578002B0C58 /* Info.plist */,
 			);
 			path = ElectSmartTests;
@@ -442,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE8AE7B1CB5FC4700F918E0 /* NewsStoryTests.swift in Sources */,
 				01DA1FD01CB4A578002B0C58 /* ElectSmartTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
