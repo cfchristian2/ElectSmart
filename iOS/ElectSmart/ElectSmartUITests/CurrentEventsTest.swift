@@ -1,14 +1,14 @@
 //
-//  upcomingElectionTest.swift
+//  CurrentEventsTest.swift
 //  ElectSmart
 //
-//  Created by Conner Christianson on 4/6/16.
+//  Created by Conner Christianson on 4/7/16.
 //  Copyright © 2016 Stephen Gaschignard. All rights reserved.
 //
 
 import XCTest
 
-class upcomingElectionTest: XCTestCase {
+class CurrentEventsTests: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -28,23 +28,16 @@ class upcomingElectionTest: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+    // Tests that table loads correctly and clicking on cell leads to article
+    func testView() {
         
         let app = XCUIApplication()
-        app.tabBars.buttons["Upcoming"].tap()
+        app.tabBars.buttons["Current Events"].tap()
         
-        let collectionQuery = app.collectionViews
-        XCTAssertEqual(collectionQuery.cells.count, 3)
-        
-        XCTAssertEqual(app.collectionViews.staticTexts["Wisconsin Caucus"].label, "Wisconsin Caucus")
-        XCTAssertEqual(app.collectionViews.staticTexts["Presidential Election"].label, "Presidential Election")
-        
-        app.collectionViews.cells.otherElements.containingType(.StaticText, identifier:"March 15").images["calendar-blank"].tap()
-        
-        XCTAssertEqual(app.tables.staticTexts["Ohio Caucus"].label, "Ohio Caucus")
+        let tableQuery = app.tables
+        XCTAssertEqual(tableQuery.count, 1)
+        XCTAssertEqual(tableQuery.cells.count, 10)
+        tableQuery.cells.elementBoundByIndex(0).tap()
         
         
     }

@@ -1,14 +1,14 @@
 //
-//  ElectSmartUITests.swift
-//  ElectSmartUITests
+//  SettingsTests.swift
+//  ElectSmart
 //
-//  Created by Nick on 4/5/16.
+//  Created by Conner Christianson on 4/7/16.
 //  Copyright © 2016 Stephen Gaschignard. All rights reserved.
 //
 
 import XCTest
 
-class ElectSmartUITests: XCTestCase {
+class SettingsTests: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -28,24 +28,22 @@ class ElectSmartUITests: XCTestCase {
         super.tearDown()
     }
     
+    // Test if settings view loads correctly
     func testView() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
         
         let app = XCUIApplication()
-        let tabBarsQuery = app.tabBars
-        tabBarsQuery.buttons["Upcoming"].tap()
-        tabBarsQuery.buttons["Current Events"].tap()
-        tabBarsQuery.buttons["Settings"].tap()
+        app.tabBars.buttons["Settings"].tap()
         
         let tablesQuery = app.tables
-        tablesQuery.buttons["Set New Location"].tap()
-        app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.childrenMatchingType(.Button).matchingIdentifier("Continue").elementBoundByIndex(1).tap()
-        tabBarsQuery.buttons["Home"].tap()
-        XCTAssertEqual(tablesQuery.cells.count, 10)
         
-        //XCTAssertTrue(table.exists)
-        //XCTAssertEqual(table.cells.count, 10)
+        tablesQuery.switches["Local Elections"].tap()
+        tablesQuery.switches["State Elections"].tap()
+        tablesQuery.switches["National Elections"].tap()
+        tablesQuery.switches["Debates"].tap()
+        tablesQuery.switches["Caucuses"].tap()
+        tablesQuery.switches["Elections"].tap()
+        tablesQuery.switches["Registration"].tap()
         
         
     }
