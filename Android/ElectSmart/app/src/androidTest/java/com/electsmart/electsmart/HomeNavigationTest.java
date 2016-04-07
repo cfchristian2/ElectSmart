@@ -78,4 +78,43 @@ public class HomeNavigationTest extends ApplicationTestCase<Application> {
             //do nothing
         }
     }
+
+    @Test
+    public void OpenElectionBannerTest(){
+        UiObject homeTab = mDevice.findObject(new UiSelector().className("android.support.v7.app.ActionBar$Tab").index(0));
+        try {
+            if (homeTab.exists() && homeTab.isEnabled()) {
+                homeTab.click();
+            }
+        } catch (UiObjectNotFoundException e) {
+            System.exit(1);
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            //do nothing
+        }
+
+        UiObject electionBanner = mDevice.findObject(new UiSelector().className("android.widget.LinearLayout")
+                .resourceId("com.electsmart.electsmart:id/ElectionBanner"));
+        try {
+            if (electionBanner.exists() && electionBanner.isEnabled()) {
+                electionBanner.click();
+            }
+            else{
+                System.exit(1);
+            }
+        }catch (UiObjectNotFoundException e){
+            Log.d("SETTINGS ERROR: ", "Couldn't find settings option");
+        }
+        catch (Exception ex){
+            Log.d("error", "some error");
+        }
+
+        try{
+            Thread.sleep(5000);
+        }catch(InterruptedException e) {
+            //do nothing
+        }
+    }
 }

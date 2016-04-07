@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 import com.electsmart.electsmart.API.Faroo.Models.FarooResponse;
 import com.electsmart.electsmart.API.bing.BingTask;
-import com.electsmart.electsmart.Activities.ElectionActivity;
+import com.electsmart.electsmart.Activities.ArticleActivity;
 import com.electsmart.electsmart.DownloadImageTask;
 import com.electsmart.electsmart.R;
 
@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment {
         electionBanner.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getContext(), ElectionActivity.class);
+                Intent intent = new Intent(getContext(), ArticleActivity.class);
                 getContext().startActivity(intent);
             }
         });

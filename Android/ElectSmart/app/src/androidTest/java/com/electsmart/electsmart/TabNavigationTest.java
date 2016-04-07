@@ -1,7 +1,5 @@
 package com.electsmart.electsmart;
 
-import static android.support.test.espresso.Espresso.onView;
-
 import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
@@ -15,6 +13,8 @@ import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static android.support.test.espresso.Espresso.onView;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -40,7 +40,7 @@ public class TabNavigationTest {
     public void currentEventsShownTest() {
         onView(Matchers.allOf(ViewMatchers.isDescendantOfA(ViewMatchers.withId(R.id.tabs)), ViewMatchers.withText("Current Events")))
                 .perform(ViewActions.click());
-        onView(ViewMatchers.withId(R.id.editText))
+        onView(ViewMatchers.withId(R.id.queryNews))
                 .check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
     }
 }
