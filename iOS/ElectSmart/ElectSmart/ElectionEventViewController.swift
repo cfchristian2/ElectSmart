@@ -96,8 +96,12 @@ class ElectionEventViewController: UIViewController, UITableViewDelegate, UITabl
         if segue.identifier == "showMap" {
             
             let vc = segue.destinationViewController as! PollingPlaceViewController
-
-            // TODO: Pass in polling place
+            
+            // TODO: Get polling address
+            let address: String = "5 Embarcadero Center, San Francisco, CA 94111"
+            
+            vc.pollingAddress = address
+            
             
         } else if segue.identifier == "showCandidate" {
             

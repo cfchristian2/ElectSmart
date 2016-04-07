@@ -13,6 +13,7 @@ class PollingPlaceViewController: UIViewController, MKMapViewDelegate, CLLocatio
 
     @IBOutlet weak var mapView: MKMapView!
     
+    var pollingAddress: String?
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -58,7 +59,7 @@ class PollingPlaceViewController: UIViewController, MKMapViewDelegate, CLLocatio
     }
     
 
-    // MARK: Location Delegate Methods
+    // MARK: Location methods
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -75,7 +76,7 @@ class PollingPlaceViewController: UIViewController, MKMapViewDelegate, CLLocatio
         //
         
         // TODO: Get polling place address
-        let annotation = getPollingPin("5 Embarcadero Center, San Francisco, CA 94111")
+        let annotation = getPollingPin(pollingAddress!)
         mapView.addAnnotation(annotation)
     }
     

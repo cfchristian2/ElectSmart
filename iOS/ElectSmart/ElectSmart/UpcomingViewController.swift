@@ -93,9 +93,6 @@ class UpcomingViewController: UIViewController, UICollectionViewDelegate, UIColl
             let indexPath = indexPaths[0] as NSIndexPath
             let vc = segue.destinationViewController as! ElectionEventViewController
             
-            
-            //TODO: Setup election view
-            
             vc.election = elections[indexPath.row]
             
         }

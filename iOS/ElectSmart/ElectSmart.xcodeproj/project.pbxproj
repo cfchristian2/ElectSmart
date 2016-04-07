@@ -16,6 +16,7 @@
 		01DA1FD01CB4A578002B0C58 /* ElectSmartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1FCF1CB4A578002B0C58 /* ElectSmartTests.swift */; };
 		01DA1FDE1CB4BC2F002B0C58 /* ElectSmartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1FDD1CB4BC2F002B0C58 /* ElectSmartUITests.swift */; };
 		561CA3441CB231AB00CF776D /* PollingPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */; };
+		563FB6251CB5C2DF0012BED9 /* upcomingElectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FB6241CB5C2DF0012BED9 /* upcomingElectionTest.swift */; };
 		56458AB91CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56458AB81CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift */; };
 		56458ABB1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56458ABA1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift */; };
 		56458ABD1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56458ABC1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift */; };
@@ -78,6 +79,7 @@
 		01DA1FDF1CB4BC2F002B0C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0786BC91F6E9AC5AC2B18D94 /* Pods_ElectSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElectSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingPlaceViewController.swift; sourceTree = "<group>"; };
+		563FB6241CB5C2DF0012BED9 /* upcomingElectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = upcomingElectionTest.swift; sourceTree = "<group>"; };
 		56458AB81CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		56458ABA1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateBioTableViewCell.swift; sourceTree = "<group>"; };
 		56458ABC1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		01DA1FDC1CB4BC2F002B0C58 /* ElectSmartUITests */ = {
 			isa = PBXGroup;
 			children = (
+				563FB6241CB5C2DF0012BED9 /* upcomingElectionTest.swift */,
 				01DA1FDD1CB4BC2F002B0C58 /* ElectSmartUITests.swift */,
 				01DA1FDF1CB4BC2F002B0C58 /* Info.plist */,
 			);
@@ -450,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				563FB6251CB5C2DF0012BED9 /* upcomingElectionTest.swift in Sources */,
 				01DA1FDE1CB4BC2F002B0C58 /* ElectSmartUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

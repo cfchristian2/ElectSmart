@@ -27,6 +27,7 @@ class AddressViewController: UIViewController, CLLocationManagerDelegate {
         
         formPlistPath()
         findMyLocation()
+
     }
     
     override func didReceiveMemoryWarning() {
