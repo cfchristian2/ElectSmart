@@ -1,15 +1,15 @@
 //
-//  SettingsTests.swift
+//  upcomingElectionTest.swift
 //  ElectSmart
 //
-//  Created by Conner Christianson on 4/7/16.
+//  Created by Conner Christianson on 4/6/16.
 //  Copyright © 2016 Stephen Gaschignard. All rights reserved.
 //
 
 import XCTest
 
-class SettingsTests: XCTestCase {
-        
+class UpcomingElectionTests: XCTestCase {
+    
     override func setUp() {
         super.setUp()
         
@@ -19,7 +19,7 @@ class SettingsTests: XCTestCase {
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
+        
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
@@ -28,23 +28,27 @@ class SettingsTests: XCTestCase {
         super.tearDown()
     }
     
-    // Test if settings view loads correctly
+    // Tests that correct information is loaded in upcoming elections view
     func testView() {
-        
         
         let app = XCUIApplication()
         sleep(4)
-        app.tabBars.buttons["Settings"].tap()
+        app.tabBars.buttons["Upcoming"].tap()
+        // Fails randomly
+        //sleep(2)
+        let collectionQuery = app.collectionViews
         
-        let tablesQuery = app.tables
+        XCTAssertEqual(app.collectionViews.count, 1)
+        XCTAssertEqual(app.collectionViews.cells.count, 3)
         
-        tablesQuery.switches["Local Elections"].tap()
-        tablesQuery.switches["State Elections"].tap()
-        tablesQuery.switches["National Elections"].tap()
-        tablesQuery.switches["Debates"].tap()
-        tablesQuery.switches["Caucuses"].tap()
-        tablesQuery.switches["Elections"].tap()
-        tablesQuery.switches["Registration"].tap()
+        let cell = collectionQuery.cells.elementBoundByIndex(0)
+        XCTAssertTrue(cell.exists)
+        let indexedText = cell.staticTexts.element
+        XCTAssertTrue(indexedText.exists)
+        
+        app.collectionViews.cells.otherElements.containingType(.StaticText, identifier:"March 15").images["calendar-blank"].tap()
+        
+        XCTAssertEqual(app.tables.staticTexts["Ohio Caucus"].label, "Ohio Caucus")
         
         
     }

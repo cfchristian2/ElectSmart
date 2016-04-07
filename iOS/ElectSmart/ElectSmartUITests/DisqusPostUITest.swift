@@ -1,5 +1,5 @@
 //
-//  SettingsTests.swift
+//  DisqusPostUITest.swift
 //  ElectSmart
 //
 //  Created by Conner Christianson on 4/7/16.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SettingsTests: XCTestCase {
+class DisqusPostUITest: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -28,23 +28,18 @@ class SettingsTests: XCTestCase {
         super.tearDown()
     }
     
-    // Test if settings view loads correctly
-    func testView() {
+    func testExample() {
         
         
         let app = XCUIApplication()
-        sleep(4)
-        app.tabBars.buttons["Settings"].tap()
+        app.tabBars.buttons["Upcoming"].tap()
+        app.collectionViews.cells.otherElements.containingType(.StaticText, identifier:"March 15").images["calendar-blank"].tap()
         
-        let tablesQuery = app.tables
-        
-        tablesQuery.switches["Local Elections"].tap()
-        tablesQuery.switches["State Elections"].tap()
-        tablesQuery.switches["National Elections"].tap()
-        tablesQuery.switches["Debates"].tap()
-        tablesQuery.switches["Caucuses"].tap()
-        tablesQuery.switches["Elections"].tap()
-        tablesQuery.switches["Registration"].tap()
+        let tablesQuery2 = app.tables
+        let tablesQuery = tablesQuery2
+        tablesQuery.staticTexts["Bernie Sanders"].tap()
+        tablesQuery2.cells.containingType(.StaticText, identifier:"Candidate Bio").childrenMatchingType(.TextView).element.tap()
+        tablesQuery.buttons["Go To Discussion Form"].tap()
         
         
     }

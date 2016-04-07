@@ -26,6 +26,12 @@ class PollingPlaceViewController: UIViewController, MKMapViewDelegate, CLLocatio
         self.mapView.showsUserLocation = true
         self.mapView.delegate = self
         
+        //
+        // Mark pin for polling location
+        //
+        let annotation = getPollingPin()
+        mapView.addAnnotation(annotation)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,11 +41,11 @@ class PollingPlaceViewController: UIViewController, MKMapViewDelegate, CLLocatio
     
     // MARK: Get polling pin location
     
-    func getPollingPin(address: String) -> MKPointAnnotation {
+    func getPollingPin() -> MKPointAnnotation {
         let annotation = MKPointAnnotation()
         
         let localSearchRequest = MKLocalSearchRequest()
-        localSearchRequest.naturalLanguageQuery = address
+        localSearchRequest.naturalLanguageQuery = pollingAddress!
         let localSearch = MKLocalSearch(request: localSearchRequest)
         localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
             
@@ -71,13 +77,6 @@ class PollingPlaceViewController: UIViewController, MKMapViewDelegate, CLLocatio
         
         self.locationManager.stopUpdatingLocation()
         
-        //
-        // Mark pin for polling location
-        //
-        
-        // TODO: Get polling place address
-        let annotation = getPollingPin(pollingAddress!)
-        mapView.addAnnotation(annotation)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

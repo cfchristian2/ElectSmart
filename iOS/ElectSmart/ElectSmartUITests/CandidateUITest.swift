@@ -1,5 +1,5 @@
 //
-//  SettingsTests.swift
+//  CandidateUITest.swift
 //  ElectSmart
 //
 //  Created by Conner Christianson on 4/7/16.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SettingsTests: XCTestCase {
+class CandidateUITest: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -28,24 +28,22 @@ class SettingsTests: XCTestCase {
         super.tearDown()
     }
     
-    // Test if settings view loads correctly
-    func testView() {
+    func testExample() {
         
         
         let app = XCUIApplication()
         sleep(4)
-        app.tabBars.buttons["Settings"].tap()
+        app.tabBars.buttons["Upcoming"].tap()
+        app.collectionViews.cells.elementBoundByIndex(0).tap()
         
         let tablesQuery = app.tables
+        tablesQuery.cells.elementBoundByIndex(1)
         
-        tablesQuery.switches["Local Elections"].tap()
-        tablesQuery.switches["State Elections"].tap()
-        tablesQuery.switches["National Elections"].tap()
-        tablesQuery.switches["Debates"].tap()
-        tablesQuery.switches["Caucuses"].tap()
-        tablesQuery.switches["Elections"].tap()
-        tablesQuery.switches["Registration"].tap()
-        
+        let candidateBioStaticText = tablesQuery.staticTexts["Candidate Bio"]
+        candidateBioStaticText.tap()
+        candidateBioStaticText.tap()
+        tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(2).staticTexts["Candidate History"].tap()
+        tablesQuery.cells.containingType(.StaticText, identifier:"Candidate Bio").childrenMatchingType(.TextView).element.tap()
         
     }
     

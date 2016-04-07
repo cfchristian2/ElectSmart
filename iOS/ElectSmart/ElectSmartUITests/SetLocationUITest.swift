@@ -1,5 +1,5 @@
 //
-//  SettingsTests.swift
+//  SetLocationUITest.swift
 //  ElectSmart
 //
 //  Created by Conner Christianson on 4/7/16.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SettingsTests: XCTestCase {
+class SetLocationUITest: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -28,24 +28,17 @@ class SettingsTests: XCTestCase {
         super.tearDown()
     }
     
-    // Test if settings view loads correctly
-    func testView() {
+    func testExample() {
         
         
         let app = XCUIApplication()
         sleep(4)
         app.tabBars.buttons["Settings"].tap()
-        
-        let tablesQuery = app.tables
-        
-        tablesQuery.switches["Local Elections"].tap()
-        tablesQuery.switches["State Elections"].tap()
-        tablesQuery.switches["National Elections"].tap()
-        tablesQuery.switches["Debates"].tap()
-        tablesQuery.switches["Caucuses"].tap()
-        tablesQuery.switches["Elections"].tap()
-        tablesQuery.switches["Registration"].tap()
-        
+        app.tables.buttons["Set New Location"].tap()
+        app.staticTexts["Address Name"].tap()
+        app.staticTexts[" Address Line 1"].tap()
+        app.staticTexts["Address Line 2"].tap()
+        app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.childrenMatchingType(.Button).matchingIdentifier("Continue").elementBoundByIndex(1).tap()
         
     }
     
