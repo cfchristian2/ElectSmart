@@ -29,7 +29,7 @@ public class CurrentEventsNavigationTest extends ActivityUnitTestCase<TabActivit
             TabActivity.class);
 
     @Test
-    public void upcomingElectionsSelectElection() {
+    public void currentEventsSelect() {
 
         //Find Upcoming Elections Tab and select it
         onView(Matchers.allOf(ViewMatchers.isDescendantOfA(ViewMatchers.withId(R.id.tabs)), ViewMatchers.withText("Current Events")))

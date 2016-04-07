@@ -84,8 +84,6 @@ public class BingTask extends AsyncTask<Void, Void, String> {
         } catch(NullPointerException e) {
             // if an exception occurred, show an error message
             Log.e(result.toString(), e.getMessage());
-
-            //throw new NullPointerException();
         }
     }
 
