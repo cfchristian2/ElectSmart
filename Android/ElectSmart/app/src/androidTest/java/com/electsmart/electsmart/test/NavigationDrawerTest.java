@@ -141,4 +141,50 @@ public class NavigationDrawerTest {
             //do nothing
         }
     }
+
+    @Test
+    public void openForumTopicTest() {
+        //Open Drawer
+        UiObject drawerButton = mDevice.findObject(new UiSelector().className("android.widget.ImageButton").descriptionContains("open"));
+        try {
+            if (drawerButton.exists() && drawerButton.isEnabled()) {
+                drawerButton.click();
+            }
+        }catch (UiObjectNotFoundException e){
+            System.exit(1);
+        }
+
+        //Select Forum
+        UiObject forumsButton = mDevice.findObject(new UiSelector().className("android.widget.CheckedTextView").text("Forums"));
+        try {
+            if (forumsButton.exists() && forumsButton.isEnabled()) {
+                forumsButton.click();
+            }
+        }catch (UiObjectNotFoundException e){
+            Log.d("CLOSEDRAWER ERROR: ", "failed to close drawer");
+        }
+
+        //Select first article
+        UiObject article = mDevice.findObject(new UiSelector()
+                .className("android.widget.ListView")
+                .index(0)
+                .childSelector(new UiSelector()
+                        .index(0)
+                        .className("android.widget.RelativeLayout")
+                        .resourceId("com.electsmart.electsmart:id/ForumContent")));
+        try {
+            if (article.exists() && article.isEnabled()) {
+                article.click();
+            } else {
+                System.exit(1);
+            }
+        }catch(UiObjectNotFoundException e){
+            System.exit(1);
+        }
+            try{
+            Thread.sleep(500);
+        }catch(InterruptedException e) {
+            //do nothing
+        }
+    }
 }
