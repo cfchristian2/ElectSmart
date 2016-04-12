@@ -24,7 +24,6 @@
 		563D15181CB70F87007B0450 /* ElectionUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D15171CB70F87007B0450 /* ElectionUITest.swift */; };
 		563D151A1CB70FF0007B0450 /* CandidateUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D15191CB70FF0007B0450 /* CandidateUITest.swift */; };
 		563D151C1CB71135007B0450 /* MapViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D151B1CB71135007B0450 /* MapViewUITest.swift */; };
-		563FB6251CB5C2DF0012BED9 /* upcomingElectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FB6241CB5C2DF0012BED9 /* upcomingElectionTest.swift */; };
 		56458AB91CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56458AB81CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift */; };
 		56458ABB1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56458ABA1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift */; };
 		56458ABD1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56458ABC1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift */; };
@@ -103,12 +102,10 @@
 		01DA1FDF1CB4BC2F002B0C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0786BC91F6E9AC5AC2B18D94 /* Pods_ElectSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElectSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingPlaceViewController.swift; sourceTree = "<group>"; };
-		562A22B11CB6F606007BBA7A /* UpcomingElectionNavigationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingElectionNavigationTest.swift; sourceTree = "<group>"; };
 		562A22B31CB6F73A007BBA7A /* CurrentEventsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventsTest.swift; sourceTree = "<group>"; };
 		563D15171CB70F87007B0450 /* ElectionUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionUITest.swift; sourceTree = "<group>"; };
 		563D15191CB70FF0007B0450 /* CandidateUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateUITest.swift; sourceTree = "<group>"; };
 		563D151B1CB71135007B0450 /* MapViewUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewUITest.swift; sourceTree = "<group>"; };
-		563FB6241CB5C2DF0012BED9 /* upcomingElectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = upcomingElectionTest.swift; sourceTree = "<group>"; };
 		56458AB81CB4C6C6008EB0F2 /* CandidateHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		56458ABA1CB4C6F9008EB0F2 /* CandidateBioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateBioTableViewCell.swift; sourceTree = "<group>"; };
 		56458ABC1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,7 +119,6 @@
 		568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingElectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionEventViewController.swift; sourceTree = "<group>"; };
 		56AF06B31CB6F923007FE2E1 /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
-		56EBDBEC1CB6D9920053DE43 /* HomeViewNavigationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewNavigationTests.swift; sourceTree = "<group>"; };
 		A3DBFDB6CA0F9F19A4924578 /* Pods-ElectSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElectSmart/Pods-ElectSmart.debug.xcconfig"; sourceTree = "<group>"; };
 		B77019F5BAE6EA95469CCF3E /* Pods-ElectSmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectSmart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ElectSmart/Pods-ElectSmart.release.xcconfig"; sourceTree = "<group>"; };
 		DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStoryTableViewController.swift; sourceTree = "<group>"; };
@@ -210,9 +206,6 @@
 				5659D62D1CB70C46008F7E00 /* UpcomingElectionsTests.swift */,
 				56AF06B31CB6F923007FE2E1 /* SettingsTests.swift */,
 				562A22B31CB6F73A007BBA7A /* CurrentEventsTest.swift */,
-				562A22B11CB6F606007BBA7A /* UpcomingElectionNavigationTest.swift */,
-				56EBDBEC1CB6D9920053DE43 /* HomeViewNavigationTests.swift */,
-				563FB6241CB5C2DF0012BED9 /* upcomingElectionTest.swift */,
 				01DA1FDD1CB4BC2F002B0C58 /* ElectSmartUITests.swift */,
 				01DA1FDF1CB4BC2F002B0C58 /* Info.plist */,
 			);
@@ -522,7 +515,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				563D15181CB70F87007B0450 /* ElectionUITest.swift in Sources */,
-				563FB6251CB5C2DF0012BED9 /* upcomingElectionTest.swift in Sources */,
 				5659D6301CB70EBE008F7E00 /* SetLocationUITest.swift in Sources */,
 				563D151C1CB71135007B0450 /* MapViewUITest.swift in Sources */,
 				563D151A1CB70FF0007B0450 /* CandidateUITest.swift in Sources */,
