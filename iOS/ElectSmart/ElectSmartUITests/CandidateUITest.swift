@@ -39,12 +39,6 @@ class CandidateUITest: XCTestCase {
         let tablesQuery = app.tables
         tablesQuery.cells.elementBoundByIndex(1)
         
-        let candidateBioStaticText = tablesQuery.staticTexts["Candidate Bio"]
-        candidateBioStaticText.tap()
-        candidateBioStaticText.tap()
-        tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(2).staticTexts["Candidate History"].tap()
-        tablesQuery.cells.containingType(.StaticText, identifier:"Candidate Bio").childrenMatchingType(.TextView).element.tap()
-        
     }
     
 }

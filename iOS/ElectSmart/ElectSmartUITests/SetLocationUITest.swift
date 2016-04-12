@@ -35,9 +35,6 @@ class SetLocationUITest: XCTestCase {
         sleep(4)
         app.tabBars.buttons["Settings"].tap()
         app.tables.buttons["Set New Location"].tap()
-        app.staticTexts["Address Name"].tap()
-        app.staticTexts[" Address Line 1"].tap()
-        app.staticTexts["Address Line 2"].tap()
         app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element.childrenMatchingType(.Button).matchingIdentifier("Continue").elementBoundByIndex(1).tap()
         
     }
