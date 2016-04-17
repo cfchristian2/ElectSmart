@@ -14,6 +14,9 @@ class HomeStoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 166
     }
     
     override func didReceiveMemoryWarning() {
