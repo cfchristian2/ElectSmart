@@ -10,7 +10,7 @@ import UIKit
 
 class CandidateHistoryTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var candidateHistoryTextView: UITextView!
+    @IBOutlet weak var historyLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

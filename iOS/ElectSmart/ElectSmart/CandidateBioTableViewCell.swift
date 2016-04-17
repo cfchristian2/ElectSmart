@@ -10,7 +10,7 @@ import UIKit
 
 class CandidateBioTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var candidateBioTextView: UITextView!
+    @IBOutlet weak var bioLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
