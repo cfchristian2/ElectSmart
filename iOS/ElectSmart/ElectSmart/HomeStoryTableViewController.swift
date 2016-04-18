@@ -11,6 +11,7 @@ import UIKit
 class HomeStoryTableViewController: UITableViewController {
     
     var stories: [NewsStory] = [NewsStory]()
+    var queryTextField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,33 @@ class HomeStoryTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func searchWithQuery(sender: AnyObject) {
+        
+        let query = self.queryTextField!.text!
+        
+        if (query.characters.count > 0) {
+            stories.removeAll()
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                let queryTask: BingTask = BingTask(query: query)
+                queryTask.makeRequest() { responseObject, error in
+                    if (responseObject?.count > 0){
+                        for story in responseObject! {
+                            self.stories.append(story)
+                        }
+                        self.tableView.reloadData()
+                    } else {
+                        print("We didn't get the right data returned")
+                    }
+                }
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
+            }
+        }
+    }
+    
+    
     // MARK: Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -30,7 +58,7 @@ class HomeStoryTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stories.count
+        return stories.count + 1
     }
     
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -39,25 +67,40 @@ class HomeStoryTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("homeStoryCell", forIndexPath: indexPath) as! HomeStoryTableViewCell
         
-        let story = stories[indexPath.row]
+        if (indexPath.row == 0) {
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("homeQueryCell", forIndexPath: indexPath) as! HomeQueryTableViewCell
+            
+            queryTextField = cell.searchText
+            
+            return cell
+            
+        } else {
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("homeStoryCell", forIndexPath: indexPath) as! HomeStoryTableViewCell
         
-        cell.newsStoryTitleLabel.text = "  "+story.title
-        cell.newsStoryContentLabel.text = story.description
+            let story = stories[indexPath.row]
         
-        return cell
+            cell.newsStoryTitleLabel.text = "  "+story.title
+            cell.newsStoryContentLabel.text = story.description
+        
+            return cell
+        }
     }
     
     // MARK: - Navigation
         
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let detScene = segue.destinationViewController as! NewsStoryViewController
         
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            let selectedStory = self.stories[indexPath.row]
-            detScene.url = NSURL(string: selectedStory.url)
-            detScene.storyTitle = selectedStory.title
+            if (indexPath.row > 0) {
+                let detScene = segue.destinationViewController as! NewsStoryViewController
+                
+                let selectedStory = self.stories[indexPath.row - 1]
+                detScene.url = NSURL(string: selectedStory.url)
+                detScene.storyTitle = selectedStory.title
+            }
         }
     }
 }

@@ -34,6 +34,7 @@
 		56694DD91CB714F00012A495 /* DisqusRepliesUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56694DD81CB714F00012A495 /* DisqusRepliesUITest.swift */; };
 		5683DA951CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683DA941CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift */; };
 		5683DA971CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5683DA961CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift */; };
+		5688D0401CC5809F007E545B /* HomeQueryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688D03F1CC5809F007E545B /* HomeQueryTableViewCell.swift */; };
 		568E4D3D1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */; };
 		568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */; };
 		56AF06B41CB6F923007FE2E1 /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AF06B31CB6F923007FE2E1 /* SettingsTests.swift */; };
@@ -119,6 +120,7 @@
 		56694DD81CB714F00012A495 /* DisqusRepliesUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisqusRepliesUITest.swift; sourceTree = "<group>"; };
 		5683DA941CB3423C00BE84B9 /* ElectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		5683DA961CB3426300BE84B9 /* ElectionCandidateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionCandidateTableViewCell.swift; sourceTree = "<group>"; };
+		5688D03F1CC5809F007E545B /* HomeQueryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeQueryTableViewCell.swift; sourceTree = "<group>"; };
 		568E4D3C1C9A70E400F5959E /* UpcomingElectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingElectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectionEventViewController.swift; sourceTree = "<group>"; };
 		56AF06B31CB6F923007FE2E1 /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				DCEF88061C8FA283005CAF6A /* HomeViewController.swift */,
 				DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */,
 				DC2DE6F11CB459BF00B50A42 /* HomeStoryTableViewCell.swift */,
+				5688D03F1CC5809F007E545B /* HomeQueryTableViewCell.swift */,
 				DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */,
 				DC9214FD1C9B92C00044BE91 /* SettingsTableViewController.swift */,
 				DCEF88081C8FA283005CAF6A /* UpcomingViewController.swift */,
@@ -565,6 +568,7 @@
 				DC24B9F31CC3FE3300586E68 /* Discussion.swift in Sources */,
 				DC7CABB41C963DA0009BB184 /* MainTabBarController.swift in Sources */,
 				56458ABD1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift in Sources */,
+				5688D0401CC5809F007E545B /* HomeQueryTableViewCell.swift in Sources */,
 				DC24B9F51CC4006400586E68 /* DiscussionReply.swift in Sources */,
 				DC9215001C9B9F580044BE91 /* Election.swift in Sources */,
 				DCE8AE831CB629C800F918E0 /* DisqusDiscussionsTableViewCell.swift in Sources */,
