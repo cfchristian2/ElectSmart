@@ -38,9 +38,12 @@
 		568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E4D3E1C9A719100F5959E /* ElectionEventViewController.swift */; };
 		56AF06B41CB6F923007FE2E1 /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AF06B31CB6F923007FE2E1 /* SettingsTests.swift */; };
 		82C014E4A8CAA3D0DA1F81F5 /* Pods_ElectSmart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0786BC91F6E9AC5AC2B18D94 /* Pods_ElectSmart.framework */; };
+		DC24B9F31CC3FE3300586E68 /* Discussion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC24B9F21CC3FE3300586E68 /* Discussion.swift */; };
+		DC24B9F51CC4006400586E68 /* DiscussionReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC24B9F41CC4006400586E68 /* DiscussionReply.swift */; };
 		DC2BBC251C9BC0DB00CB72AA /* HomeStoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */; };
 		DC2DE6F21CB459BF00B50A42 /* HomeStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2DE6F11CB459BF00B50A42 /* HomeStoryTableViewCell.swift */; };
 		DC2DE6F61CB4657800B50A42 /* CurrentEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2DE6F51CB4657800B50A42 /* CurrentEventsTableViewCell.swift */; };
+		DC4EE1C71CC43C3C0028D144 /* CurrentEventsTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4EE1C61CC43C3C0028D144 /* CurrentEventsTableViewHeaderCell.swift */; };
 		DC7CABAC1C961FC8009BB184 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */; };
 		DC7CABAE1C962096009BB184 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7CABAD1C962096009BB184 /* CoreLocation.framework */; };
 		DC7CABB21C962D29009BB184 /* AppData.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC7CABB11C962D29009BB184 /* AppData.plist */; };
@@ -121,9 +124,12 @@
 		56AF06B31CB6F923007FE2E1 /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
 		A3DBFDB6CA0F9F19A4924578 /* Pods-ElectSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElectSmart/Pods-ElectSmart.debug.xcconfig"; sourceTree = "<group>"; };
 		B77019F5BAE6EA95469CCF3E /* Pods-ElectSmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElectSmart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ElectSmart/Pods-ElectSmart.release.xcconfig"; sourceTree = "<group>"; };
+		DC24B9F21CC3FE3300586E68 /* Discussion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discussion.swift; sourceTree = "<group>"; };
+		DC24B9F41CC4006400586E68 /* DiscussionReply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionReply.swift; sourceTree = "<group>"; };
 		DC2BBC241C9BC0DB00CB72AA /* HomeStoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStoryTableViewController.swift; sourceTree = "<group>"; };
 		DC2DE6F11CB459BF00B50A42 /* HomeStoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStoryTableViewCell.swift; sourceTree = "<group>"; };
 		DC2DE6F51CB4657800B50A42 /* CurrentEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventsTableViewCell.swift; sourceTree = "<group>"; };
+		DC4EE1C61CC43C3C0028D144 /* CurrentEventsTableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventsTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		DC7CABAB1C961FC8009BB184 /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		DC7CABAD1C962096009BB184 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DC7CABB11C962D29009BB184 /* AppData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppData.plist; sourceTree = "<group>"; };
@@ -243,6 +249,8 @@
 				015B0ABD1CB3911C0036A819 /* BingTask.swift */,
 				DC9214FF1C9B9F580044BE91 /* Election.swift */,
 				DC9215011C9B9F8C0044BE91 /* Candidate.swift */,
+				DC24B9F21CC3FE3300586E68 /* Discussion.swift */,
+				DC24B9F41CC4006400586E68 /* DiscussionReply.swift */,
 				DC7CABAD1C962096009BB184 /* CoreLocation.framework */,
 				DCEF88031C8FA283005CAF6A /* ElectSmart */,
 				01DA1FCE1CB4A578002B0C58 /* ElectSmartTests */,
@@ -285,6 +293,7 @@
 				561CA3431CB231AB00CF776D /* PollingPlaceViewController.swift */,
 				DC7CABD91C966847009BB184 /* CurrentEventsTableViewController.swift */,
 				DC2DE6F51CB4657800B50A42 /* CurrentEventsTableViewCell.swift */,
+				DC4EE1C61CC43C3C0028D144 /* CurrentEventsTableViewHeaderCell.swift */,
 				DC7CABDC1C96793D009BB184 /* NewsStoryViewController.swift */,
 				01AA1C101CB5FFD600463145 /* DisqusAuthenticateViewController.swift */,
 				01AA1C111CB5FFD600463145 /* DisqusDiscussionsTableViewController.swift */,
@@ -531,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4EE1C71CC43C3C0028D144 /* CurrentEventsTableViewHeaderCell.swift in Sources */,
 				568E4D3F1C9A719100F5959E /* ElectionEventViewController.swift in Sources */,
 				01AA1C151CB5FFD600463145 /* DisqusDiscussionsTableViewController.swift in Sources */,
 				DC7CABDA1C966847009BB184 /* CurrentEventsTableViewController.swift in Sources */,
@@ -552,8 +562,10 @@
 				DCE8AE811CB61E2400F918E0 /* DisqusDiscussionRepliesTableViewController.swift in Sources */,
 				DC7CABAC1C961FC8009BB184 /* AddressViewController.swift in Sources */,
 				DC7CABDD1C96793D009BB184 /* NewsStoryViewController.swift in Sources */,
+				DC24B9F31CC3FE3300586E68 /* Discussion.swift in Sources */,
 				DC7CABB41C963DA0009BB184 /* MainTabBarController.swift in Sources */,
 				56458ABD1CB4C70D008EB0F2 /* CandidateHistoryTableViewCell.swift in Sources */,
+				DC24B9F51CC4006400586E68 /* DiscussionReply.swift in Sources */,
 				DC9215001C9B9F580044BE91 /* Election.swift in Sources */,
 				DCE8AE831CB629C800F918E0 /* DisqusDiscussionsTableViewCell.swift in Sources */,
 				DC9215021C9B9F8C0044BE91 /* Candidate.swift in Sources */,

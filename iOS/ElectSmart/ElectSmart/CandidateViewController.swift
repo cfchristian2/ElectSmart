@@ -57,7 +57,7 @@ class CandidateViewController: UIViewController, UITableViewDelegate, UITableVie
             
             let cell = tableView.dequeueReusableCellWithIdentifier("bioCell", forIndexPath: indexPath) as! CandidateBioTableViewCell
             
-            cell.candidateBioTextView.text = candidate!.bio
+            cell.bioLabel.text = candidate!.bio
             
             return cell
             
@@ -65,7 +65,7 @@ class CandidateViewController: UIViewController, UITableViewDelegate, UITableVie
             
             let cell = tableView.dequeueReusableCellWithIdentifier("historyCell", forIndexPath: indexPath) as! CandidateHistoryTableViewCell
             
-            cell.candidateHistoryTextView.text = "Put some voter history about candidate here"
+            cell.historyLabel.text = "Put some voter history about candidate here"
             
             return cell
             

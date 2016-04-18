@@ -28,17 +28,19 @@ extension String
 
 public class BingTask{
     
-    let newsurl = "https://api.datamarket.azure.com/Bing/Search/v1/News?Query=%27Hillary%20Clinton%27&$format=JSON&$top=10"
+    let newsurl:String
     let keyString:String = "fDs4/JuSlVn0HIG0tp4QaQwxuLnfe35r8Kq6ej51RL0:fDs4/JuSlVn0HIG0tp4QaQwxuLnfe35r8Kq6ej51RL0"
     
-
     let keyEncoded:String
     
     init(){
-       keyEncoded = keyString.toBase64()
-    
-        
-        
+        keyEncoded = keyString.toBase64()
+        newsurl = "https://api.datamarket.azure.com/Bing/Search/v1/News?Query=%27Hillary%20Clinton%27&$format=JSON&$top=10"
+    }
+    init(query: String){
+        keyEncoded = keyString.toBase64()
+        let q = query.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        newsurl = "https://api.datamarket.azure.com/Bing/Search/v1/News?Query=%27"+q!+"%27&$format=JSON&$top=10"
     }
     
     //let title: String
